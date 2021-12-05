@@ -39,7 +39,7 @@ const ExploreByVertical = props => {
 
   // 
   const details = props?.route?.params;
-  const level = details.level
+  const level = details?.level
   let showCats = true
   let showSubCats = true
    if (level == 3){
@@ -54,9 +54,6 @@ const ExploreByVertical = props => {
       const count = cartItems && cartItems.length ? cartItems.length : 0;
       setCartCount(count);
       global.badgeCount = count;
-      setTimeout(() => {
-        setIsLoading(false);
-      }, 300);
     });
   };
 
@@ -76,8 +73,8 @@ const ExploreByVertical = props => {
         setSelectedCategory(global.category ? global.category : cats && cats.length && cats[0]);
         setTimeout(() => {
           setIsLoading(false);
-        }, 300);
-        },
+        }, 500);
+      },
     );
   }, []);
 
@@ -99,7 +96,7 @@ const ExploreByVertical = props => {
             setSelectedSubCategory(global.subcategory ?  global.subcategory : subs && subs.length && subs[0]);
             setTimeout(() => {
               setIsLoading(false);
-            }, 300);
+            }, 500);
           },
         );
       }
@@ -126,7 +123,7 @@ const ExploreByVertical = props => {
             setAlreadyFetchedProducts(ad)
             setTimeout(() => {
               setIsLoading(false);
-            }, 300);
+            }, 500);
           },
         );
       }
@@ -149,8 +146,6 @@ const ExploreByVertical = props => {
     const result = filtedObjs?.[0] 
     return result?.products
   }
-
- 
 
 
   return (

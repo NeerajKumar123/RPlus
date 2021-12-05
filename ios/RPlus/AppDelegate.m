@@ -36,7 +36,6 @@ static void InitializeFlipper(UIApplication *application) {
 #endif
 
 
-  //Add these 3 lines
   [FIRApp configure];
 
 

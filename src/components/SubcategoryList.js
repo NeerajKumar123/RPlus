@@ -1,13 +1,15 @@
-import React from 'react';
+import React,{useRef} from 'react';
 import {Text, View, FlatList} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import * as Colors from '../constants/ColorDefs';
 
 const SubcategoryList = props => {
   const {subCatlist, onSubCateSelected,selectedValue} = props;
+  const flatListRef = useRef(null)
   const isSelected = (item) =>{
     return selectedValue?.subcategory_id == item.subcategory_id
   }
+  
   return (
     <View
       style={{
@@ -17,6 +19,7 @@ const SubcategoryList = props => {
         padding: 10
       }}>
       <FlatList
+        ref = {flatListRef}
         horizontal={true}
         showsHorizontalScrollIndicator={false}
         style={{
