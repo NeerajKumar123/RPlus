@@ -143,6 +143,14 @@ const OrderSummary = () => {
   }, []);
 
   const checkDelivery = () => {
+    console.log('deliveryTimeSlot',deliveryTimeSlot)
+    if(!deliveryTimeSlot?.slot_id){
+      Alert.alert(AppData.title_alert,'Please select a time slot.');
+      setTimeout(() => {
+        setOrderPlacedFailedCount(orderPlacedFailedCount + 1)
+      }, 2000);
+    return 
+    }
     const storePincodes = global?.storeInfo?.pincode;
     const deliveryPincode = deliveryAddress?.pincode;
     const isServing =

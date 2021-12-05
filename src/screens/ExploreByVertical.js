@@ -34,6 +34,8 @@ const ExploreByVertical = props => {
   const [isSearchShowing, setIsSearchShowing] = useState(false);
   const [cartCount, setCartCount] = useState(0);
   const isFocused = useIsFocused();
+  const [alreadyFetchedProducts, setAlreadyFetchedProducts] = useState([])
+  const [alreadyFetchedSubcats, setAlreadyFetchedSubcats] = useState([])
 
   // 
   const details = props?.route?.params;
@@ -52,7 +54,9 @@ const ExploreByVertical = props => {
       const count = cartItems && cartItems.length ? cartItems.length : 0;
       setCartCount(count);
       global.badgeCount = count;
-      setIsLoading(false);
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 300);
     });
   };
 
@@ -70,46 +74,84 @@ const ExploreByVertical = props => {
         const cats = res && res.payload_verticalByCategory;
         setCategories(cats);
         setSelectedCategory(global.category ? global.category : cats && cats.length && cats[0]);
-        setIsLoading(false);
-      },
+        setTimeout(() => {
+          setIsLoading(false);
+        }, 300);
+        },
     );
   }, []);
 
   useEffect(() => {
     if (selectedCategory) {
-      setIsLoading(true);
-      getCategoryBySubCategory(
-        {store_id: storeID, category_id: selectedCategory.category_id},
-        res => {
-          const subs = res && res.payload_categoryBySubCategory;
-          setSubCategories(subs);
-          setSelectedSubCategory(global.subcategory ?  global.subcategory : subs && subs.length && subs[0]);
-          setTimeout(() => {
-            setIsLoading(false);
-          }, 300);
-        },
-      );
+      const savedSubcats = checkIfSubcategoriesAlreadyFetched(selectedCategory)
+      if(savedSubcats){
+        setSubCategories(savedSubcats);
+      }else{
+        setIsLoading(true);
+        getCategoryBySubCategory(
+          {store_id: storeID, category_id: selectedCategory.category_id},
+          res => {
+            const subs = res && res.payload_categoryBySubCategory;
+            const dataToBeCached = {"category_id": `${selectedCategory.category_id}`,"subs": subs}
+            const ad = [...alreadyFetchedSubcats,dataToBeCached]
+            setAlreadyFetchedSubcats(ad)
+            setSubCategories(subs);
+            setSelectedSubCategory(global.subcategory ?  global.subcategory : subs && subs.length && subs[0]);
+            setTimeout(() => {
+              setIsLoading(false);
+            }, 300);
+          },
+        );
+      }
     }
   }, [selectedCategory]);
 
   useEffect(() => {
     if (selectedSubCategory) {
-      setIsLoading(true);
-      getProductBySubCategory(
-        {
-          store_id: storeID,
-          subcategory_id: selectedSubCategory.subcategory_id,
-        },
-        res => {
-          const prods = res && res.payload_SubCategoryByProduct;
-          setProducts(prods);
-          setTimeout(() => {
-            setIsLoading(false);
-          }, 300);
-        },
-      );
+      const savedProducts = checkIfProductsAlreadyFetched(selectedCategory,selectedSubCategory)
+      if(savedProducts){
+        setProducts(savedProducts);
+      }else{
+        setIsLoading(true);
+        getProductBySubCategory(
+          {
+            store_id: storeID,
+            subcategory_id: selectedSubCategory.subcategory_id,
+          },
+          res => {
+            const prods = res && res.payload_SubCategoryByProduct;
+            setProducts(prods);
+            const dataToBeCached = {"category_id": `${selectedCategory.category_id}`,subcategory_id:`${selectedSubCategory.subcategory_id}` ,"products": prods}
+            const ad = [...alreadyFetchedProducts,dataToBeCached]
+            setAlreadyFetchedProducts(ad)
+            setTimeout(() => {
+              setIsLoading(false);
+            }, 300);
+          },
+        );
+      }
     }
   }, [selectedSubCategory]);
+
+
+  const checkIfSubcategoriesAlreadyFetched = (cat) =>{
+    const filtedObjs =  alreadyFetchedSubcats?.filter(item =>{
+      return  cat.category_id == item.category_id
+    });
+    const result = filtedObjs?.[0] 
+    return result?.subs
+  }
+
+  const checkIfProductsAlreadyFetched = (cat, subcat) =>{
+    const filtedObjs =  alreadyFetchedProducts?.filter(item =>{
+      return  cat.category_id == item.category_id && subcat.subcategory_id == item.subcategory_id
+    });
+    const result = filtedObjs?.[0] 
+    return result?.products
+  }
+
+ 
+
 
   return (
     <View

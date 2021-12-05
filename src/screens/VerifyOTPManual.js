@@ -200,7 +200,9 @@ const VerifyOTP = props => {
           setIsLoading(true);
           const verifyParams = {otp_type:otpParams?.otp_type,otp_id:otpParams?.otp_id,otp:otpParams?.otp,company_id:otpParams?.company_id}
           verifyOtp(verifyParams, res => {
-            setIsLoading(false);
+            setTimeout(() => {
+              setIsLoading(false);
+            }, 300);
             if(res?.status == -1){
               Alert.alert(AppData.title_alert, 'Currently, we are facing some technical glitch ,please retry.');
               return

@@ -33,7 +33,7 @@ const PDImageBannerCard = props => {
           uri: image_url
         }}
       />
-      <TouchableOpacity 
+      {/* <TouchableOpacity 
       onPress={() => {
         props.onShareClicked && props.onShareClicked()
       }}
@@ -43,7 +43,7 @@ const PDImageBannerCard = props => {
           style={{ width: 25, height: 25 }}
           source={share}
         />
-      </TouchableOpacity>
+      </TouchableOpacity> */}
 
     </TouchableOpacity>
   );

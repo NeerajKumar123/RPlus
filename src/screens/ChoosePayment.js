@@ -108,7 +108,6 @@ const ChoosePayment = props => {
     };
     userDetails(params, userRes => {
       setIsLoading(false);
-      console.log('userRes', userRes, userRes?.payload_userDetails?.walletcash);
       setUserDetailsRes(userRes);
       setWalletCash(userRes?.payload_userDetails?.walletcash);
     });

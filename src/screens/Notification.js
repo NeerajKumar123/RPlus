@@ -83,12 +83,12 @@ useEffect(() => {
               }]}
           />
           {isLoading && <RPLoader />}
-          {isReady && notifications && notifications.length == 0 && (
+          {isReady && notifications && notifications.length == 0  && (
             <EmptyNotif 
             navigation = {navigation}
             />
           )}
-          {notifications && notifications.length > 0 && (
+          {notifications && notifications.length > 0  && (
               <FlatList
                 style={{ width: '100%',flex:1, padding:16 }}
                 keyExtractor={(item, index) => 'key_' + index}
@@ -114,13 +114,11 @@ useEffect(() => {
 
     
     const EmptyNotif = props => {
-      const {navigation} = props
       return (
         <View
           style={{
             width: '100%',
-            flexDirection: 'column',
-            padding: 20,
+            height:'100%',
             alignItems: 'center',
             justifyContent: 'center',
           }}>
@@ -141,24 +139,7 @@ useEffect(() => {
             }}>
             There is no notification to show!
           </Text>
-          <Text
-            style={{
-              fontSize: 16,
-              color: Colors.CLR_68708E,
-              marginTop: 8,
-              marginBottom: 30,
-              width: 230,
-              textAlign: 'center'
-            }}>
-            We are egerly waiting to deliver your first order
-          </Text>
-          <RPButton
-            title={'Start Shopping'}
-            backgroundColor={Colors.CLR_EE6F12}
-            onPress={() => {
-              navigation.goBack()
-            }}
-          />
+          
         </View>
       );
     };
