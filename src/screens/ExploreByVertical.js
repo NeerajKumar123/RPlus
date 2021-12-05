@@ -83,6 +83,7 @@ const ExploreByVertical = props => {
       const savedSubcats = checkIfSubcategoriesAlreadyFetched(selectedCategory)
       if(savedSubcats){
         setSubCategories(savedSubcats);
+        setSelectedSubCategory(global.subcategory ?  global.subcategory : savedSubcats?.[0]);
       }else{
         setIsLoading(true);
         getCategoryBySubCategory(
@@ -210,6 +211,7 @@ const ExploreByVertical = props => {
         <SubcategoryList
           subCatlist={subCategories}
           selectedValue={selectedSubCategory}
+          mappingKey={'subcategory_id'}
           onSubCateSelected={subCate => {
             setSelectedSubCategory(subCate);
           }}

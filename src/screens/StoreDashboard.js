@@ -160,6 +160,8 @@ const StoreDashboard = props => {
       });
     } else if (isSubCategory || isCategory || isVertical) {
       global.vertical = item
+      global.category = undefined
+      global.subcategory = undefined
       let decidedLevel = 4
       if(isSubCategory){
         decidedLevel = 2

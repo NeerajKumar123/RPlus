@@ -89,7 +89,7 @@ const ExploreCategoriesContainer = () => {
                 global.category = item
                 global.subcategory = subcat
                 global.vertical = selectedVertical
-                navigation.navigate('ExploreByVertical');
+                navigation.navigate('ExploreByVertical',{level:2});
               }}
             />
           )}

@@ -1,14 +1,22 @@
-import React,{useRef} from 'react';
+import React,{useRef,useEffect} from 'react';
 import {Text, View, FlatList} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import * as Colors from '../constants/ColorDefs';
 
 const SubcategoryList = props => {
-  const {subCatlist, onSubCateSelected,selectedValue} = props;
-  const flatListRef = useRef(null)
+  const {subCatlist, onSubCateSelected,selectedValue = {},mappingKey} = props;
   const isSelected = (item) =>{
     return selectedValue?.subcategory_id == item.subcategory_id
   }
+
+  const flatListRef = useRef(null)
+  useEffect(() => {
+    setTimeout(() => {
+      let selectedIndex = subCatlist && subCatlist.findIndex(x => x[mappingKey] == selectedValue[mappingKey]);
+      selectedIndex = selectedIndex < 0 ? 0 :selectedIndex 
+      flatListRef.current.scrollToOffset({animated: true,offset:selectedIndex*20})
+    }, 1000);
+  }, [selectedValue, subCatlist])
   
   return (
     <View
