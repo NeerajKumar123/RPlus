@@ -19,6 +19,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import Geolocation from '@react-native-community/geolocation';
 const detector_blue = require('../../assets/detector_blue.png');
 const user = require('../../assets/user.png');
+const mail = require('../../assets/mail.png');
 const mobile_icon = require('../../assets/mobile.png');
 import AppConfigData from '../constants/AppConfigData'
 import * as Validator from '../helpers/RPValidator';
@@ -48,9 +49,11 @@ const AddNewAddress = props => {
     landmark = '',
     address_type = 'home',
     address_id = 0,
+    email
   } = address && address;
   const [mpincode, setPincode] = useState(pincode);
   const [mname, setName] = useState(name);
+  const [memail, setEmail] = useState(email);
   const [mmobile, setMobile] = useState(contact);
   const [mcity, setCity] = useState(city);
   const [mstate, setState] = useState(state);
@@ -197,7 +200,10 @@ const AddNewAddress = props => {
     } else if (mname == undefined || mname.length < 2) {
       isValidForm = false;
       Alert.alert(AppData.title_alert, 'Please enter valid name.');
-    } else if (!Validator.isValidField(mmobile, RP_REGEX.Mobile)) {
+    }else if (!Validator.isValidField(memail, RP_REGEX.Email)) {
+      isValidForm = false;
+      Alert.alert(AppData.title_alert, 'Please enter valid email.');
+    }else if (!Validator.isValidField(mmobile, RP_REGEX.Mobile)) {
       isValidForm = false;
       Alert.alert(AppData.title_alert, 'Please enter valid mobile number.');
     } else if (mcity == undefined || mcity.length < 3) {
@@ -280,6 +286,15 @@ const AddNewAddress = props => {
               }}
             />
             <RPInputAddress
+              maxLength={50}
+              value={memail}
+              isLeftIconSource={mail}
+              placeholder="Enter Your Email Address"
+              onEndEditing={value => {
+                setEmail(value);
+              }}
+            />
+            <RPInputAddress
               maxLength={10}
               keyboardType={'phone-pad'}
               value={mmobile}
@@ -356,6 +371,7 @@ const AddNewAddress = props => {
               street: mstreet,
               landmark: mlandmark,
               address_type: maddressType,
+              email:memail
             };
             if (address_id) {
               const params = { ...commonParams, address_id: address_id };

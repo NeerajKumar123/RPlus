@@ -27,7 +27,6 @@ const search_icon = require('../../assets/search_icon.png');
 
 const ReferAndEarn = props => {
   const AppData = AppConfigData()
-  console.log('AppConfigData',AppData)
   const navigation = useNavigation();
   const [refAmount, setRefAmount] = useState(100);
   const [refCode, setRefCode] = useState();
@@ -62,7 +61,6 @@ const ReferAndEarn = props => {
       order_value: 1000,
     };
     checkReferralCode(params, refCodeRes => {
-      console.log('checkRefCode', refCodeRes);
     });
   };
 
@@ -75,7 +73,6 @@ const ReferAndEarn = props => {
         Download the App Now!!
         ${shortUrl}`,
       });
-      console.log('result.action',result.action)
 
       if (result.action === Share.sharedAction) {
         if (result.activityType) {
@@ -155,11 +152,9 @@ const ReferAndEarn = props => {
             Clipboard.setString(code);
           }}
           onSendInviteClicked={() => {
-            console.log('onSendInviteClicked');
             onShare();
           }}
           onHowItWorksClicked = {() =>{
-            console.log('onSendInviteClicked');
             navigation.navigate('HowItWorks')
           }}
         />
@@ -189,7 +184,6 @@ const ReferAndEarn = props => {
               <FAQCard
                 item={item}
                 onSelectClick={() => {
-                  console.log('call recieved', item);
                   if(item.id == 1){
                     navigation.navigate('FrequentlyAsked',{isFromWallet:true})
                   }else{
@@ -210,7 +204,6 @@ const FAQCard = props => {
   return (
     <TouchableOpacity
       onPress={() => {
-        console.log('title');
         onSelectClick();
       }}
       style={{
@@ -318,7 +311,6 @@ const AmountAndCodeView = props => {
           </Text>
           <TouchableOpacity
             onPress={() => {
-              console.log('Copy me');
               onCodeCopied(refCode);
             }}>
             <Image
@@ -344,7 +336,6 @@ const AmountAndCodeView = props => {
       <View style = {{width:'80%', flexDirection:'row',marginTop: 20,justifyContent:'center',alignItems:'center'}}> 
       <TouchableOpacity
         onPress={() => {
-          console.log('terms conditions');
           onHowItWorksClicked();
         }}>
         <Text

@@ -182,7 +182,6 @@ const Stores = props => {
                       {
                         text: 'Cancel',
                         onPress: () => {
-                          console.log('Cancel')
                         }
                       },
                       {

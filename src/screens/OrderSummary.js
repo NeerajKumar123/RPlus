@@ -143,7 +143,6 @@ const OrderSummary = () => {
   }, []);
 
   const checkDelivery = () => {
-    console.log('deliveryTimeSlot',deliveryTimeSlot)
     if(!deliveryTimeSlot?.slot_id){
       Alert.alert(AppData.title_alert,'Please select a time slot.');
       setTimeout(() => {
@@ -248,7 +247,6 @@ const OrderSummary = () => {
         <AddOrChangeAddBlock
         title = {deliveryAddress ? 'Change or Add New Address' : 'Add New Address'}
         onChangeorAddNewAddressPressed = {()=>{
-          console.log('onChangeorAddNewAddressPressed')
           navigation.navigate('Addresses');
         }}
         />
@@ -320,7 +318,6 @@ const OrderSummary = () => {
             setShowApplyCpnView(false);
           }}
           onApplyCoupon={cpn => {
-          console.log('showApplyCpnView',cpn) 
           setAppliedCoupon(cpn)
           setShowApplyCpnView(false);
           }}

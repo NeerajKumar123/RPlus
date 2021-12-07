@@ -342,7 +342,6 @@ const RefCashPoints = props => {
             marginHorizontal={0}
             backgroundColor={Colors.WHITE}
             onOfferOfTheDaySelected={item => {
-              console.log('Special Offers clicked');
             }}
           />
         )}
@@ -429,7 +428,6 @@ const FAQCard = props => {
   return (
     <TouchableOpacity
       onPress={() => {
-        console.log('title');
         onSelectClick();
       }}
       style={{

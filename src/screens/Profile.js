@@ -11,6 +11,7 @@ import {
   Alert
 } from 'react-native';
 import AppHeader from '../components/AppHeader';
+import RPLoader from '../components/RPLoader';
 import {UnderLinedInput} from '../components/RPInput';
 import {VerifyMobileEmail} from '../components/RPModels';
 import {useNavigation} from '@react-navigation/native';
@@ -86,7 +87,7 @@ const Profile = props => {
   const userInfo = global.userInfo ? global.userInfo :{};
   const storeInfo = global.storeInfo ? global.storeInfo :{};
   const badgeCount = global.badgeCount;
-
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const {id} = global.storeInfo
@@ -124,7 +125,6 @@ const Profile = props => {
         {
           text: 'Cancel',
           onPress: () => {
-            console.log('Cancel')
           }
         },
         {
@@ -160,19 +160,21 @@ const Profile = props => {
         ]}
       />
       <View style={{flex: 1, alignItems: 'center', marginTop: -70}}>
+      {isLoading && <RPLoader />}
         {!editable ? (
           <UserDetailsBlockNonEditable
             userInfo={userInfo}
             onEditClicked={() => {
-              console.log('onEditClicked');
               setEditable(true);
             }}
           />
         ) : (
           <UserDetailsBlockEditable
             userInfo={userInfo}
+            onVarificationStateChanged = {(status) =>{
+              setIsLoading(status)
+            }}
             onSaveChanges={(updatedMobile, updatedEmail) => {
-              console.log('onSaveChanges===>', updatedMobile, updatedEmail);
               const params = {
                 save_type: 'both',
                 mobile: updatedMobile,
@@ -181,10 +183,8 @@ const Profile = props => {
                 store_id:storeInfo.id
               };
               updateExistingUserInfo(params, res => {
-                console.log(' updateExistingUserInfo res===>', res);
                 const updatedUserInfo = {...userInfo,contact:updatedMobile, email:updatedEmail}
                 Storage.storeUserData(updatedUserInfo,()=>{
-                  console.log('user data saved')
                   global.userInfo = updatedUserInfo,
                   setEditable(false);
                 })
@@ -194,7 +194,6 @@ const Profile = props => {
         )}
         <Options
           onMenuPressed={option => {
-            console.log(option);
             navigateToPage(option);
           }}
         />
@@ -268,7 +267,7 @@ const UserDetailsBlockNonEditable = props => {
 };
 
 const UserDetailsBlockEditable = props => {
-  const {userInfo, onSaveChanges} = props;
+  const {userInfo, onSaveChanges, onVarificationStateChanged = () =>{}} = props;
   const {contact, email} = userInfo;
   const AppData = AppConfigData()
   const [mobNumber, setMobNumber] = useState(contact);
@@ -304,9 +303,10 @@ const UserDetailsBlockEditable = props => {
               setIsVerificationState(isEntered);
             }}
             onVerifyClicked={mobileNumber => {
-              console.log('MobileNumber VerifyClicked', mobileNumber);
+              onVarificationStateChanged(true)
               const params = {otp_type:'mobile',username:mobileNumber,customer_id:userInfo.customer_id,store_id:storeInfo.id}
               sentOTPExistingUser(params,(res) =>{
+                onVarificationStateChanged(false)
                 const details = res?.payload_sendExistUserOtp
                 setOtpDetails(details)
                 setMobNumber(mobileNumber)
@@ -326,6 +326,45 @@ const UserDetailsBlockEditable = props => {
                   ? event.nativeEvent.text.trim()
                   : '';
               setMobNumber(userMobileNo);
+            }}
+          />
+          <UnderLinedInput
+            isVerified={isEmailVerified}
+            placeholder={'Email ID'}
+            maxLength={30}
+            marginTop={20}
+            isVerificationRequired={true}
+            validationRegex={RP_REGEX.Email}
+            errorMessage="Enter valid email id"
+            value={emailID}
+            keyboardType="email-address"
+            onVerificationStateChanged={isEntered => {
+              setIsVerificationState(isEntered);
+            }}
+            onVerifyClicked={emailID => {
+              onVarificationStateChanged(true)
+              const params = {otp_type:'email',username:emailID,customer_id:userInfo.customer_id,store_id:storeInfo.id}
+              sentOTPExistingUser(params,(res) =>{
+                onVarificationStateChanged(false)
+                const details = res?.payload_sendExistUserOtp
+                setOtpDetails(details)
+                setEmailID(emailID)
+                if(details){
+                  setShowVerifyOTP(2);
+                }else{
+                  Alert.alert(AppData.title_alert,'Error while verifying.')
+                }
+              })
+            }}
+            onChangeText={text => {
+              setEmailID(text);
+            }}
+            onEndEditing={event => {
+              let userEmailId =
+                event.nativeEvent.text && event.nativeEvent.text.length
+                  ? event.nativeEvent.text.trim()
+                  : '';
+              setEmailID(userEmailId);
             }}
           />
           {showVerifyOTP && (
@@ -355,7 +394,6 @@ const UserDetailsBlockEditable = props => {
                 })
               }}
               onResendOtp = {()=>{
-                console.log('Email VerifyClicked', emailID);
                 const params = {otp_type:'email',username:emailID,customer_id:userInfo.customer_id,store_id:storeInfo.id}
                 sentOTPExistingUser(params,(res) =>{
                   const details = res?.payload_sendExistUserOtp
@@ -373,50 +411,11 @@ const UserDetailsBlockEditable = props => {
               }}
             />
           )}
-          <UnderLinedInput
-            isVerified={isEmailVerified}
-            placeholder={'Email ID'}
-            maxLength={30}
-            marginTop={20}
-            isVerificationRequired={true}
-            validationRegex={RP_REGEX.Email}
-            errorMessage="Enter valid email id"
-            value={emailID}
-            keyboardType="email-address"
-            onVerificationStateChanged={isEntered => {
-              setIsVerificationState(isEntered);
-            }}
-            onVerifyClicked={emailID => {
-              console.log('Email VerifyClicked', emailID);
-              const params = {otp_type:'email',username:emailID,customer_id:userInfo.customer_id,store_id:storeInfo.id}
-              sentOTPExistingUser(params,(res) =>{
-                const details = res?.payload_sendExistUserOtp
-                setOtpDetails(details)
-                setEmailID(emailID)
-                if(details){
-                  setShowVerifyOTP(2);
-                }else{
-                  Alert.alert(AppData.title_alert,'Error while verifying.')
-                }
-              })
-            }}
-            onChangeText={text => {
-              setEmailID(text);
-            }}
-            onEndEditing={event => {
-              let userEmailId =
-                event.nativeEvent.text && event.nativeEvent.text.length
-                  ? event.nativeEvent.text.trim()
-                  : '';
-              setEmailID(userEmailId);
-            }}
-          />
         </View>
       </View>
       <SaveButton
         isVerificationState={isVerificationState}
         onSaveChanges={() => {
-          console.log('SaveButton, emailID',mobNumber, emailID)
           onSaveChanges && onSaveChanges(mobNumber, emailID);
         }}
       />

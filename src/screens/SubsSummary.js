@@ -125,7 +125,6 @@ const SubsSummaryAmountBlock = props => {
         fontSize="bold"
         backgroundColor="#EAEAEA"
         onEndEditing={value => {
-          console.log('onEndEditing', value);
         }}
       />
     </View>

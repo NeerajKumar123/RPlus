@@ -93,11 +93,8 @@ const SetAddressOnMap = props => {
           enablePoweredByContainer={true}
           listUnderlayColor="lightgrey"
           onPress={(data, details) => {
-            console.log('details', details);
-            console.log('data', data);
             setListViewDisplayed(null);
             setAddress(data.description);
-            console.log('details.description',data.description)
             const newRegion = {
               latitudeDelta,
               longitudeDelta,
@@ -182,7 +179,6 @@ const SetAddressOnMap = props => {
           title={'CONFIRM LOCATION'}
           onPress={() => {
             let coords = {"speed":-1,"longitude":region.longitude,"latitude":region.latitude,"accuracy":5,"heading":-1,"altitude":0,"altitudeAccuracy":-1}
-            console.log('coords',coords)
             navigation.navigate('Stores',{location:coords});
           }}
         />

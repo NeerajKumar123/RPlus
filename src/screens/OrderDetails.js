@@ -19,12 +19,23 @@ const OrderDetails = props => {
   const [orderDetails, setOrderDetails] = useState(undefined);
   const [orderItems, setOrderItems] = useState(undefined);
   const [isLoading, setIsLoading] = useState(false);
+  const [isCancelled, setIsCancelled] = useState(false);
   const companyID = global.storeInfo && global.storeInfo.company_id;
   const storeID = global.storeInfo && global.storeInfo.id;
   const customerID = global.userInfo && global.userInfo.customer_id;
   const orderID = props?.route?.params?.order_id;
 
   useEffect(() => {
+    getUpdatedOrderDetails()
+  }, []);
+
+  useEffect(() => {
+    if(isCancelled){
+      getUpdatedOrderDetails()
+    }
+  }, [isCancelled]);
+
+  const getUpdatedOrderDetails = () =>{
     const params = {
       company_id: companyID,
       store_id: storeID,
@@ -37,7 +48,7 @@ const OrderDetails = props => {
       setOrderItems(res?.payload_orderDetails?.orderdetails);
       setIsLoading(false);
     });
-  }, []);
+  }
 
   return (
     <View
@@ -60,7 +71,7 @@ const OrderDetails = props => {
           <InvoiceDetails orderDetails={orderDetails} />
           {orderItems && (
             <FlatList
-              style={{width: '100%', marginTop: 10}}
+              style={{width: '100%', marginTop: 10, marginBottom:100}}
               horizontal={false}
               keyExtractor={(item, index) => 'key_' + index}
               data={orderItems}
@@ -74,24 +85,26 @@ const OrderDetails = props => {
                     navigation.navigate('TrackOrder');
                   }}
                   onCancelPressed={() => {
+                    setIsLoading(true)
                     const params = {
                       company_id: companyID,
                       store_id: storeID,
                       customer_id: customerID,
                       order_id: orderID,
-                      item_id: 132,
+                      item_id: item.item_id,
                     };
                     cancelItem(params, res => {
-                      console.log('params==>', res);
+                      setIsLoading(false)
+                      setIsCancelled(true)
                     });
                   }}
                   onReorderPresssed={() => {
-                    console.log('onReorderPresssed');
                   }}
                 />
               )}
             />
           )}
+
         </ScrollView>
       )}
     </View>

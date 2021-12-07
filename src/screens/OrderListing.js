@@ -102,7 +102,6 @@ const OrderListing = () => {
       {orders && orders.length <= 0 && (
         <NoOrders
           startShoppiingPressed={() => {
-            console.log('startShoppiingPressed');
           }}
         />
       )}
@@ -157,7 +156,6 @@ const OrderListing = () => {
           rescheduleNow={(selectedDateSlot, selectedTimeSlot) => {
             setShowRescheduleModel(false)
             setIsLoading(true)
-            console.log('onReschedulePressed===>');
             const params = {
               company_id: companyID,
               store_id: storeID,
@@ -167,7 +165,6 @@ const OrderListing = () => {
               slot_id: selectedTimeSlot.slot_id,
             };
             rescheduleOrder(params, res => {
-              console.log('rescheduleOrder', res);
               updateOrderList()
             });
           }}

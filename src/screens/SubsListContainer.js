@@ -33,10 +33,8 @@ const SubsListContainer = () => {
       </View>
       <SubsDaysBlock
         frequencyClicked={() => {
-          console.log('=====000000');
         }}
         dateClicked={() => {
-          console.log('=====11111');
           setShowPicker(true)
         }}
       />
@@ -55,7 +53,6 @@ const SubsListContainer = () => {
             mode={'date'}
             display={Platform.OS == 'ios' ? 'inline' : 'default'}
             onChange={(e, date) => {
-              console.log('e', e, date);
               setShowPicker(false)
             }}
           />

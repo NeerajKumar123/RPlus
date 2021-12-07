@@ -196,9 +196,7 @@ const StoreDashboard = props => {
           {
             iconSource: notif_icon,
             color: Colors.CLR_5F259F,
-            badgeCount: cartCount,
             onPress: () => {
-              console.log('12121======>', )
               navigation.navigate('Notification');
             },
             iconBg: Colors.GREEN,
@@ -208,7 +206,6 @@ const StoreDashboard = props => {
             color: Colors.CLR_5F259F,
             badgeCount: cartCount,
             onPress: () => {
-              console.log('1111======>', )
               navigation.navigate('Cart');
             },
             iconBg: Colors.GREEN,
@@ -321,7 +318,6 @@ const StoreDashboard = props => {
           {dealsOfTheDayDetails && (
             <DealsOfTheDay
               onViewAllClicked={() => {
-                console.log('onViewAllClicked');
               }}
               onProductSelected={item => {
                 navigation.navigate('ProductDetailsContainer', {
@@ -336,7 +332,6 @@ const StoreDashboard = props => {
               details={dealsOfTheDayDetails}
               onLoaderStateChanged={(isShow) => {
                 setIsLoading(isShow)
-                console.log('isShow', isShow)
                 if (!isShow) {
                   updateCart()
                 }
@@ -367,7 +362,6 @@ const StoreDashboard = props => {
             <Category2by2TypeOne 
               data={evenCates}
               onSelect = {(item)=>{
-                console.log('onSelect',item )
                 doNavigate(item)
             }}
               />)
@@ -379,7 +373,6 @@ const StoreDashboard = props => {
             <AllCategories 
                 data={allCates}
                onSelect = {(item)=>{
-                console.log('onSelect',item )
                 doNavigate(item)
             }}
             />)
@@ -397,7 +390,6 @@ const StoreDashboard = props => {
             <Category3by3Block
               data={threeCates}
               onSelect = {(item)=>{
-                console.log('onSelect',item )
                 doNavigate(item)
             }}
 

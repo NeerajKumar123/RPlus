@@ -17,6 +17,8 @@ import {useIsFocused} from '@react-navigation/native';
 import * as Storage from '../helpers/RPStorage';
 import NotificationCard from '../components/NotificationCard';
 const vertical_bubbles = require('../../assets/vertical_bubbles.png');
+const notif_empty = require('../../assets/notif_empty.png');
+
 
 
 const Notification = props => {
@@ -28,30 +30,12 @@ const navigation = useNavigation();
 
 
 useEffect(() => {
-  const paramForNotification = { store_id: 25}
+  const paramForNotification = { store_id: 23}
   getNotification(paramForNotification, (notificatinRes)=>{
     const notification = notificatinRes.payload_notification
+    console.log('notificatinRes======>', notificatinRes,notification)
     setNotifications(notification)
     setIsReady(true)
-    console.log('notificatinRes======>', JSON.stringify(notification))
-
-    const dummyNotifs = [{
-      heading:'heading1',
-      image:'https://picsum.photos/200/300',
-      description:'Upto 30% Off'
-    },
-    {
-      heading:'heading2',
-      image:'https://picsum.photos/200/300',
-      description:'Upto 30% Off'
-    },
-    {
-      heading:'heading3',
-      image:'https://picsum.photos/200/300',
-      description:'Upto 30% Off'
-    }]
-    setNotifications(dummyNotifs)
-
   })
   
 }, []);
@@ -73,17 +57,17 @@ useEffect(() => {
             onLeftPress={() => {
               navigation.goBack();
             }}
-            rightIcons={[
-              {
-                iconSource: vertical_bubbles,
-                color: Colors.CLR_5F259F,
-                iconBg: Colors.GREEN,
-                onPress: () => {
-                },
-              }]}
+            // rightIcons={[
+            //   {
+            //     iconSource: vertical_bubbles,
+            //     color: Colors.CLR_5F259F,
+            //     iconBg: Colors.GREEN,
+            //     onPress: () => {
+            //     },
+            //   }]}
           />
           {isLoading && <RPLoader />}
-          {isReady && notifications && notifications.length == 0  && (
+          {isReady &&  (notifications == undefined || notifications?.length == 0)  && (
             <EmptyNotif 
             navigation = {navigation}
             />
@@ -128,7 +112,7 @@ useEffect(() => {
               width: 143,
               height: 143,
             }}
-            source={empty_orders_image}
+            source={notif_empty}
           />
           <Text
             style={{

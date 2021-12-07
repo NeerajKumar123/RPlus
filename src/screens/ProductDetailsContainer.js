@@ -175,7 +175,6 @@ const ProductDetailsContainer = props => {
                     isOutOfStock={isOutOfStock}
                     item={item}
                     onClick={() => {
-                      console.log('onClick', item);
                       setIsShowImage(true);
                       setSelectedImage(item.image_url);
                     }}

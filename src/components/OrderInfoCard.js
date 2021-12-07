@@ -26,7 +26,8 @@ const OrderInfoCard = props => {
     quantity,
     image,
     mrp,
-    selling_price
+    selling_price,
+    cancel_status = 0
   } = props.item;
   let off = ((mrp - selling_price) / mrp) * 100;
   off = off.toFixed(0);
@@ -158,6 +159,7 @@ const OrderInfoCard = props => {
           alignItems: 'center',
         }}>
         <TouchableOpacity
+          disabled = {cancel_status }
           style={{
             height: 40,
             justifyContent: 'center',
@@ -173,8 +175,9 @@ const OrderInfoCard = props => {
               color: Colors.CLR_DD5E5E,
               fontWeight: 'bold',
               fontSize: 14,
+              opacity : cancel_status ? .7 : 1.0
             }}>
-            Cancel
+            {cancel_status ? 'Cancelled' : 'Cancel'}
           </Text>
         </TouchableOpacity>
         <TouchableOpacity

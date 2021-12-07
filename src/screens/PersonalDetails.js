@@ -45,7 +45,6 @@ const PersonalDetails = props => {
   }
 
   useEffect(() => {
-    console.log('email',email,name)
     isValidForm()
   }, [email, name])
 
@@ -152,7 +151,6 @@ const PersonalDetails = props => {
           value={`+91 - ${mobile}`}
           placeholder={'Enter Mobile Number'}
           onEndEditing={value => {
-            console.log('onEndEditing', value);
           }}
         />
       </View>
@@ -173,7 +171,6 @@ const PersonalDetails = props => {
           value={email}
           placeholder={'Enter Email ID'}
           onEndEditing={value => {
-            console.log('onEndEditing', value);
             setEmail(value);
           }}
         />

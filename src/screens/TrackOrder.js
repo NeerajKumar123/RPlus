@@ -74,7 +74,6 @@ const TrackOrder = props => {
 
   const StatusItem = props => {
     const {item, itemIndex, progressIndex} = props;
-    console.log('progressIndex',progressIndex, itemIndex)
     return (
       <View
         key={item.tabName}

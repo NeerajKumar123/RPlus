@@ -288,14 +288,10 @@ const VerifyOTP = props => {
           verifyOtp(params, (res) => {
             setIsLoading(false)
             const userInfo = res && res.payload
-            console.log('res',res)
             Storage.storeUserData(userInfo,()=>{
               global.userInfo = userInfo
-              console.log('1111',userInfo, typeof(userInfo))
               const userName=  userInfo.name
-              console.log('00000',userName)
               if(userName){
-                console.log('2222')
                 DeviceEventEmitter.emit('otp_verified',true)
                 navigation.navigate(global.lastScreenName);
               }else{

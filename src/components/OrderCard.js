@@ -142,6 +142,22 @@ const OrderCard = props => {
               fontSize: 13,
               marginVertical: 7,
             }}>
+            {`Ordered On : ${ordered_on}`}
+          </Text>
+          <Text
+            style={{
+              color: Colors.CLR_16253B,
+              fontSize: 13,
+              marginVertical: 7,
+            }}>
+            {`Delivery Date : ${delivery_date}`}
+          </Text>
+          <Text
+            style={{
+              color: Colors.CLR_16253B,
+              fontSize: 13,
+              marginVertical: 7,
+            }}>
             {`Seller : ${store_name}`}
           </Text>
         </View>

@@ -26,7 +26,6 @@ const Offers = () => {
         isHome={true}
         imageUrl={storeInfo.photo}
         storeIconClicked={() => {
-          console.log('storeIconClicked');
           navigation.goBack();
         }}
         rightIcons={[
@@ -90,7 +89,6 @@ const Offers = () => {
             subtitle={'Currently we dont have any offers for you!'}
             // buttonTitle={'Explore other options'}
             onButtonPress={() => {
-              console.log('navigation====',navigation)
               navigation.navigate('DashboardContainer', { store_id: storeID});
             }}
           />

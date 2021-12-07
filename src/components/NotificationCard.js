@@ -8,11 +8,11 @@ import {
 import * as Colors from '../constants/ColorDefs';
 
 const NotificationCard = props => {
-    const { image,heading ,description} = props.item
+    const { image,heading ,description, onItemPressed = () =>{}} = props.item
     return (
       <TouchableOpacity
         onPress={() => {
-          props.onItemPressed();
+          onItemPressed();
         }}
         key={name}
         style={{
@@ -20,6 +20,7 @@ const NotificationCard = props => {
           width: '100%',
           marginTop: 10,
           flexDirection: 'row',
+          alignItems:'center',
           borderRadius: 4,
           paddingHorizontal: 17,
           paddingVertical: 15,
@@ -31,7 +32,7 @@ const NotificationCard = props => {
           shadowRadius: 2,
           shadowOpacity: 0.5,
         }}>
-        <Image resizeMode = 'contain' style={{ width: 42, height: 42}} source={{ uri: image }} />
+        <Image resizeMode = 'cover' style={{ width: 42, height: 42, backgroundColor:'red'}} source={{ uri: image }} />
         <View
           style={{
             flex: 5,
@@ -39,9 +40,9 @@ const NotificationCard = props => {
             marginHorizontal: 10,
             marginLeft: 20,
           }}>
-          <Text style = {{opacity: 1}}>{heading}</Text>
+          <Text style = {{opacity: 1, fontSize:15, fontWeight:'600'}}>{heading}</Text>
           <View style={{ flexDirection: 'row', marginTop: 6 }}>
-            <Text style={{opacity:1 }}>5 Hrs</Text>
+            <Text style={{opacity:1, color:Colors.CLR_49537D }}>{description}</Text>
           </View>
         </View>
       </TouchableOpacity>
