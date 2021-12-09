@@ -188,7 +188,7 @@ const AddMoney = props => {
                   } = processRes.payload_topupPaymentProcess;
                   const store_name = global.storeInfo && global.storeInfo.store_name;
                   let payKey = ''
-                  if(store_name ==  "HONEY MONEY TOP"){
+                  if(store_name == "HONEY MONEY TOP"){
                     payKey = 'rzp_live_V6l7WnPe1dfl6E'
                   }else{
                     payKey = 'rzp_live_7NXmXoE72iTqIo'
