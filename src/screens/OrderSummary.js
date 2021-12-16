@@ -540,15 +540,13 @@ const PremiumBlock = props => {
         title={'Delivery Charges'}
         subtitle={deliveryCharges > 0 ? `Rs. ${deliveryCharges}` : 'Free'}
       />
-      {coupons && coupons.length > 0 && (
-        <ItemValue
+       <ItemValue
           title={couponDiscount > 0 ? 'Coupon Discount Applied' : 'Coupon Discount'}
           subtitle={couponDiscount > 0 ? `Rs. ${couponDiscount}` : 'Apply Coupon'}
           subsClicked={() => {
             !couponDiscount && props.onApplyCouponPressed && props.onApplyCouponPressed();
           }}
         />
-      )}
       <PayableBlock paybleAmount={paybleAmount} />
     </View>
   );

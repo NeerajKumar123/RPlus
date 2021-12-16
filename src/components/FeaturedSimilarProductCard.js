@@ -40,7 +40,7 @@ const FeaturedSimilarProductCard = props => {
     },
     shadowRadius: 2,
     shadowOpacity: 0.5,
-    elevation:3
+    elevation:3,
   }
   return (
     <TouchableOpacity
@@ -71,13 +71,14 @@ const FeaturedSimilarProductCard = props => {
         </Text>
       </View>
       <Image
+      resizeMode = 'contain'
         style={{
           width: 70,
           height: 94,
           alignSelf: 'center',
           borderRadius: 4,
           marginTop: 14,
-          opacity:isOutOfStock?.3:1
+          opacity:isOutOfStock?.3:1,
         }}
         source={{
           uri: image

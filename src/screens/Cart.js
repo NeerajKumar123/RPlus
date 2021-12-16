@@ -230,7 +230,6 @@ const Cart = props => {
               global.lastScreenName = 'Cart';
               // check if user logged in
               const custID =  global.userInfo?.customer_id;
-              console.log('custID', custID);
               if (custID) {
                 navigation.navigate('OrderSummary');
               } else {

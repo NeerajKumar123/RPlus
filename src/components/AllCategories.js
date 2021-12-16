@@ -45,7 +45,7 @@ const AllCategories = (props) => {
           return (
           <SquareShapeCardBaverage
             item={item}
-            marginRight = {index == category.length - 1 ? 64 : 20}
+            marginRight = {index == category.length - 1 ? 64 : 0}
             onPress={() => {
               onSelect({...item,vertical_id:vertical_id,vertical_name:vertical_name })
             }}

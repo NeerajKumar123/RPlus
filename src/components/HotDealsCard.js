@@ -111,3 +111,5 @@ const HotDealsCard = props => {
   );
 };
 
+
+export default HotDealsCard

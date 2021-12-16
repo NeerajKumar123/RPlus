@@ -9,6 +9,7 @@ import {
   KeyboardAvoidingView,
   Alert,
   Keyboard,
+  Platform,
 } from 'react-native';
 import * as Colors from '../constants/ColorDefs';
 import PopupConatiner from './PopupConatiner';
@@ -67,7 +68,6 @@ const RPModels = props => {
               }
               setIsChecking(true);
               const params = {...props.details, coupon_code: trimmedText};
-
               if(trimmedText.startsWith('RWD')){
                 checkReferralCode(params, res => {
                   setIsChecking(false);
@@ -190,10 +190,12 @@ const ApplyCouponFooter = props => {
   return (
     <View
       style={{
-        height: 62,
+        height: 84,
         width: '100%',
         flexDirection: 'row',
         backgroundColor: Colors.CLR_2C3646,
+        position:'absolute',
+        bottom:Platform.OS === 'ios' ? 0 : 0
       }}>
       <View
         style={{

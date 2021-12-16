@@ -64,18 +64,22 @@ const ExploreByVertical = props => {
   }, [isFocused]);
 
   useEffect(() => {
-    setIsLoading(true);
-    getVerticalByCategory(
-      {store_id: storeID, vertical_id: vertical.vertical_id},
-      res => {
-        const cats = res && res.payload_verticalByCategory;
-        setCategories(cats);
-        setSelectedCategory(global.category ? global.category : cats && cats.length && cats[0]);
-        setTimeout(() => {
-          setIsLoading(false);
-        }, 500);
-      },
-    );
+    if(!showCats && showSubCats){
+      setSelectedCategory({category_id:vertical?.category_id});
+    }else{
+      setIsLoading(true);
+      getVerticalByCategory(
+        {store_id: storeID, vertical_id: vertical.vertical_id},
+        res => {
+          const cats = res && res.payload_verticalByCategory;
+          setCategories(cats);
+          setSelectedCategory(global.category ? global.category : cats && cats.length && cats[0]);
+          setTimeout(() => {
+            setIsLoading(false);
+          }, 500);
+        },
+      );
+    }
   }, []);
 
   useEffect(() => {

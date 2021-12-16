@@ -1,6 +1,6 @@
 import React from 'react';
 import {Text, View, FlatList, Image, TouchableOpacity} from 'react-native';
-import HotDealsCard ,{HotDealsCard2} from './HotDealsCard';
+import HotDealsCard  from './HotDealsCard';
 import * as Colors from '../constants/ColorDefs';
 
 const HotDeals = props => {
@@ -68,7 +68,7 @@ const HotDeals = props => {
         keyExtractor={(item, index) => 'key_' + index}
         data={deals}
         renderItem={({item}) => (
-         <HotDealsCard2
+         <HotDealsCard
             item={item}
             onLoaderStateChanged = {(isLoading) =>{
               props.onLoaderStateChanged(isLoading)

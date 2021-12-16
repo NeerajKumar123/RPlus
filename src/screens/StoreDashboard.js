@@ -392,7 +392,6 @@ const StoreDashboard = props => {
               onSelect = {(item)=>{
                 doNavigate(item)
             }}
-
               />)
           })
           }
