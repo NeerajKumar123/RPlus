@@ -17,14 +17,15 @@ export default function GetAppConfigData() {
       app_store_name:'RewardsPlus Store',
       app_version:"1.0.2",
       bundle_version:"5",
-      AppHeaderGradidentColors :[Colors.CLR_033AA4, Colors.CLR_0095D4]
+      AppHeaderGradidentColors :[Colors.CLR_033AA4, Colors.CLR_0095D4],
+      app_theme:Colors.THEMME_CLR_RPLUS
     };
   } else if (AppID == 2) {
     //Hmt App
     return {
       cust_email: 'hmtit@honeymoneytop.com',
-      cust_mobile_call: '9811995444',
-      cust_mobile_whatspp: '7291970052',
+      cust_mobile_call: '7291975303',
+      cust_mobile_whatspp: '7291975303',
       title_alert: 'HoneyMoneyTop',
       wallet_app_name: 'HONEY MONEY TOP',
       payment_key: 'rzp_live_V6l7WnPe1dfl6E',
@@ -35,7 +36,8 @@ export default function GetAppConfigData() {
       app_store_name:'HONEY MONEY TOP',
       app_version:"1.5",
       bundle_version:"6",
-      AppHeaderGradidentColors :[Colors.CLR_033AA4, Colors.CLR_0095D4]
+      AppHeaderGradidentColors :[Colors.CLR_033AA4, Colors.CLR_0095D4],
+      app_theme:Colors.THEMME_CLR_HMT
     };
   } else if (AppID == 3) {
     //Hmf App
@@ -53,7 +55,8 @@ export default function GetAppConfigData() {
       app_store_name:'Home Fresh Mart',
       app_version:"1.0",
       bundle_version:"1",
-      AppHeaderGradidentColors :[Colors.CLR_033AA4, Colors.CLR_0095D4]
+      AppHeaderGradidentColors :[Colors.CLR_033AA4, Colors.CLR_0095D4],
+      app_theme:Colors.THEMME_CLR_HFM
     };
   } else if (AppID == 4) {
     //Gdees App
@@ -71,7 +74,8 @@ export default function GetAppConfigData() {
       app_store_name:'GDEES',
       app_version:"1.0",
       bundle_version:"1",
-      AppHeaderGradidentColors :[Colors.CLR_033AA4, Colors.CLR_0095D4]
+      AppHeaderGradidentColors :[Colors.CLR_033AA4, Colors.CLR_0095D4],
+      app_theme:Colors.THEMME_CLR_GDEES
     };
   }
 }

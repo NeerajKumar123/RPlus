@@ -32,14 +32,13 @@ const FeaturedSimilarProductCard = props => {
     flexDirection: 'column',
     paddingVertical: 10,
     paddingHorizontal: 12,
-    borderColor: Colors.GRAY,
-    shadowColor: Colors.GRAY,
+    shadowColor: Colors.LIGHTGRAY,
     shadowOffset: {
-      width: 0,
-      height: 2,
+      width: 1,
+      height: 1,
     },
-    shadowRadius: 2,
-    shadowOpacity: 0.5,
+    shadowRadius: 3,
+    shadowOpacity: 1.0,
     elevation:3,
   }
   return (

@@ -51,9 +51,24 @@ const OrderSummary = () => {
   const [showApplyCpnView, setShowApplyCpnView] = useState(false);
   const [cartIDs, setCartIDs] = useState('');
   const [orderPlacedFailedCount, setOrderPlacedFailedCount] = useState(0)
+  const [addresses, setAddresses] = useState(undefined);
   const companyID = global.storeInfo && global.storeInfo.company_id;
   const storeID = global.storeInfo && global.storeInfo.id;
   const customerID = global.userInfo && global.userInfo.customer_id;
+  const userInfo = global.userInfo ? global.userInfo : {};
+  const storeInfo = global.storeInfo ? global.storeInfo : {};
+
+
+  const updateAddList = () => {
+    setIsLoading(true);
+    const params = {store_id: storeInfo.id, customer_id: userInfo.customer_id};
+    getAddressList(params, res => {
+      setAddresses(res?.payload_addressList);
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 300);
+    });
+  };
 
   const updateList = cartItems => {
     let sum = 0;
@@ -109,6 +124,7 @@ const OrderSummary = () => {
   useEffect(() => {
     DeviceEventEmitter.addListener('add_selected', eventData => {
       setDeliveryAddress(eventData);
+      updateAddList()
     });
   }, []);
 
@@ -140,6 +156,7 @@ const OrderSummary = () => {
         setDeliveryAddress(results[0]);
       }
     });
+    updateAddList()
   }, []);
 
   const checkDelivery = () => {
@@ -183,40 +200,6 @@ const OrderSummary = () => {
     }
   };
 
-  const openLink = (link, linkType) => {
-    let finalLink = link;
-    if (linkType == 1) { // mail
-      if (Platform.OS == 'ios') {
-        finalLink = `mailto:${finalLink}`;
-      } else {
-        finalLink = `mailto:${finalLink}`;
-      }
-    } else if (linkType == 2) {
-      if (Platform.OS == 'ios') {
-        finalLink = `telprompt:${finalLink}`;
-      } else {
-        finalLink = `tel:${finalLink}`;
-      }
-    } else if (linkType == 3) {
-      if (Platform.OS == 'ios') {
-        finalLink = `whatsapp://send?text=hello&phone=:${finalLink}`;
-      } else {
-        finalLink = `whatsapp://send?text=hello&phone=:${finalLink}`;
-      }
-    }
-    Linking.canOpenURL(finalLink)
-      .then(supported => {
-        if (!supported) {
-          Alert.alert(AppData.title_alert, 'Currently not availble');
-        } else {
-          return Linking.openURL(finalLink);
-        }
-      })
-      .catch(err => {
-        console.log('err', err);
-      });
-  };
-
   return (
     <View style={{flex: 1, backgroundColor: Colors.CLR_E7ECF2}}>
       <AppHeader
@@ -246,6 +229,7 @@ const OrderSummary = () => {
         )}
         <AddOrChangeAddBlock
         title = {deliveryAddress ? 'Change or Add New Address' : 'Add New Address'}
+        subtitle = { addresses?.length - 1 > 0 ? `(You have ${addresses?.length - 1} more address${addresses?.length - 1 > 1 ?'es' : ''} to choose from)` : undefined}
         onChangeorAddNewAddressPressed = {()=>{
           navigation.navigate('Addresses');
         }}
@@ -371,7 +355,7 @@ const AddressBlock = props => {
 };
 
 const AddOrChangeAddBlock = props => {
-  const {onChangeorAddNewAddressPressed  = () =>{}} = props;
+  const {onChangeorAddNewAddressPressed  = () =>{},subtitle} = props;
   return (
     <View
     style={{
@@ -381,11 +365,11 @@ const AddOrChangeAddBlock = props => {
     }}>
     <TouchableOpacity
       style={{
-        height: 44,
         width: '80%',
         borderColor: Colors.CLR_02A3FC,
         borderRadius: 4,
         borderWidth: 1,
+        paddingVertical:10,
         justifyContent: 'center',
         alignItems: 'center',
       }}
@@ -401,6 +385,19 @@ const AddOrChangeAddBlock = props => {
         }}>
         Change or Add new address
       </Text>
+      {subtitle && 
+ <Text
+ style={{
+   paddingHorizontal: 5,
+   fontSize: 11,
+   fontStyle:'italic',
+   fontWeight: 'normal',
+   color: Colors.GRAY,
+ }}>
+  {subtitle}
+</Text>
+      }
+     
     </TouchableOpacity>
   </View>
   );

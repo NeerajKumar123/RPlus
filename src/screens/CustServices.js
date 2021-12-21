@@ -38,7 +38,6 @@ console.log(AppData)
         finalLink = `tel:${finalLink}`;
       }
     } else if (linkType == 3) {
-      console.log('adda');
       if (Platform.OS == 'ios') {
         finalLink = `whatsapp://send?text=hello&phone=:${finalLink}`;
       } else {

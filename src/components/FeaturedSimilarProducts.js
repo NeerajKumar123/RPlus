@@ -95,7 +95,7 @@ const FeaturedSimilarProducts = props => {
         horizontal={true}
         showsHorizontalScrollIndicator={false}
         style={{marginTop: 10, width: '100%'}}
-        contentContainerStyle={{paddingHorizontal: 20,paddingVertical:5}}
+        contentContainerStyle={{paddingHorizontal: 20,paddingVertical:10}}
         keyExtractor={(item, index) => 'key_' + index}
         ItemSeparatorComponent={() => <View style={{height: 10, width: 20}} />}
         data={data}

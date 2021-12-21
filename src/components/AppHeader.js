@@ -30,11 +30,12 @@ const AppHeader = props => {
     imageUrl = '',
   } = props;
   const headerGradidentColors = AppData.AppHeaderGradidentColors
+  // const headerGradidentColors = [AppData.app_theme, AppData.app_theme]
   let truncatedtitle = title;
   if (title && title.length > 30) {
     truncatedtitle = `${title.substring(0, 25)} ...`;
   }
-  let headerHeight = 80;
+  let headerHeight = 100;
   if (isExtendedHeader) {
     headerHeight = headerHeight + 50;
   }
@@ -66,11 +67,11 @@ const AppHeader = props => {
                 props.onLeftPress && props.onLeftPress();
               }}>
               <Icon
-                name="arrow-left"
+                name="chevron-left"
                 type="MaterialCommunityIcons"
                 style={{
                   color: Colors.WHITE,
-                  fontSize: 30,
+                  fontSize: 35,
                 }}
               />
             </TouchableOpacity>
@@ -126,7 +127,7 @@ const AppHeader = props => {
                 />
               )}
             </View>
-            {subtitle && (
+            {subtitle?.length > 0 && (
               <Text
                 style={{
                   fontSize: 12,

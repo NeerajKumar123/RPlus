@@ -88,3 +88,10 @@ export const CLR_CBE8D3 = '#CBE8D3'
 export const CLR_656A80 = '#656A80'
 export const CLR_11A83B = '#11A83B'
 export const CLR_333F5E = '#333F5E'
+export const CLR_FF6667 = '#FF6667'
+
+// App theme Colors
+export const THEMME_CLR_RPLUS = '#171F58'
+export const THEMME_CLR_HMT = '#51AF5E'
+export const THEMME_CLR_HFM = '#233C42'
+export const THEMME_CLR_GDEES = '#2C3E33'

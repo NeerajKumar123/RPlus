@@ -76,7 +76,7 @@ const CloseButtonHeader = props => {
         <Icon
           name={'close-circle-outline'}
           size={30}
-          color={Colors.DARKGRAY}
+          color={Colors.CLR_FF6667}
         />
       </TouchableOpacity>
     </View>

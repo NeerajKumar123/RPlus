@@ -41,7 +41,7 @@ const ChoosePayment = props => {
   const storeID = global.storeInfo && global.storeInfo.id;
   const customerID = global.userInfo && global.userInfo.customer_id;
   const [isLoading, setIsLoading] = useState(false);
-  const [orderPlacedFailedCount, setOrderPlacedFailedCount] = useState(0);
+  const [orderPlacedFailedCount, setOrderPlacedFailedCount] = useState(4);
   const [walletCash, setWalletCash] = useState(0);
   const [userDetailsRes, setUserDetailsRes] = useState();
 
@@ -55,43 +55,6 @@ const ChoosePayment = props => {
     {displayName: 'Wallet', name: 'wallet', paymentModeID: 3},
   ];
   const [paymentMode, setPaymentMode] = useState(paymentModes[0]);
-
-  const openLink = (link, linkType) => {
-    console.log('link', link, linkType);
-    let finalLink = link;
-    if (linkType == 1) {
-      // mail
-      if (Platform.OS == 'ios') {
-        finalLink = `mailto:${finalLink}`;
-      } else {
-        finalLink = `mailto:${finalLink}`;
-      }
-    } else if (linkType == 2) {
-      if (Platform.OS == 'ios') {
-        finalLink = `telprompt:${finalLink}`;
-      } else {
-        finalLink = `tel:${finalLink}`;
-      }
-    } else if (linkType == 3) {
-      console.log('adda');
-      if (Platform.OS == 'ios') {
-        finalLink = `whatsapp://send?text=hello&phone=:${finalLink}`;
-      } else {
-        finalLink = `whatsapp://send?text=hello&phone=:${finalLink}`;
-      }
-    }
-    Linking.canOpenURL(finalLink)
-      .then(supported => {
-        if (!supported) {
-          Alert.alert(AppData.title_alert, 'Currently not availble');
-        } else {
-          return Linking.openURL(finalLink);
-        }
-      })
-      .catch(err => {
-        console.log('err', err);
-      });
-  };
 
   useEffect(() => {
     updateData();
@@ -151,6 +114,8 @@ const ChoosePayment = props => {
     const params = prepareParamsAddMoney();
     setIsLoading(true)
     topupPaymentProcess(params, processRes => {
+      console.log('global.userInfo',global.userInfo)
+
       setIsLoading(false)
       if (processRes.status != -1 && processRes?.payload_topupPaymentProcess) {
         const {order_date, order_id} = processRes.payload_topupPaymentProcess;
@@ -173,7 +138,7 @@ const ChoosePayment = props => {
             contact: global.userInfo.contact,
             name: global.userInfo.name,
           },
-          theme: {color: Colors.CLR_E88219},
+          theme: {color: AppData.app_theme},
         };
         RazorpayCheckout.open(options)
           .then(data => {
@@ -291,7 +256,6 @@ const ChoosePayment = props => {
         if (isSuccess) {
           navigation.navigate('Thanks', {...res?.payload_cashOnDelivery});
         } else {
-          setOrderPlacedFailedCount(orderPlacedFailedCount + 1);
           Alert.alert(
             AppData.title_alert,
             'Facing some technical glich while ordering , Pls try again later',
@@ -313,19 +277,6 @@ const ChoosePayment = props => {
         onLeftPress={() => {
           navigation.goBack();
         }}
-        rightIcons={
-          orderPlacedFailedCount > 0
-            ? [
-                {
-                  iconSource: phone_icon,
-                  color: Colors.CLR_5F259F,
-                  onPress: () => {
-                    openLink('9650861174', 2);
-                  },
-                },
-              ]
-            : []
-        }
       />
       <ScrollView
         contentContainerStyle={{
@@ -436,7 +387,7 @@ const PaymentTypeCard = props => {
       onPress={() => {
         props.onPaymentModeSelected && props.onPaymentModeSelected();
       }}
-      style={{flexDirection: 'row', alignItems: 'center', paddingVertical: 5}}>
+      style={{flexDirection: 'row', alignItems: 'center', paddingVertical: 5, justifyContent:'flex-start'}}>
       <Icon
         name={isSelected ? 'radiobox-marked' : 'radiobox-blank'}
         size={20}
@@ -449,13 +400,11 @@ const PaymentTypeCard = props => {
         <Text
           style={{
             marginLeft: 5,
-            fontSize: 18,
-            fontWeight: 'bold',
-            color: Colors.CLR_03C47E,
-            position: 'absolute',
-            right: 20,
+            fontSize: 14,
+            fontStyle:'italic',
+            color: props?.cash > 0 ? Colors.CLR_03C47E : Colors.CLR_FF6667,
           }}>
-          {props.cash ? `Rs. ${props.cash}` : `Rs. 0`}
+          {`(Rs. ${props?.cash || 0} in wallet)`}
         </Text>
       )}
     </TouchableOpacity>

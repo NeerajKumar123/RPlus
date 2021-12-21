@@ -130,7 +130,7 @@ const Cart = props => {
       <AppHeader
         title="Personal Cart"
         isLeftIconEnabeld={true}
-        subtitle={`Shopping at ${global.pincode}`}
+        subtitle={global.pincode ? `Shopping at ${global.pincode}` : ''}
         onLeftPress={() => {
           navigation.goBack();
         }}
