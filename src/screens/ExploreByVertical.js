@@ -253,10 +253,11 @@ const ExploreByVertical = props => {
           }}
         />
       )}
-      {categories == undefined ||
-        !categories.length ||
-        subCategories == undefined ||
-        !subCategories.length ||
+      {!isLoading &&
+      (categories == undefined ||
+        !categories.length) ||
+        (subCategories == undefined ||
+          !subCategories.length) ||
         ((products == undefined || !products.length) && (
           <NoData
             title={'No data found'}

@@ -14,7 +14,7 @@ const SubcategoryList = props => {
     setTimeout(() => {
       let selectedIndex = subCatlist && subCatlist.findIndex(x => x[mappingKey] == selectedValue[mappingKey]);
       selectedIndex = selectedIndex < 0 ? 0 :selectedIndex 
-      flatListRef.current.scrollToOffset({animated: true,offset:selectedIndex*20})
+      // flatListRef.current.scrollToOffset({animated: true,offset:selectedIndex*20})
     }, 1000);
   }, [selectedValue, subCatlist])
   

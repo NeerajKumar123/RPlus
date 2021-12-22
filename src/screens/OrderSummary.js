@@ -207,7 +207,7 @@ const OrderSummary = () => {
         isLeftIconEnabeld={true}
         isExtendedHeader={true}
         isCheckoutStep={true}
-        progressIndex={1}
+        progressIndex={2}
         onLeftPress={() => {
           navigation.goBack();
         }}
@@ -383,7 +383,7 @@ const AddOrChangeAddBlock = props => {
           fontWeight: 'bold',
           color: Colors.CLR_02A3FC,
         }}>
-        Change or Add new address
+        Change or Add New Address
       </Text>
       {subtitle && 
  <Text

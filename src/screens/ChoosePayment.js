@@ -48,7 +48,7 @@ const ChoosePayment = props => {
   const paymentModes = [
     {displayName: 'Cash on Delivery', name: 'cash', paymentModeID: 1},
     {
-      displayName: 'Others UPI IDs/Net Banking',
+      displayName: 'Credit/Debit Card/Net Banking/UPI',
       name: 'online',
       paymentModeID: 2,
     },
@@ -209,9 +209,8 @@ const ChoosePayment = props => {
               contact: global.userInfo.contact,
               name: global.userInfo.name,
             },
-            theme: {color: Colors.CLR_E88219},
+            theme: {color: AppData.app_theme},
           };
-          console.log('options', JSON.stringify(options))
           RazorpayCheckout.open(options)
             .then(data => {
               // handle success
@@ -272,7 +271,7 @@ const ChoosePayment = props => {
         isLeftIconEnabeld={true}
         isExtendedHeader={true}
         isCheckoutStep={true}
-        progressIndex={2}
+        progressIndex={3}
         phone_icon
         onLeftPress={() => {
           navigation.goBack();
@@ -443,14 +442,15 @@ const PremiumBlock = props => {
         <Text
           style={{
             color: Colors.CLR_2B415B,
-            fontSize: 14,
+            fontSize: 12,
             fontWeight: 'normal',
+            fontStyle:'italic'
           }}>
-          {`( ${cartItemsCount} Items )`}
+          {` (${cartItemsCount} Items)`}
         </Text>
       </Text>
-      <ItemValue title={'MRP.'} subtitle={`Rs. ${maxPrice}`} />
-      <ItemValue title={'Discount.'} subtitle={`Rs. ${discount}`} />
+      <ItemValue title={'MRP'} subtitle={`Rs. ${maxPrice}`} />
+      <ItemValue title={'Discount'} subtitle={`Rs. ${discount}`} />
       <ItemValue
         title={'Delivery Charges'}
         subtitle={deliveryCharge > 0 ? `Rs. ${deliveryCharge}` : 'Free'}

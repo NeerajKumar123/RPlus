@@ -205,7 +205,7 @@ const AddMoney = props => {
                       contact: global.userInfo.contact,
                       name: global.userInfo.name,
                     },
-                    theme: {color: Colors.CLR_E88219},
+                    theme: {color: AppData.app_theme},
                   };
                   RazorpayCheckout.open(options)
                     .then(data => {

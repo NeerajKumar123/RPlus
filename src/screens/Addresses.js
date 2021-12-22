@@ -59,7 +59,7 @@ const Addresses = props => {
           <AddNewAddressBlock
             adrss = {addresses}
             addNewAddressPressed={() => {
-              navigation.navigate('AddNewAddress',{title: addresses?.length > 0 ? 'Add new address' : 'Add address' });
+              navigation.navigate('AddNewAddress',{title: addresses?.length > 0 ? 'Add New Address' : 'Add address' });
             }}
           />
         )}
@@ -146,7 +146,7 @@ const AddNewAddressBlock = props => {
             fontSize: 16,
             color: Colors.CLR_313131,
           }}>
-          {props.adrss?.length > 0 ?  'Add new address' : 'Add address'}
+          {props.adrss?.length > 0 ?  'Add New Address' : 'Add address'}
         </Text>
         <Icon
           name={'plus'} //radiobox-blank

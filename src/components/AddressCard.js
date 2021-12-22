@@ -14,8 +14,8 @@ import * as Colors from '../constants/ColorDefs';
 
 const AddressCard = props => {
   const {item, isFromAccount, onAddressSelection,selectedAddress} = props;
-  const {contact, name, email, city, landmark, state, pincode} = item;
-  const displayAdd = `Near ${landmark}, ${city}, ${state}(${pincode})`;
+  const {contact, name, email, city, landmark, state, pincode, house_no,street} = item;
+  const displayAdd = `${house_no}, ${street}, ${city}, ${state}, ${pincode}\n${landmark}`
   const isSelected = item.address_id == selectedAddress.address_id
   return (
     <TouchableOpacity
@@ -41,7 +41,7 @@ const AddressCard = props => {
               flexDirection: 'row',
               width: 30,
               justifyContent: 'center',
-              alignItems: 'center',
+              alignItems: 'flex-start',
               marginRight: 5,
             }}>
             <Icon
@@ -52,7 +52,7 @@ const AddressCard = props => {
           </View>
         )}
         <View style={{flex: 1}}>
-          <Text style={{color: Colors.CLR_161E42, fontSize: 14, marginTop: 12}}>
+          <Text style={{color: Colors.CLR_161E42, fontSize: 14}}>
             {name}
           </Text>
           <Text style={{color: Colors.CLR_161E42, fontSize: 14, marginTop: 12}}>

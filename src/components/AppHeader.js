@@ -35,7 +35,7 @@ const AppHeader = props => {
   if (title && title.length > 30) {
     truncatedtitle = `${title.substring(0, 25)} ...`;
   }
-  let headerHeight = 100;
+  let headerHeight = 90;
   if (isExtendedHeader) {
     headerHeight = headerHeight + 50;
   }
