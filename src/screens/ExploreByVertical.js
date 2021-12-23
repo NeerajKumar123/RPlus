@@ -64,14 +64,17 @@ const ExploreByVertical = props => {
   }, [isFocused]);
 
   useEffect(() => {
-    if(!showCats && showSubCats){
+    if(!showCats && !showSubCats){
+      setSelectedCategory({category_id:vertical?.category_id});
+      setSelectedSubCategory({subcategory_id:vertical?.subcategory_id});
+    }else if(!showCats && showSubCats){
       setSelectedCategory({category_id:vertical?.category_id});
     }else{
       setIsLoading(true);
       getVerticalByCategory(
         {store_id: storeID, vertical_id: vertical.vertical_id},
         res => {
-          const cats = res && res.payload_verticalByCategory;
+          const cats = res?.payload_verticalByCategory;
           setCategories(cats);
           setSelectedCategory(global.category ? global.category : cats && cats.length && cats[0]);
           setTimeout(() => {
@@ -91,10 +94,10 @@ const ExploreByVertical = props => {
       }else{
         setIsLoading(true);
         getCategoryBySubCategory(
-          {store_id: storeID, category_id: selectedCategory.category_id},
+          {store_id: storeID, category_id: selectedCategory?.category_id},
           res => {
-            const subs = res && res.payload_categoryBySubCategory;
-            const dataToBeCached = {"category_id": `${selectedCategory.category_id}`,"subs": subs}
+            const subs = res?.payload_categoryBySubCategory;
+            const dataToBeCached = {"category_id": `${selectedCategory?.category_id}`,"subs": subs}
             const ad = [...alreadyFetchedSubcats,dataToBeCached]
             setAlreadyFetchedSubcats(ad)
             setSubCategories(subs);
@@ -118,10 +121,10 @@ const ExploreByVertical = props => {
         getProductBySubCategory(
           {
             store_id: storeID,
-            subcategory_id: selectedSubCategory.subcategory_id,
+            subcategory_id: selectedSubCategory?.subcategory_id,
           },
           res => {
-            const prods = res && res.payload_SubCategoryByProduct;
+            const prods =  res?.payload_SubCategoryByProduct;
             setProducts(prods);
             const dataToBeCached = {"category_id": `${selectedCategory.category_id}`,subcategory_id:`${selectedSubCategory.subcategory_id}` ,"products": prods}
             const ad = [...alreadyFetchedProducts,dataToBeCached]

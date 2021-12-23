@@ -46,6 +46,7 @@ export const formatToCartObj = (item, quantity, itemType) => {
       cartObj.storeID = storeID;
       cartObj.custID = custID;
       cartObj.companyID = companyID;
+      cartObj.isDeal = item?.is_deal
       break;
     case PLUS_MINUS_BUTTON_TYPE.ComboOffersDashboardCard:
       cartObj.maxPrice = parseInt(item.mrp);
@@ -128,6 +129,7 @@ export const formatToCartObj = (item, quantity, itemType) => {
       cartObj.mrp = item.maxPrice;
       cartObj.quantity = item.productQuantity;
       cartObj.cart_id = item.cartID
+      cartObj.is_hot_deals = item?.isDeal
       break;
     default:
       break;

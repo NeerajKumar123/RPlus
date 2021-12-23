@@ -27,13 +27,13 @@ const [isLoading, setIsLoading] = useState(false);
 const [isReady, setIsReady] = useState(false);
 const [notifications, setNotifications] = useState();
 const navigation = useNavigation();
+const storeID = global.storeInfo.id;
 
 
 useEffect(() => {
-  const paramForNotification = { store_id: 23}
+  const paramForNotification = { store_id: storeID}
   getNotification(paramForNotification, (notificatinRes)=>{
     const notification = notificatinRes.payload_notification
-    console.log('notificatinRes======>', notificatinRes,notification)
     setNotifications(notification)
     setIsReady(true)
   })

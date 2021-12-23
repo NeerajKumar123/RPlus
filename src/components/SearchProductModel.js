@@ -83,7 +83,6 @@ const CloseButtonHeader = props => {
   );
 };
 const SearchProductModel = props => {
-  console.log('props',props)
   const {storeID = 27, onProductSelection = ()=>{}} =  props
   const [searchedItems, setSearchedItems] = useState(undefined);
   const [isSearching, setIsSearching] = useState(false)
