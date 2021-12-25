@@ -44,7 +44,9 @@ const OrderListing = () => {
       const allOrders = res?.payload_orderList
       allOrders && allOrders.sort((a, b) => b.order_id - a.order_id);
       setOrders(allOrders);
-      setIsLoading(false);
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 200);
     });
   }
 

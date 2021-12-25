@@ -12,7 +12,13 @@ import * as Colors from '../constants/ColorDefs';
 import AppHeader from '../components/AppHeader';
 import OrderInfoCard from '../components/OrderInfoCard';
 import RPLoader from '../components/RPLoader';
-import {getOrderDetails, cancelItem, addTocart} from '../apihelper/Api';
+import {
+  getOrderDetails,
+  cancelItem,
+  rescheduleOrder,
+  getDeliveryDateTimeSlots,
+} from '../apihelper/Api';
+import {RescheduleDateTimeModel} from '../components/RPModels';
 
 const OrderDetails = props => {
   const navigation = useNavigation();
@@ -24,18 +30,41 @@ const OrderDetails = props => {
   const storeID = global.storeInfo && global.storeInfo.id;
   const customerID = global.userInfo && global.userInfo.customer_id;
   const orderID = props?.route?.params?.order_id;
+  const [slots, setSlots] = useState(undefined);
+  const [timeSlots, setTimeSlots] = useState(undefined);
+  const [deliveryDateSlot, setDeliveryDateSlot] = useState(undefined);
+  const [deliveryTimeSlot, setDeliveryTimeSlot] = useState(undefined);
+  const [showRescheduleModel, setShowRescheduleModel] = useState(false);
+  const [selectedOrder, setSelectedOrder] = useState();
 
   useEffect(() => {
-    getUpdatedOrderDetails()
+    getUpdatedOrderDetails();
   }, []);
 
   useEffect(() => {
-    if(isCancelled){
-      getUpdatedOrderDetails()
+    if (isCancelled) {
+      getUpdatedOrderDetails();
     }
   }, [isCancelled]);
 
-  const getUpdatedOrderDetails = () =>{
+  useEffect(() => {
+    const params = {
+      company_id: companyID,
+      store_id: storeID,
+      customer_id: customerID,
+    };
+    getDeliveryDateTimeSlots(params, res => {
+      const slots = res && res.payload_timeSlot;
+      const defaultDateSlot = slots && slots[0];
+      const defaultTimeSlots = defaultDateSlot && defaultDateSlot.timeslot;
+      setSlots(slots);
+      setDeliveryDateSlot(defaultDateSlot);
+      setTimeSlots(defaultTimeSlots);
+      setDeliveryTimeSlot(defaultTimeSlots && defaultTimeSlots[0]);
+    });
+  }, []);
+
+  const getUpdatedOrderDetails = () => {
     const params = {
       company_id: companyID,
       store_id: storeID,
@@ -44,11 +73,14 @@ const OrderDetails = props => {
     };
     setIsLoading(true);
     getOrderDetails(params, res => {
+      console.log('res', res);
       setOrderDetails(res?.payload_orderDetails);
       setOrderItems(res?.payload_orderDetails?.orderdetails);
-      setIsLoading(false);
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 200);
     });
-  }
+  };
 
   return (
     <View
@@ -65,13 +97,13 @@ const OrderDetails = props => {
       />
       {isLoading && <RPLoader />}
       {orderDetails && (
-        <ScrollView style={{padding: 20}}>
+        <ScrollView style={{padding: 20}} showsVerticalScrollIndicator={false}>
           <DeleiverySlot orderDetails={orderDetails} />
           <DeleiveryAdd orderDetails={orderDetails} />
           <InvoiceDetails orderDetails={orderDetails} />
           {orderItems && (
             <FlatList
-              style={{width: '100%', marginTop: 10, marginBottom:100}}
+              style={{width: '100%', marginTop: 10, marginBottom: 100}}
               horizontal={false}
               keyExtractor={(item, index) => 'key_' + index}
               data={orderItems}
@@ -82,10 +114,12 @@ const OrderDetails = props => {
                 <OrderInfoCard
                   item={item}
                   onTrackOrderPressed={() => {
+                    setSelectedOrder(item);
                     navigation.navigate('TrackOrder');
                   }}
                   onCancelPressed={() => {
-                    setIsLoading(true)
+                    setSelectedOrder(item);
+                    setIsLoading(true);
                     const params = {
                       company_id: companyID,
                       store_id: storeID,
@@ -94,17 +128,46 @@ const OrderDetails = props => {
                       item_id: item.item_id,
                     };
                     cancelItem(params, res => {
-                      setIsLoading(false)
-                      setIsCancelled(true)
+                      setIsCancelled(true);
+                      setIsLoading(false);
                     });
                   }}
                   onReorderPresssed={() => {
+                    setSelectedOrder(item);
+                    setShowRescheduleModel(true);
                   }}
                 />
               )}
             />
           )}
 
+          {slots && timeSlots && showRescheduleModel && (
+            <RescheduleDateTimeModel
+              title={'Choose Delivery Time'}
+              deliverySlots={slots}
+              timeSlots={timeSlots}
+              deliveryDateSlot={deliveryDateSlot}
+              deliveryTimeSlot={deliveryTimeSlot}
+              onClose={() => {
+                setShowRescheduleModel(false);
+              }}
+              rescheduleNow={(selectedDateSlot, selectedTimeSlot) => {
+                console.log('selected order====>', selectedOrder);
+                setShowRescheduleModel(false);
+                const params = {
+                  company_id: companyID,
+                  store_id: storeID,
+                  customer_id: customerID,
+                  order_id: selectedOrder?.order_id,
+                  slot_date: selectedDateSlot?.date,
+                  slot_id: selectedTimeSlot?.slot_id,
+                };
+                rescheduleOrder(params, res => {
+                  getUpdatedOrderDetails();
+                });
+              }}
+            />
+          )}
         </ScrollView>
       )}
     </View>
