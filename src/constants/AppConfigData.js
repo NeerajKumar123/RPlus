@@ -34,8 +34,8 @@ export default function GetAppConfigData() {
       appStoreURL: 'https://apps.apple.com/in/app/honey-money-top/id1574488018',
       bundle:'com.honeymoneytop.honeymoneytop',
       app_store_name:'HONEY MONEY TOP',
-      app_version:"1.5",
-      bundle_version:"6",
+      app_version:"1.6",
+      bundle_version:"7",
       AppHeaderGradidentColors :[Colors.CLR_033AA4, Colors.CLR_0095D4],
       app_theme:Colors.THEMME_CLR_HMT
     };
