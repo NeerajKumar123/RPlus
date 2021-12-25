@@ -15,8 +15,8 @@ export default function GetAppConfigData() {
       appStoreURL: 'http://itunes.apple.com/app/id1576051283',
       bundle:'com.RewardsPlus.Rplus',
       app_store_name:'RewardsPlus Store',
-      app_version:"1.0.2",
-      bundle_version:"5",
+      app_version:"1.0.3",
+      bundle_version:"6",
       AppHeaderGradidentColors :[Colors.CLR_033AA4, Colors.CLR_0095D4],
       app_theme:Colors.THEMME_CLR_RPLUS
     };

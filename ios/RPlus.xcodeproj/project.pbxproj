@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* RPlusTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* RPlusTests.m */; };
-		074CDA692753DA37003474A7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 074CDA682753DA37003474A7 /* GoogleService-Info.plist */; };
 		075698FB2753B8D500E531F1 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 075698FA2753B8D500E531F1 /* UserNotifications.framework */; };
 		07C29BFB2740FF1800B90AE5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07C29BFA2740FF1800B90AE5 /* Images.xcassets */; };
 		07D87386274222B100E3B14F /* launch.png in Resources */ = {isa = PBXBuildFile; fileRef = 07D87385274222B000E3B14F /* launch.png */; };
+		07E3333B27771DB600F2FB56 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07E3333A27771DB600F2FB56 /* GoogleService-Info.plist */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		4097601B5C14BCC6448D99ED /* libPods-RPlus.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2A57DA5A0BC6D3F25A161C9 /* libPods-RPlus.a */; };
@@ -41,13 +41,13 @@
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* RPlusTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RPlusTests.m; sourceTree = "<group>"; };
 		07457D722608F289005D672D /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = MaterialCommunityIcons.ttf; path = "../../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
-		074CDA682753DA37003474A7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		075698F32753B5BB00E531F1 /* RPlus.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = RPlus.entitlements; path = RPlus/RPlus.entitlements; sourceTree = "<group>"; };
 		075698F42753B85E00E531F1 /* RNFirebase.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNFirebase.xcodeproj; path = "../node_modules/react-native-firebase/ios/RNFirebase.xcodeproj"; sourceTree = "<group>"; };
 		075698FA2753B8D500E531F1 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		07900BBC9657448389C978E0 /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
 		07C29BFA2740FF1800B90AE5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = RPlus/Images.xcassets; sourceTree = "<group>"; };
 		07D87385274222B000E3B14F /* launch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launch.png; sourceTree = "<group>"; };
+		07E3333A27771DB600F2FB56 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		13A7264E1885B994E0CD8DF4 /* Pods-RPlus-RPlusTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RPlus-RPlusTests.release.xcconfig"; path = "Target Support Files/Pods-RPlus-RPlusTests/Pods-RPlus-RPlusTests.release.xcconfig"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* RPlus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RPlus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = RPlus/AppDelegate.h; sourceTree = "<group>"; };
@@ -191,7 +191,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				074CDA682753DA37003474A7 /* GoogleService-Info.plist */,
+				07E3333A27771DB600F2FB56 /* GoogleService-Info.plist */,
 				07D87385274222B000E3B14F /* launch.png */,
 				07457D712608F248005D672D /* Fonts */,
 				13B07FAE1A68108700A75B9A /* RPlus */,
@@ -339,7 +339,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				07D87386274222B100E3B14F /* launch.png in Resources */,
-				074CDA692753DA37003474A7 /* GoogleService-Info.plist in Resources */,
+				07E3333B27771DB600F2FB56 /* GoogleService-Info.plist in Resources */,
 				07C29BFB2740FF1800B90AE5 /* Images.xcassets in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 			);
@@ -605,10 +605,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = RPlus/RPlus.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Avinash K Jha (378LT7JJLS)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Avinash K Jha (378LT7JJLS)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: APPZIAA SOFTLABS PRIVATE LIMITED (N9T6K48WRZ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: APPZIAA SOFTLABS PRIVATE LIMITED (N9T6K48WRZ)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = N9T6K48WRZ;
 				ENABLE_BITCODE = NO;
 				HEADER_SEARCH_PATHS = (
@@ -657,7 +657,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.3;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -665,7 +665,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.RewardsPlus.Rplus;
 				PRODUCT_NAME = RPlus;
-				PROVISIONING_PROFILE_SPECIFIER = RPlusDev15June21;
+				PROVISIONING_PROFILE_SPECIFIER = RPlusDistAPNs_25Dec21;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -679,9 +679,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = RPlus/RPlus.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Avinash K Jha (378LT7JJLS)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: APPZIAA SOFTLABS PRIVATE LIMITED (N9T6K48WRZ)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = N9T6K48WRZ;
 				ENABLE_BITCODE = NO;
 				HEADER_SEARCH_PATHS = (
@@ -730,7 +730,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.3;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -738,7 +738,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.RewardsPlus.Rplus;
 				PRODUCT_NAME = RPlus;
-				PROVISIONING_PROFILE_SPECIFIER = RPlusDev15June21;
+				PROVISIONING_PROFILE_SPECIFIER = RPlusDistAPNs_25Dec21;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {
   Text,
   View,
@@ -7,11 +7,11 @@ import {
   Dimensions,
   ScrollView,
   TouchableOpacity,
-  Alert
+  Alert,
 } from 'react-native';
-import { useNavigation, useIsFocused } from '@react-navigation/native';
-import NetInfo from "@react-native-community/netinfo";
-import Carousel, { Pagination } from 'react-native-snap-carousel';
+import {useNavigation, useIsFocused} from '@react-navigation/native';
+import NetInfo from '@react-native-community/netinfo';
+import Carousel, {Pagination} from 'react-native-snap-carousel';
 import AppHeader from '../components/AppHeader';
 import BannerCard from '../components/BannerCard';
 import SearchProductModel from '../components/SearchProductModel';
@@ -23,18 +23,23 @@ import HotDeals from '../components/HotDeals';
 import ComboOffers from '../components/ComboOffers';
 import OffersOfTheDay from '../components/OffersOfTheDay';
 import SubscriptionsBlock from '../components/SubscriptionsBlock';
-import Category2by2TypeOne from '../components/Category2by2TypeOne'
-import AllCategories from '../components/AllCategories'
-import Category2by2TypeTwo from '../components/Category2by2TypeTwo'
-import Category3by3Block from '../components/Category3by3Block'
+import Category2by2TypeOne from '../components/Category2by2TypeOne';
+import AllCategories from '../components/AllCategories';
+import Category2by2TypeTwo from '../components/Category2by2TypeTwo';
+import Category3by3Block from '../components/Category3by3Block';
 import RPLoader from '../components/RPLoader';
 import NoInternetDashBoard from '../components/NoInternetDashBoard';
 import * as Colors from '../constants/ColorDefs';
 import * as RPCartManager from '../helpers/RPCartManager';
 const notif_icon = require('../../assets/notif_icon.png');
 const cart_icon = require('../../assets/cart_icon.png');
-const { height, width } = Dimensions.get('window');
-import { getStoreBanner, getVerticalList, getVerticaldesign,getNotification } from '../apihelper/Api.js';
+const {height, width} = Dimensions.get('window');
+import {
+  getStoreBanner,
+  getVerticalList,
+  getVerticaldesign,
+  getNotification,
+} from '../apihelper/Api.js';
 import messaging from '@react-native-firebase/messaging';
 
 const StoreDashboard = props => {
@@ -54,36 +59,37 @@ const StoreDashboard = props => {
   const [isLoading, setIsLoading] = useState(false);
   const [cartCount, setCartCount] = useState(0);
   const [isSearchShowing, setIsSearchShowing] = useState(false);
-  const [activeIndex, setActiveIndex] = useState(2)
+  const [activeIndex, setActiveIndex] = useState(2);
   const isFocused = useIsFocused();
-  const cwidth = width - 50
-  const cheight = cwidth * .47
-  const [isConnected, setIsConnected] = useState(true)
-  const [verticalDesignDetails, setVerticalDesignDetails] = useState()
+  const cwidth = width - 50;
+  const cheight = cwidth * 0.47;
+  const [isConnected, setIsConnected] = useState(true);
+  const [verticalDesignDetails, setVerticalDesignDetails] = useState();
 
   useEffect(() => {
     requestUserPermission();
     // Register background handler
-  messaging().setBackgroundMessageHandler(async remoteMessage => {
-    Alert.alert('Message handled in the background!', JSON.stringify(remoteMessage));
-});
+    messaging().setBackgroundMessageHandler(async remoteMessage => {
+      Alert.alert(
+        'Message handled in the background!',
+        JSON.stringify(remoteMessage),
+      );
+    });
 
     const unsubscribe = messaging().onMessage(async remoteMessage => {
-      Alert.alert('A new FCM message arrived!', JSON.stringify(remoteMessage));
-      const item = {vertical_id:12,category_id:1,subcategory_id:3,product_id:26}
-      doNavigate(item)
+      console.log('remoteMessage', JSON.stringify(remoteMessage));
     });
     return unsubscribe;
-   }, []);
+  }, []);
 
-   async function requestUserPermission() {
+  async function requestUserPermission() {
     const authStatus = await messaging().requestPermission();
     const enabled =
       authStatus === messaging.AuthorizationStatus.AUTHORIZED ||
       authStatus === messaging.AuthorizationStatus.PROVISIONAL;
-  
+
     if (enabled) {
-      getFcmToken()
+      getFcmToken();
       console.log('Authorization status:', authStatus);
     }
   }
@@ -91,12 +97,11 @@ const StoreDashboard = props => {
   const getFcmToken = async () => {
     const fcmToken = await messaging().getToken();
     if (fcmToken) {
-    console.log("Failed", "No token received",fcmToken);
-    //  Alert.alert("Your Firebase Token is:", fcmToken);
+      console.log('Token received', fcmToken);
     } else {
-     console.log("Failed", "No token received");
+      console.log('Failed', 'No token received');
     }
-  }
+  };
 
   const updateCart = () => {
     RPCartManager.decideAndGetCartData(cartItems => {
@@ -107,17 +112,16 @@ const StoreDashboard = props => {
     });
   };
 
-
   const init = () => {
     setIsLoading(true);
     updateCart();
-    getStoreBanner({ store_id: storeID }, bannersRes => {
-      const { payload_banner } = bannersRes;
+    getStoreBanner({store_id: storeID}, bannersRes => {
+      const {payload_banner} = bannersRes;
       setBanners(payload_banner.banner);
       setPromobanners(payload_banner.promobanner);
       setOffersoftheday(payload_banner.offeroftheday);
       setSectionbanner(payload_banner.sectionbanner);
-      getVerticalList({ store_id: storeID }, verticalRes => {
+      getVerticalList({store_id: storeID}, verticalRes => {
         setIsLoading(false);
         const details = verticalRes?.payload_verticalList;
         setVerticals(details?.vertical);
@@ -130,45 +134,49 @@ const StoreDashboard = props => {
       });
     });
 
-    const params = { store_id: storeID,response_type:4 }
-    getVerticaldesign(params, (res) =>{
-      const designObj = res.payload_verticaldesign
-      setVerticalDesignDetails(designObj)
-    })
-   
-  }
-  
+    const params = {store_id: storeID, response_type: 4};
+    getVerticaldesign(params, res => {
+      const designObj = res.payload_verticaldesign;
+      setVerticalDesignDetails(designObj);
+    });
+  };
+
   useEffect(() => {
     if (isFocused) {
       NetInfo.fetch().then(state => {
-        setIsConnected(state.isConnected)
-        init()
+        setIsConnected(state.isConnected);
+        init();
       });
     }
   }, [isFocused]);
 
   const doNavigate = item => {
-    const isProduct = item.vertical_id && item.category_id && item.subcategory_id && item.product_id
-    const isSubCategory = item.vertical_id && item.category_id && item.subcategory_id
-    const isCategory = item.vertical_id && item.category_id
-    const isVertical = item.vertical_id
+    const isProduct =
+      item.vertical_id &&
+      item.category_id &&
+      item.subcategory_id &&
+      item.product_id;
+    const isSubCategory =
+      item.vertical_id && item.category_id && item.subcategory_id;
+    const isCategory = item.vertical_id && item.category_id;
+    const isVertical = item.vertical_id;
     if (isProduct) {
       navigation.navigate('ProductDetailsContainer', {
         store_id: storeID,
-        product_id: item.product_id, 
+        product_id: item.product_id,
         company_id: storeDetails.company_id,
       });
     } else if (isSubCategory || isCategory || isVertical) {
-      global.vertical = item
-      global.category = undefined
-      global.subcategory = undefined
-      let decidedLevel = 4
-      if(isSubCategory){
-        decidedLevel = 2
-      }else if(isCategory){
-        decidedLevel = 3
+      global.vertical = item;
+      global.category = undefined;
+      global.subcategory = undefined;
+      let decidedLevel = 4;
+      if (isSubCategory) {
+        decidedLevel = 2;
+      } else if (isCategory) {
+        decidedLevel = 3;
       }
-      navigation.navigate('ExploreByVertical',{level:decidedLevel});
+      navigation.navigate('ExploreByVertical', {level: decidedLevel});
     }
   };
 
@@ -187,9 +195,9 @@ const StoreDashboard = props => {
           if (navigation.canGoBack()) {
             navigation.goBack();
           } else {
-            const { lat, lon } = global?.storeInfo
-            const location = { latitude: lat, longitude: lon }
-            navigation.navigate('Stores', { location: location });
+            const {lat, lon} = global?.storeInfo;
+            const location = {latitude: lat, longitude: lon};
+            navigation.navigate('Stores', {location: location});
           }
         }}
         rightIcons={[
@@ -210,16 +218,15 @@ const StoreDashboard = props => {
             },
             iconBg: Colors.GREEN,
           },
-         
         ]}
       />
-      
-      {isConnected ?
+
+      {isConnected ? (
         <ScrollView
           contentContainerStyle={{
             backgroundColor: Colors.CLR_E7ECF2,
             width: width,
-            paddingBottom:10
+            paddingBottom: 10,
           }}>
           {isLoading && <RPLoader />}
           <View
@@ -233,7 +240,7 @@ const StoreDashboard = props => {
             {isSearchShowing && (
               <SearchProductModel
                 storeID={storeID}
-                onProductSelection={(item) => {
+                onProductSelection={item => {
                   setIsSearchShowing(false);
                   navigation.navigate('ProductDetailsContainer', {
                     store_id: storeID,
@@ -258,11 +265,11 @@ const StoreDashboard = props => {
                     paddingTop: 0,
                     position: 'absolute',
                     top: 90,
-                    width:'100%'
+                    width: '100%',
                   }}
                   ref={sliderRef}
                   data={banners}
-                  renderItem={({ item }) => (
+                  renderItem={({item}) => (
                     <BannerCard
                       item={item}
                       height={cheight}
@@ -280,7 +287,7 @@ const StoreDashboard = props => {
                   scrollEnabled={true}
                   enableSnap={true}
                   layoutCardOffset={0}
-                  activeSlideAlignment='start'
+                  activeSlideAlignment="start"
                   lockScrollWhileSnapping={true}
                   enableSnap={true}
                   enableMomentum={true}
@@ -293,18 +300,17 @@ const StoreDashboard = props => {
               </>
             )}
           </View>
-          <View style={{ paddingHorizontal: 18 }}>
+          <View style={{paddingHorizontal: 18}}>
             {verticals && verticals.length > 0 ? (
               <ExploreCategory
                 data={verticals}
                 onVerticalSelected={vertical => {
-                  doNavigate(vertical)
+                  doNavigate(vertical);
                 }}
               />
-            )
-              :
-              <View style={{ marginTop: 100 }} />
-            }
+            ) : (
+              <View style={{marginTop: 100}} />
+            )}
             {hasSubscription && <SubscriptionsBlock />}
             {promobanners && promobanners.length > 0 && (
               <Promos
@@ -317,8 +323,7 @@ const StoreDashboard = props => {
           </View>
           {dealsOfTheDayDetails && (
             <DealsOfTheDay
-              onViewAllClicked={() => {
-              }}
+              onViewAllClicked={() => {}}
               onProductSelected={item => {
                 navigation.navigate('ProductDetailsContainer', {
                   store_id: storeID,
@@ -330,10 +335,10 @@ const StoreDashboard = props => {
                 // setDealsOfTheDayDetails(undefined);
               }}
               details={dealsOfTheDayDetails}
-              onLoaderStateChanged={(isShow) => {
-                setIsLoading(isShow)
+              onLoaderStateChanged={isShow => {
+                setIsLoading(isShow);
                 if (!isShow) {
-                  updateCart()
+                  updateCart();
                 }
               }}
             />
@@ -341,10 +346,10 @@ const StoreDashboard = props => {
           {hotDealsDetails && (
             <HotDeals
               details={hotDealsDetails}
-              onLoaderStateChanged={(isShow) => {
-                setIsLoading(isShow)
+              onLoaderStateChanged={isShow => {
+                setIsLoading(isShow);
                 if (!isShow) {
-                  updateCart()
+                  updateCart();
                 }
               }}
               onItemPressed={item => {
@@ -356,63 +361,64 @@ const StoreDashboard = props => {
               }}
             />
           )}
-         
-          {verticalDesignDetails?.d_even.map((evenCates)=>{
-            return (
-            <Category2by2TypeOne 
-              data={evenCates}
-              onSelect = {(item)=>{
-                doNavigate(item)
-            }}
-              />)
-          })
-          }
 
-          {verticalDesignDetails?.all.map((allCates)=>{
+          {verticalDesignDetails?.d_even.map(evenCates => {
             return (
-            <AllCategories 
-                data={allCates}
-               onSelect = {(item)=>{
-                doNavigate(item)
-            }}
-            />)
-          })
-          }
-          {sectionbanners && sectionbanners.length > 0 && (
-              <SectionBanners data={sectionbanners}
-                onSectionBannerSelected={item => {
+              <Category2by2TypeOne
+                data={evenCates}
+                onSelect={item => {
                   doNavigate(item);
                 }}
               />
-            )}
-          {verticalDesignDetails?.d_three.map((threeCates)=>{
+            );
+          })}
+
+          {verticalDesignDetails?.all.map(allCates => {
             return (
-            <Category3by3Block
-              data={threeCates}
-              onSelect = {(item)=>{
-                doNavigate(item)
-            }}
-              />)
-          })
-          }
+              <AllCategories
+                data={allCates}
+                onSelect={item => {
+                  doNavigate(item);
+                }}
+              />
+            );
+          })}
+          {sectionbanners && sectionbanners.length > 0 && (
+            <SectionBanners
+              data={sectionbanners}
+              onSectionBannerSelected={item => {
+                doNavigate(item);
+              }}
+            />
+          )}
+          {verticalDesignDetails?.d_three.map(threeCates => {
+            return (
+              <Category3by3Block
+                data={threeCates}
+                onSelect={item => {
+                  doNavigate(item);
+                }}
+              />
+            );
+          })}
           {offersoftheday && offersoftheday.length > 0 && (
             <OffersOfTheDay
               data={offersoftheday}
-              onOfferOfTheDaySelected={(item) => {
-                doNavigate(item)
+              onOfferOfTheDaySelected={item => {
+                doNavigate(item);
               }}
             />
           )}
           {comboOffers && <ComboOffers data={comboOffers} />}
         </ScrollView>
-        :
+      ) : (
         <NoInternetDashBoard
           onButtonPress={() => {
-            setIsConnected(true)
-            init()
+            setIsConnected(true);
+            init();
           }}
         />
-      }
+      )}
     </View>
   );
 };
@@ -434,7 +440,7 @@ const SearchBar = props => {
         paddingHorizontal: 20,
         borderRadius: 4,
       }}>
-      <Text style={{ fontSize: 16, color: Colors.CLR_8797AA }}>
+      <Text style={{fontSize: 16, color: Colors.CLR_8797AA}}>
         Search your product
       </Text>
     </TouchableOpacity>
