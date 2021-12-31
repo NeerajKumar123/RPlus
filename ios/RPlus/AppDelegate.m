@@ -12,7 +12,11 @@
 #import <FlipperKitNetworkPlugin/FlipperKitNetworkPlugin.h>
 #import <SKIOSNetworkPlugin/SKIOSNetworkAdapter.h>
 #import <FlipperKitReactPlugin/FlipperKitReactPlugin.h>
-
+//#RewardsPlus == 1
+//#HMT == 2
+//#HMF == 3
+//#GDEES  == 4
+//#Kandvika == 5
 
 
 
@@ -34,11 +38,9 @@ static void InitializeFlipper(UIApplication *application) {
 #ifdef FB_SONARKIT_ENABLED
   InitializeFlipper(application);
 #endif
-
-
-  [FIRApp configure];
-
-
+  NSString *bundleIdentifier = [[NSBundle mainBundle] bundleIdentifier];
+  NSLog(@"bundle id%@",bundleIdentifier);
+  [self configureFirebaseWithAppID:(3)];
   RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];
   RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge
                                                    moduleName:@"RPlus"
@@ -67,5 +69,38 @@ static void InitializeFlipper(UIApplication *application) {
 #endif
 }
 
+
+- (void) configureFirebaseWithAppID:(int)appID{
+  NSLog(@"%d", appID);
+  NSString *plistName;
+  switch (appID) {
+    case 1:
+      plistName = @"GoogleService-Info-RewardsPlus";
+      break;
+    case 2:
+      plistName = @"GoogleService-Info-HMT";
+      break;
+    case 3:
+      plistName = @"GoogleService-Info-HMF";
+      break;
+    case 4:
+      plistName = @"GoogleService-Info-GDEES";
+      break;
+    case 5:
+      plistName = @"GoogleService-Info-Kandavika.plist";
+      break;
+    default:
+      plistName = @"GoogleService-Info-RewardsPlus";
+      break;
+  }
+  
+  NSLog(@"plistName%@",plistName);
+  NSString *filePath = [[NSBundle mainBundle] pathForResource:plistName ofType:@"plist"];
+  NSLog(@"filePath%@",filePath);
+  FIROptions *options = [[FIROptions alloc] initWithContentsOfFile:filePath];
+  NSLog(@"options%@",options);
+
+  [FIRApp configureWithOptions:options];
+}
 
 @end

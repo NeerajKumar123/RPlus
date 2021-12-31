@@ -7,19 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0700DE6627779FA100F33B67 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
-		0700DE6727779FA100F33B67 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		0700DE6927779FA100F33B67 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 075698FA2753B8D500E531F1 /* UserNotifications.framework */; };
-		0700DE6B27779FA100F33B67 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 079334AF27775028004C8CB3 /* GoogleService-Info.plist */; };
-		0700DE6C27779FA100F33B67 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		0700DE7D27779FCE00F33B67 /* MediaTest.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0700DE7B27779FCE00F33B67 /* MediaTest.xcassets */; };
-		0700DE7E27779FCE00F33B67 /* Test.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0700DE7C27779FCE00F33B67 /* Test.plist */; };
+		071CCEA0277ECD6D00412F05 /* GoogleService-Info-Kandavika.plist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 071CCE9F277ECD6D00412F05 /* GoogleService-Info-Kandavika.plist.plist */; };
 		075698FB2753B8D500E531F1 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 075698FA2753B8D500E531F1 /* UserNotifications.framework */; };
-		079334B027775029004C8CB3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 079334AF27775028004C8CB3 /* GoogleService-Info.plist */; };
+		07680642277DBAD6003D1C32 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
+		07680643277DBAD6003D1C32 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		07680645277DBAD6003D1C32 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 075698FA2753B8D500E531F1 /* UserNotifications.framework */; };
+		07680647277DBAD6003D1C32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		07680659277DBC1C003D1C32 /* Kandavika.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07680656277DBC1C003D1C32 /* Kandavika.plist */; };
+		0768065A277DBC1C003D1C32 /* MediaKandavika.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07680657277DBC1C003D1C32 /* MediaKandavika.xcassets */; };
+		07D55DA2277EE878000C6D9B /* GoogleService-Info-GDEES.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07D55DA1277EE877000C6D9B /* GoogleService-Info-GDEES.plist */; };
+		07D55DA9277EE889000C6D9B /* GoogleService-Info-HMF.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07D55DA8277EE889000C6D9B /* GoogleService-Info-HMF.plist */; };
+		07E2C8FE277D852900C61E7D /* GoogleService-Info-HMT.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07E2C8FD277D852900C61E7D /* GoogleService-Info-HMT.plist */; };
+		07E2C90A277D89C900C61E7D /* GoogleService-Info-RewardsPlus.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07E2C909277D89C900C61E7D /* GoogleService-Info-RewardsPlus.plist */; };
 		07F167F5277786BB0082015A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		07F167F6277786BB0082015A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		07F167F8277786BB0082015A /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 075698FA2753B8D500E531F1 /* UserNotifications.framework */; };
-		07F167FC277786BB0082015A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 079334AF27775028004C8CB3 /* GoogleService-Info.plist */; };
 		07F167FD277786BB0082015A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		07F1680B277787000082015A /* MediaHMT.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07F1680A277787000082015A /* MediaHMT.xcassets */; };
 		07F168112777876E0082015A /* HMT.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07F168102777876D0082015A /* HMT.plist */; };
@@ -28,12 +30,10 @@
 		07F1687827778E9C0082015A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		07F1687927778E9C0082015A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		07F1687B27778E9C0082015A /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 075698FA2753B8D500E531F1 /* UserNotifications.framework */; };
-		07F1687F27778E9C0082015A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 079334AF27775028004C8CB3 /* GoogleService-Info.plist */; };
 		07F1688127778E9C0082015A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		07F1689A27778FDB0082015A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		07F1689B27778FDB0082015A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		07F1689D27778FDB0082015A /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 075698FA2753B8D500E531F1 /* UserNotifications.framework */; };
-		07F168A127778FDB0082015A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 079334AF27775028004C8CB3 /* GoogleService-Info.plist */; };
 		07F168A527778FDB0082015A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		07F168B62777902F0082015A /* MediaHMF.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07F168B42777902F0082015A /* MediaHMF.xcassets */; };
 		07F168B72777902F0082015A /* HMF.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07F168B52777902F0082015A /* HMF.plist */; };
@@ -41,8 +41,8 @@
 		07F168E7277791360082015A /* GDEES.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07F1689027778F030082015A /* GDEES.plist */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		59A376221CE7221EF0CFCB9C /* libPods-HMF.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A0D88F699E7E532E8EB020AC /* libPods-HMF.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		EB1EEDF2E309B3C8BE30BF05 /* libPods-Test.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 260D55520B69E86690607852 /* libPods-Test.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,15 +58,20 @@
 /* Begin PBXFileReference section */
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* RPlusTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RPlusTests.m; sourceTree = "<group>"; };
-		0700DE7327779FA100F33B67 /* Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Test.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		0700DE7B27779FCE00F33B67 /* MediaTest.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MediaTest.xcassets; sourceTree = "<group>"; };
-		0700DE7C27779FCE00F33B67 /* Test.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Test.plist; sourceTree = "<group>"; };
+		071CCE9F277ECD6D00412F05 /* GoogleService-Info-Kandavika.plist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-Kandavika.plist.plist"; sourceTree = "<group>"; };
 		07457D722608F289005D672D /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = MaterialCommunityIcons.ttf; path = "../../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
 		075698F32753B5BB00E531F1 /* RPlus.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = RPlus.entitlements; path = RPlus/RPlus.entitlements; sourceTree = "<group>"; };
 		075698F42753B85E00E531F1 /* RNFirebase.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNFirebase.xcodeproj; path = "../node_modules/react-native-firebase/ios/RNFirebase.xcodeproj"; sourceTree = "<group>"; };
 		075698FA2753B8D500E531F1 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		0768064E277DBAD6003D1C32 /* Kandvika.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kandvika.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0768064F277DBAD6003D1C32 /* HMF copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "HMF copy-Info.plist"; path = "/Users/neeraj/Documents/RPNew/nhmtrn/ios/HMF copy-Info.plist"; sourceTree = "<absolute>"; };
+		07680656277DBC1C003D1C32 /* Kandavika.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Kandavika.plist; sourceTree = "<group>"; };
+		07680657277DBC1C003D1C32 /* MediaKandavika.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MediaKandavika.xcassets; sourceTree = "<group>"; };
 		07900BBC9657448389C978E0 /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
-		079334AF27775028004C8CB3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		07D55DA1277EE877000C6D9B /* GoogleService-Info-GDEES.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-GDEES.plist"; sourceTree = "<group>"; };
+		07D55DA8277EE889000C6D9B /* GoogleService-Info-HMF.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-HMF.plist"; sourceTree = "<group>"; };
+		07E2C8FD277D852900C61E7D /* GoogleService-Info-HMT.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-HMT.plist"; sourceTree = "<group>"; };
+		07E2C909277D89C900C61E7D /* GoogleService-Info-RewardsPlus.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-RewardsPlus.plist"; sourceTree = "<group>"; };
 		07F167E2277784230082015A /* MediaRPlus.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MediaRPlus.xcassets; sourceTree = "<group>"; };
 		07F16805277786BB0082015A /* HMT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HMT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07F1680A277787000082015A /* MediaHMT.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MediaHMT.xcassets; sourceTree = "<group>"; };
@@ -83,7 +88,7 @@
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = RPlus/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* RPlusInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = RPlusInfo.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = RPlus/main.m; sourceTree = "<group>"; };
-		260D55520B69E86690607852 /* libPods-Test.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Test.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		19D6D30F50C8306BBEE6ADF8 /* Pods-HMF.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HMF.debug.xcconfig"; path = "Target Support Files/Pods-HMF/Pods-HMF.debug.xcconfig"; sourceTree = "<group>"; };
 		372A79F749AF44789C645DE4 /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
 		5C7AE11CA1514C66996800CF /* Fontisto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Fontisto.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf"; sourceTree = "<group>"; };
 		62E1C6DA2F7B418AA21BD95A /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
@@ -92,14 +97,14 @@
 		6950573662964B40B4581799 /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = RPlus/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9201691099BA49D5931DAB3A /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
-		95CD2097458DD77C6355654F /* Pods-Test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test.debug.xcconfig"; path = "Target Support Files/Pods-Test/Pods-Test.debug.xcconfig"; sourceTree = "<group>"; };
+		A0D88F699E7E532E8EB020AC /* libPods-HMF.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HMF.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3995A3150AE7F9E8803F4A1 /* Pods-RPlus-RPlusTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RPlus-RPlusTests.debug.xcconfig"; path = "Target Support Files/Pods-RPlus-RPlusTests/Pods-RPlus-RPlusTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A59065560CD6FE97F5268D77 /* Pods-HMF.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HMF.release.xcconfig"; path = "Target Support Files/Pods-HMF/Pods-HMF.release.xcconfig"; sourceTree = "<group>"; };
 		A6CC269602504251B8AB8E02 /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Solid.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
 		A6D2DC922FDD49ABBD01E2B8 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
 		B36C1E65D4C34A8A81D104D4 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
 		B9168136E4DF4AFC810DDC06 /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Brands.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
 		CBF4E1497A034958B8168634 /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Regular.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
-		D2F04C9503B388AB13ECC7BC /* Pods-Test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test.release.xcconfig"; path = "Target Support Files/Pods-Test/Pods-Test.release.xcconfig"; sourceTree = "<group>"; };
 		D3D3E87DA89344FF91BFB1DB /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
 		D5B6940D1C2543E2A5279926 /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
 		D774FF804A864381A71E2025 /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
@@ -108,12 +113,11 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0700DE6827779FA100F33B67 /* Frameworks */ = {
+		07680644277DBAD6003D1C32 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0700DE6927779FA100F33B67 /* UserNotifications.framework in Frameworks */,
-				EB1EEDF2E309B3C8BE30BF05 /* libPods-Test.a in Frameworks */,
+				07680645277DBAD6003D1C32 /* UserNotifications.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				07F1689D27778FDB0082015A /* UserNotifications.framework in Frameworks */,
+				59A376221CE7221EF0CFCB9C /* libPods-HMF.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,15 +174,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		0700DE7A27779FCE00F33B67 /* Test */ = {
-			isa = PBXGroup;
-			children = (
-				0700DE7B27779FCE00F33B67 /* MediaTest.xcassets */,
-				0700DE7C27779FCE00F33B67 /* Test.plist */,
-			);
-			path = Test;
-			sourceTree = "<group>";
-		};
 		07457D712608F248005D672D /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -194,10 +190,21 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		07680655277DBBF3003D1C32 /* AdrishStoreTargetFiles */ = {
+			isa = PBXGroup;
+			children = (
+				071CCE9F277ECD6D00412F05 /* GoogleService-Info-Kandavika.plist.plist */,
+				07680656277DBC1C003D1C32 /* Kandavika.plist */,
+				07680657277DBC1C003D1C32 /* MediaKandavika.xcassets */,
+			);
+			path = AdrishStoreTargetFiles;
+			sourceTree = "<group>";
+		};
 		07F167E1277783FE0082015A /* RPlusTargetFiles */ = {
 			isa = PBXGroup;
 			children = (
 				07F167E2277784230082015A /* MediaRPlus.xcassets */,
+				07E2C909277D89C900C61E7D /* GoogleService-Info-RewardsPlus.plist */,
 				13B07FB61A68108700A75B9A /* RPlusInfo.plist */,
 			);
 			path = RPlusTargetFiles;
@@ -207,6 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				07F1680A277787000082015A /* MediaHMT.xcassets */,
+				07E2C8FD277D852900C61E7D /* GoogleService-Info-HMT.plist */,
 				07F168102777876D0082015A /* HMT.plist */,
 			);
 			path = HMTTargetFiles;
@@ -216,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				07F1688F27778F030082015A /* MediaGDEES.xcassets */,
+				07D55DA1277EE877000C6D9B /* GoogleService-Info-GDEES.plist */,
 				07F1689027778F030082015A /* GDEES.plist */,
 			);
 			path = GDEESTargetFiles;
@@ -225,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				07F168B42777902F0082015A /* MediaHMF.xcassets */,
+				07D55DA8277EE889000C6D9B /* GoogleService-Info-HMF.plist */,
 				07F168B52777902F0082015A /* HMF.plist */,
 			);
 			path = HMFTargetFiles;
@@ -271,7 +281,7 @@
 				075698FA2753B8D500E531F1 /* UserNotifications.framework */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				6675137F51A45297975DCBAA /* libPods-RPlus-RPlusTests.a */,
-				260D55520B69E86690607852 /* libPods-Test.a */,
+				A0D88F699E7E532E8EB020AC /* libPods-HMF.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -287,8 +297,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				079334AF27775028004C8CB3 /* GoogleService-Info.plist */,
-				0700DE7A27779FCE00F33B67 /* Test */,
+				07680655277DBBF3003D1C32 /* AdrishStoreTargetFiles */,
 				07F168B32777902F0082015A /* HMFTargetFiles */,
 				07F1688E27778F030082015A /* GDEESTargetFiles */,
 				07F16809277786E20082015A /* HMTTargetFiles */,
@@ -301,6 +310,7 @@
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				D75238E35561036A0885DA7F /* Pods */,
 				1DAA473E31244FC79E5A8E45 /* Resources */,
+				0768064F277DBAD6003D1C32 /* HMF copy-Info.plist */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -314,7 +324,7 @@
 				07F16805277786BB0082015A /* HMT.app */,
 				07F1688927778E9C0082015A /* GDEES.app */,
 				07F168AD27778FDB0082015A /* HMF.app */,
-				0700DE7327779FA100F33B67 /* Test.app */,
+				0768064E277DBAD6003D1C32 /* Kandvika.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -324,8 +334,8 @@
 			children = (
 				A3995A3150AE7F9E8803F4A1 /* Pods-RPlus-RPlusTests.debug.xcconfig */,
 				13A7264E1885B994E0CD8DF4 /* Pods-RPlus-RPlusTests.release.xcconfig */,
-				95CD2097458DD77C6355654F /* Pods-Test.debug.xcconfig */,
-				D2F04C9503B388AB13ECC7BC /* Pods-Test.release.xcconfig */,
+				19D6D30F50C8306BBEE6ADF8 /* Pods-HMF.debug.xcconfig */,
+				A59065560CD6FE97F5268D77 /* Pods-HMF.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -333,27 +343,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0700DE6327779FA100F33B67 /* Test */ = {
+		0768063F277DBAD6003D1C32 /* Kandvika */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0700DE7027779FA100F33B67 /* Build configuration list for PBXNativeTarget "Test" */;
+			buildConfigurationList = 0768064B277DBAD6003D1C32 /* Build configuration list for PBXNativeTarget "Kandvika" */;
 			buildPhases = (
-				7A6C9627F530849D448B8182 /* [CP] Check Pods Manifest.lock */,
-				0700DE6427779FA100F33B67 /* Start Packager */,
-				0700DE6527779FA100F33B67 /* Sources */,
-				0700DE6827779FA100F33B67 /* Frameworks */,
-				0700DE6A27779FA100F33B67 /* Resources */,
-				0700DE6F27779FA100F33B67 /* Bundle React Native code and images */,
-				70702C5F428C3CF1E4383D72 /* [CP] Embed Pods Frameworks */,
-				695D4FB1B7A66854DF976684 /* [CP] Copy Pods Resources */,
-				47A1ADCE1202656B6F75D30A /* [CP-User] [RNFB] Core Configuration */,
+				07680640277DBAD6003D1C32 /* Start Packager */,
+				07680641277DBAD6003D1C32 /* Sources */,
+				07680644277DBAD6003D1C32 /* Frameworks */,
+				07680646277DBAD6003D1C32 /* Resources */,
+				0768064A277DBAD6003D1C32 /* Bundle React Native code and images */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Test;
+			name = Kandvika;
 			productName = RPlus;
-			productReference = 0700DE7327779FA100F33B67 /* Test.app */;
+			productReference = 0768064E277DBAD6003D1C32 /* Kandvika.app */;
 			productType = "com.apple.product-type.application";
 		};
 		07F167F1277786BB0082015A /* HMT */ = {
@@ -398,11 +404,15 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 07F168AA27778FDB0082015A /* Build configuration list for PBXNativeTarget "HMF" */;
 			buildPhases = (
+				D3C7A35F6E5A9F0035B3EB01 /* [CP] Check Pods Manifest.lock */,
 				07F1689827778FDB0082015A /* Start Packager */,
 				07F1689927778FDB0082015A /* Sources */,
 				07F1689C27778FDB0082015A /* Frameworks */,
 				07F1689F27778FDB0082015A /* Resources */,
 				07F168A627778FDB0082015A /* Bundle React Native code and images */,
+				DD4785726FB061073B9F8792 /* [CP] Embed Pods Frameworks */,
+				FBEE1F1423BA3A6A9EF983C8 /* [CP] Copy Pods Resources */,
+				2F15B079F37A4D6944773ACE /* [CP-User] [RNFB] Core Configuration */,
 			);
 			buildRules = (
 			);
@@ -468,7 +478,7 @@
 				07F167F1277786BB0082015A /* HMT */,
 				07F1687427778E9C0082015A /* GDEES */,
 				07F1689627778FDB0082015A /* HMF */,
-				0700DE6327779FA100F33B67 /* Test */,
+				0768063F277DBAD6003D1C32 /* Kandvika */,
 			);
 		};
 /* End PBXProject section */
@@ -484,14 +494,14 @@
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
-		0700DE6A27779FA100F33B67 /* Resources */ = {
+		07680646277DBAD6003D1C32 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0700DE7E27779FCE00F33B67 /* Test.plist in Resources */,
-				0700DE7D27779FCE00F33B67 /* MediaTest.xcassets in Resources */,
-				0700DE6B27779FA100F33B67 /* GoogleService-Info.plist in Resources */,
-				0700DE6C27779FA100F33B67 /* LaunchScreen.storyboard in Resources */,
+				071CCEA0277ECD6D00412F05 /* GoogleService-Info-Kandavika.plist.plist in Resources */,
+				07680659277DBC1C003D1C32 /* Kandavika.plist in Resources */,
+				07680647277DBAD6003D1C32 /* LaunchScreen.storyboard in Resources */,
+				0768065A277DBC1C003D1C32 /* MediaKandavika.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,8 +510,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				07F1680B277787000082015A /* MediaHMT.xcassets in Resources */,
-				07F167FC277786BB0082015A /* GoogleService-Info.plist in Resources */,
 				07F168112777876E0082015A /* HMT.plist in Resources */,
+				07E2C8FE277D852900C61E7D /* GoogleService-Info-HMT.plist in Resources */,
 				07F167FD277786BB0082015A /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -510,7 +520,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07F1687F27778E9C0082015A /* GoogleService-Info.plist in Resources */,
+				07D55DA2277EE878000C6D9B /* GoogleService-Info-GDEES.plist in Resources */,
 				07F168E7277791360082015A /* GDEES.plist in Resources */,
 				07F168DE277791320082015A /* MediaGDEES.xcassets in Resources */,
 				07F1688127778E9C0082015A /* LaunchScreen.storyboard in Resources */,
@@ -521,8 +531,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07F168A127778FDB0082015A /* GoogleService-Info.plist in Resources */,
 				07F168A527778FDB0082015A /* LaunchScreen.storyboard in Resources */,
+				07D55DA9277EE889000C6D9B /* GoogleService-Info-HMF.plist in Resources */,
 				07F168B72777902F0082015A /* HMF.plist in Resources */,
 				07F168B62777902F0082015A /* MediaHMF.xcassets in Resources */,
 			);
@@ -532,9 +542,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				079334B027775029004C8CB3 /* GoogleService-Info.plist in Resources */,
 				07F16818277789630082015A /* MediaRPlus.xcassets in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
+				07E2C90A277D89C900C61E7D /* GoogleService-Info-RewardsPlus.plist in Resources */,
 				07F1681B277789980082015A /* RPlusInfo.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -556,7 +566,7 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nexport NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
-		0700DE6427779FA100F33B67 /* Start Packager */ = {
+		07680640277DBAD6003D1C32 /* Start Packager */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -575,7 +585,7 @@
 			shellScript = "export RCT_METRO_PORT=\"${RCT_METRO_PORT:=8081}\"\necho \"export RCT_METRO_PORT=${RCT_METRO_PORT}\" > \"${SRCROOT}/../node_modules/react-native/scripts/.packager.env\"\nif [ -z \"${RCT_NO_LAUNCH_PACKAGER+xxx}\" ] ; then\n  if nc -w 5 -z localhost ${RCT_METRO_PORT} ; then\n    if ! curl -s \"http://localhost:${RCT_METRO_PORT}/status\" | grep -q \"packager-status:running\" ; then\n      echo \"Port ${RCT_METRO_PORT} already in use, packager is either not running or not running correctly\"\n      exit 2\n    fi\n  else\n    open \"$SRCROOT/../node_modules/react-native/scripts/launchPackager.command\" || echo \"Can't start packager automatically\"\n  fi\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		0700DE6F27779FA100F33B67 /* Bundle React Native code and images */ = {
+		0768064A277DBAD6003D1C32 /* Bundle React Native code and images */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -688,7 +698,7 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nexport NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
-		47A1ADCE1202656B6F75D30A /* [CP-User] [RNFB] Core Configuration */ = {
+		2F15B079F37A4D6944773ACE /* [CP-User] [RNFB] Core Configuration */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -701,41 +711,7 @@
 			shellPath = /bin/sh;
 			shellScript = "#!/usr/bin/env bash\n#\n# Copyright (c) 2016-present Invertase Limited & Contributors\n#\n# Licensed under the Apache License, Version 2.0 (the \"License\");\n# you may not use this library except in compliance with the License.\n# You may obtain a copy of the License at\n#\n#   http://www.apache.org/licenses/LICENSE-2.0\n#\n# Unless required by applicable law or agreed to in writing, software\n# distributed under the License is distributed on an \"AS IS\" BASIS,\n# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n# See the License for the specific language governing permissions and\n# limitations under the License.\n#\nset -e\n\n_MAX_LOOKUPS=2;\n_SEARCH_RESULT=''\n_RN_ROOT_EXISTS=''\n_CURRENT_LOOKUPS=1\n_JSON_ROOT=\"'react-native'\"\n_JSON_FILE_NAME='firebase.json'\n_JSON_OUTPUT_BASE64='e30=' # { }\n_CURRENT_SEARCH_DIR=${PROJECT_DIR}\n_PLIST_BUDDY=/usr/libexec/PlistBuddy\n_TARGET_PLIST=\"${BUILT_PRODUCTS_DIR}/${INFOPLIST_PATH}\"\n_DSYM_PLIST=\"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Info.plist\"\n\n# plist arrays\n_PLIST_ENTRY_KEYS=()\n_PLIST_ENTRY_TYPES=()\n_PLIST_ENTRY_VALUES=()\n\nfunction setPlistValue {\n  echo \"info:      setting plist entry '$1' of type '$2' in file '$4'\"\n  ${_PLIST_BUDDY} -c \"Add :$1 $2 '$3'\" $4 || echo \"info:      '$1' already exists\"\n}\n\nfunction getFirebaseJsonKeyValue () {\n  if [[ ${_RN_ROOT_EXISTS} ]]; then\n    ruby -e \"require 'rubygems';require 'json'; output=JSON.parse('$1'); puts output[$_JSON_ROOT]['$2']\"\n  else\n    echo \"\"\n  fi;\n}\n\nfunction jsonBoolToYesNo () {\n  if [[ $1 == \"false\" ]]; then\n    echo \"NO\"\n  elif [[ $1 == \"true\" ]]; then\n    echo \"YES\"\n  else echo \"NO\"\n  fi\n}\n\necho \"info: -> RNFB build script started\"\necho \"info: 1) Locating ${_JSON_FILE_NAME} file:\"\n\nif [[ -z ${_CURRENT_SEARCH_DIR} ]]; then\n  _CURRENT_SEARCH_DIR=$(pwd)\nfi;\n\nwhile true; do\n  _CURRENT_SEARCH_DIR=$(dirname \"$_CURRENT_SEARCH_DIR\")\n  if [[ \"$_CURRENT_SEARCH_DIR\" == \"/\" ]] || [[ ${_CURRENT_LOOKUPS} -gt ${_MAX_LOOKUPS} ]]; then break; fi;\n  echo \"info:      ($_CURRENT_LOOKUPS of $_MAX_LOOKUPS) Searching in '$_CURRENT_SEARCH_DIR' for a ${_JSON_FILE_NAME} file.\"\n  _SEARCH_RESULT=$(find \"$_CURRENT_SEARCH_DIR\" -maxdepth 2 -name ${_JSON_FILE_NAME} -print | /usr/bin/head -n 1)\n  if [[ ${_SEARCH_RESULT} ]]; then\n    echo \"info:      ${_JSON_FILE_NAME} found at $_SEARCH_RESULT\"\n    break;\n  fi;\n  _CURRENT_LOOKUPS=$((_CURRENT_LOOKUPS+1))\ndone\n\nif [[ ${_SEARCH_RESULT} ]]; then\n  _JSON_OUTPUT_RAW=$(cat \"${_SEARCH_RESULT}\")\n  _RN_ROOT_EXISTS=$(ruby -e \"require 'rubygems';require 'json'; output=JSON.parse('$_JSON_OUTPUT_RAW'); puts output[$_JSON_ROOT]\" || echo '')\n\n  if [[ ${_RN_ROOT_EXISTS} ]]; then\n    _JSON_OUTPUT_BASE64=$(python -c 'import json,sys,base64;print(base64.b64encode(json.dumps(json.loads(open('\"'${_SEARCH_RESULT}'\"').read())['${_JSON_ROOT}'])))' || echo \"e30=\")\n  fi\n\n  _PLIST_ENTRY_KEYS+=(\"firebase_json_raw\")\n  _PLIST_ENTRY_TYPES+=(\"string\")\n  _PLIST_ENTRY_VALUES+=(\"$_JSON_OUTPUT_BASE64\")\n\n  # config.app_data_collection_default_enabled\n  _APP_DATA_COLLECTION_ENABLED=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"app_data_collection_default_enabled\")\n  if [[ $_APP_DATA_COLLECTION_ENABLED ]]; then\n    _PLIST_ENTRY_KEYS+=(\"FirebaseDataCollectionDefaultEnabled\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_APP_DATA_COLLECTION_ENABLED\")\")\n  fi\n\n  # config.analytics_auto_collection_enabled\n  _ANALYTICS_AUTO_COLLECTION=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"analytics_auto_collection_enabled\")\n  if [[ $_ANALYTICS_AUTO_COLLECTION ]]; then\n    _PLIST_ENTRY_KEYS+=(\"FIREBASE_ANALYTICS_COLLECTION_ENABLED\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_ANALYTICS_AUTO_COLLECTION\")\")\n  fi\n\n  # config.analytics_collection_deactivated\n  _ANALYTICS_DEACTIVATED=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"analytics_collection_deactivated\")\n  if [[ $_ANALYTICS_DEACTIVATED ]]; then\n    _PLIST_ENTRY_KEYS+=(\"FIREBASE_ANALYTICS_COLLECTION_DEACTIVATED\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_ANALYTICS_DEACTIVATED\")\")\n  fi\n\n  # config.analytics_idfv_collection_enabled\n  _ANALYTICS_IDFV_COLLECTION=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"analytics_idfv_collection_enabled\")\n  if [[ $_ANALYTICS_IDFV_COLLECTION ]]; then\n    _PLIST_ENTRY_KEYS+=(\"GOOGLE_ANALYTICS_IDFV_COLLECTION_ENABLED\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_ANALYTICS_IDFV_COLLECTION\")\")\n  fi\n\n  # config.analytics_default_allow_ad_personalization_signals\n  _ANALYTICS_PERSONALIZATION=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"analytics_default_allow_ad_personalization_signals\")\n  if [[ $_ANALYTICS_PERSONALIZATION ]]; then\n    _PLIST_ENTRY_KEYS+=(\"GOOGLE_ANALYTICS_DEFAULT_ALLOW_AD_PERSONALIZATION_SIGNALS\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_ANALYTICS_PERSONALIZATION\")\")\n  fi\n\n  # config.perf_auto_collection_enabled\n  _PERF_AUTO_COLLECTION=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"perf_auto_collection_enabled\")\n  if [[ $_PERF_AUTO_COLLECTION ]]; then\n    _PLIST_ENTRY_KEYS+=(\"firebase_performance_collection_enabled\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_PERF_AUTO_COLLECTION\")\")\n  fi\n\n  # config.perf_collection_deactivated\n  _PERF_DEACTIVATED=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"perf_collection_deactivated\")\n  if [[ $_PERF_DEACTIVATED ]]; then\n    _PLIST_ENTRY_KEYS+=(\"firebase_performance_collection_deactivated\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_PERF_DEACTIVATED\")\")\n  fi\n\n  # config.messaging_auto_init_enabled\n  _MESSAGING_AUTO_INIT=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"messaging_auto_init_enabled\")\n  if [[ $_MESSAGING_AUTO_INIT ]]; then\n    _PLIST_ENTRY_KEYS+=(\"FirebaseMessagingAutoInitEnabled\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_MESSAGING_AUTO_INIT\")\")\n  fi\n\n  # config.in_app_messaging_auto_colllection_enabled\n  _FIAM_AUTO_INIT=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"in_app_messaging_auto_collection_enabled\")\n  if [[ $_FIAM_AUTO_INIT ]]; then\n    _PLIST_ENTRY_KEYS+=(\"FirebaseInAppMessagingAutomaticDataCollectionEnabled\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_FIAM_AUTO_INIT\")\")\n  fi\n\n  # config.app_check_token_auto_refresh\n  _APP_CHECK_TOKEN_AUTO_REFRESH=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"app_check_token_auto_refresh\")\n  if [[ $_APP_CHECK_TOKEN_AUTO_REFRESH ]]; then\n    _PLIST_ENTRY_KEYS+=(\"FirebaseAppCheckTokenAutoRefreshEnabled\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_APP_CHECK_TOKEN_AUTO_REFRESH\")\")\n  fi\n\n  # config.crashlytics_disable_auto_disabler - undocumented for now - mainly for debugging, document if becomes useful\n  _CRASHLYTICS_AUTO_DISABLE_ENABLED=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"crashlytics_disable_auto_disabler\")\n  if [[ $_CRASHLYTICS_AUTO_DISABLE_ENABLED == \"true\" ]]; then\n    echo \"Disabled Crashlytics auto disabler.\" # do nothing\n  else\n    _PLIST_ENTRY_KEYS+=(\"FirebaseCrashlyticsCollectionEnabled\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"NO\")\n  fi\nelse\n  _PLIST_ENTRY_KEYS+=(\"firebase_json_raw\")\n  _PLIST_ENTRY_TYPES+=(\"string\")\n  _PLIST_ENTRY_VALUES+=(\"$_JSON_OUTPUT_BASE64\")\n  echo \"warning:   A firebase.json file was not found, whilst this file is optional it is recommended to include it to configure firebase services in React Native Firebase.\"\nfi;\n\necho \"info: 2) Injecting Info.plist entries: \"\n\n# Log out the keys we're adding\nfor i in \"${!_PLIST_ENTRY_KEYS[@]}\"; do\n  echo \"    ->  $i) ${_PLIST_ENTRY_KEYS[$i]}\" \"${_PLIST_ENTRY_TYPES[$i]}\" \"${_PLIST_ENTRY_VALUES[$i]}\"\ndone\n\nfor plist in \"${_TARGET_PLIST}\" \"${_DSYM_PLIST}\" ; do\n  if [[ -f \"${plist}\" ]]; then\n\n    # paths with spaces break the call to setPlistValue. temporarily modify\n    # the shell internal field separator variable (IFS), which normally\n    # includes spaces, to consist only of line breaks\n    oldifs=$IFS\n    IFS=\"\n\"\n\n    for i in \"${!_PLIST_ENTRY_KEYS[@]}\"; do\n      setPlistValue \"${_PLIST_ENTRY_KEYS[$i]}\" \"${_PLIST_ENTRY_TYPES[$i]}\" \"${_PLIST_ENTRY_VALUES[$i]}\" \"${plist}\"\n    done\n\n    # restore the original internal field separator value\n    IFS=$oldifs\n  else\n    echo \"warning:   A Info.plist build output file was not found (${plist})\"\n  fi\ndone\n\necho \"info: <- RNFB build script finished\"\n";
 		};
-		695D4FB1B7A66854DF976684 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Test/Pods-Test-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Test/Pods-Test-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Test/Pods-Test-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		70702C5F428C3CF1E4383D72 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Test/Pods-Test-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Test/Pods-Test-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Test/Pods-Test-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7A6C9627F530849D448B8182 /* [CP] Check Pods Manifest.lock */ = {
+		D3C7A35F6E5A9F0035B3EB01 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -750,11 +726,45 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Test-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-HMF-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DD4785726FB061073B9F8792 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HMF/Pods-HMF-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HMF/Pods-HMF-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HMF/Pods-HMF-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FBEE1F1423BA3A6A9EF983C8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HMF/Pods-HMF-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HMF/Pods-HMF-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HMF/Pods-HMF-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -779,12 +789,12 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		0700DE6527779FA100F33B67 /* Sources */ = {
+		07680641277DBAD6003D1C32 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0700DE6627779FA100F33B67 /* AppDelegate.m in Sources */,
-				0700DE6727779FA100F33B67 /* main.m in Sources */,
+				07680642277DBAD6003D1C32 /* AppDelegate.m in Sources */,
+				07680643277DBAD6003D1C32 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -827,15 +837,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		0700DE7127779FA100F33B67 /* Debug */ = {
+		0768064C277DBAD6003D1C32 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 95CD2097458DD77C6355654F /* Pods-Test.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = RPlus/RPlus.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: APPZIAA SOFTLABS PRIVATE LIMITED (N9T6K48WRZ)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: APPZIAA SOFTLABS PRIVATE LIMITED (N9T6K48WRZ)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Avinash K Jha (378LT7JJLS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Avinash K Jha (378LT7JJLS)";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = N9T6K48WRZ;
@@ -880,7 +889,7 @@
 					"\"$(PODS_ROOT)/Headers/Private/React-Core\"",
 					"$(SRCROOT)/../node_modules/react-native-firebase/ios/RNFirebase",
 				);
-				INFOPLIST_FILE = Test/Test.plist;
+				INFOPLIST_FILE = AdrishStoreTargetFiles/Kandavika.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -892,23 +901,22 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.test.test;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rplus.Kandavika;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = HMTAPNsDist_25Dec21;
+				PROVISIONING_PROFILE_SPECIFIER = Kandavika_Dev_APNs_31Dec21;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
-		0700DE7227779FA100F33B67 /* Release */ = {
+		0768064D277DBAD6003D1C32 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D2F04C9503B388AB13ECC7BC /* Pods-Test.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = RPlus/RPlus.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: APPZIAA SOFTLABS PRIVATE LIMITED (N9T6K48WRZ)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Avinash K Jha (378LT7JJLS)";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = N9T6K48WRZ;
@@ -953,7 +961,7 @@
 					"\"$(PODS_ROOT)/Headers/Private/React-Core\"",
 					"$(SRCROOT)/../node_modules/react-native-firebase/ios/RNFirebase",
 				);
-				INFOPLIST_FILE = Test/Test.plist;
+				INFOPLIST_FILE = AdrishStoreTargetFiles/Kandavika.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -965,9 +973,9 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.test.test;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rplus.Kandavika;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = HMTAPNsDist_25Dec21;
+				PROVISIONING_PROFILE_SPECIFIER = Kandavika_Dev_APNs_31Dec21;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -982,7 +990,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: APPZIAA SOFTLABS PRIVATE LIMITED (N9T6K48WRZ)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: APPZIAA SOFTLABS PRIVATE LIMITED (N9T6K48WRZ)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = N9T6K48WRZ;
 				ENABLE_BITCODE = NO;
 				HEADER_SEARCH_PATHS = (
@@ -1054,7 +1062,7 @@
 				CODE_SIGN_ENTITLEMENTS = RPlus/RPlus.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: APPZIAA SOFTLABS PRIVATE LIMITED (N9T6K48WRZ)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = N9T6K48WRZ;
 				ENABLE_BITCODE = NO;
 				HEADER_SEARCH_PATHS = (
@@ -1263,12 +1271,13 @@
 		};
 		07F168AB27778FDB0082015A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 19D6D30F50C8306BBEE6ADF8 /* Pods-HMF.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = RPlus/RPlus.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: APPZIAA SOFTLABS PRIVATE LIMITED (N9T6K48WRZ)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: APPZIAA SOFTLABS PRIVATE LIMITED (N9T6K48WRZ)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Avinash K Jha (378LT7JJLS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Avinash K Jha (378LT7JJLS)";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = N9T6K48WRZ;
@@ -1325,9 +1334,9 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Home-Fresh-Mart";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rplus.hmf;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = HMTAPNsDist_25Dec21;
+				PROVISIONING_PROFILE_SPECIFIER = HMF_DevAPNs_31Dec21;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1336,11 +1345,12 @@
 		};
 		07F168AC27778FDB0082015A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A59065560CD6FE97F5268D77 /* Pods-HMF.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = RPlus/RPlus.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: APPZIAA SOFTLABS PRIVATE LIMITED (N9T6K48WRZ)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Avinash K Jha (378LT7JJLS)";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = N9T6K48WRZ;
@@ -1397,9 +1407,9 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Home-Fresh-Mart";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rplus.hmf;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = HMTAPNsDist_25Dec21;
+				PROVISIONING_PROFILE_SPECIFIER = HMF_DevAPNs_31Dec21;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -1675,11 +1685,11 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0700DE7027779FA100F33B67 /* Build configuration list for PBXNativeTarget "Test" */ = {
+		0768064B277DBAD6003D1C32 /* Build configuration list for PBXNativeTarget "Kandvika" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0700DE7127779FA100F33B67 /* Debug */,
-				0700DE7227779FA100F33B67 /* Release */,
+				0768064C277DBAD6003D1C32 /* Debug */,
+				0768064D277DBAD6003D1C32 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

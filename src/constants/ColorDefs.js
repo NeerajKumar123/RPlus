@@ -95,3 +95,5 @@ export const THEMME_CLR_RPLUS = '#171F58'
 export const THEMME_CLR_HMT = '#51AF5E'
 export const THEMME_CLR_HFM = '#233C42'
 export const THEMME_CLR_GDEES = '#2C3E33'
+export const THEMME_CLR_KANVIKA = '#E4E44E'
+

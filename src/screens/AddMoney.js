@@ -32,11 +32,11 @@ const ref_points_header = require('../../assets/ref_points_header.png');
 const ref_cash_header = require('../../assets/ref_cash_header.png');
 const car_circular_loader = require('../../assets/car_circular_loader.json');
 import Lottie from 'lottie-react-native';
-import AppConfigData from '../constants/AppConfigData'
+import AppConfigData, {PaymentKeys} from '../constants/AppConfigData'
 
 const AddMoney = props => {
   const AppData = AppConfigData()
-
+  console.log('PaymentKeys',PaymentKeys)
   const navigation = useNavigation();
   const {userDetailsRes, amount = 0} = props?.route?.params;
   const [selectedAmount, setSelectedAmount] = useState(amount);

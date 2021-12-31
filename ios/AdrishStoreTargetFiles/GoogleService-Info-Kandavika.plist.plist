@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyB9xxKvRFRnICsG3nXGdwCMb8wCniVQYj4</string>
+	<key>BUNDLE_ID</key>
+	<string>com.rplus.Kandavika</string>
+	<key>CLIENT_ID</key>
+	<string>962145287337-qnk32amti3p8ni2v01p9geqdmved010l.apps.googleusercontent.com</string>
+	<key>GCM_SENDER_ID</key>
+	<string>962145287337</string>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:962145287337:ios:babbdefb0f934f910d3db8</string>
+	<key>IS_ADS_ENABLED</key>
+	<false/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>PROJECT_ID</key>
+	<string>kandvika-adrish</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.962145287337-qnk32amti3p8ni2v01p9geqdmved010l</string>
+	<key>STORAGE_BUCKET</key>
+	<string>kandvika-adrish.appspot.com</string>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
+</dict>
+</plist>

@@ -1,7 +1,16 @@
 import {AppID} from '../../app.json';
 import * as Colors from '../constants/ColorDefs';
+import DeviceInfo from 'react-native-device-info';
+
+export const PaymentKeys = {
+  Rplus:'rzp_live_7NXmXoE72iTqIo',
+  HMT:'rzp_live_V6l7WnPe1dfl6E'
+}
+
 export default function GetAppConfigData() {
-  if (AppID == 1) {
+  const appid = getAppID()
+  console.log('getAppID',appid)
+  if (appid == 1) {
     //rewardPlusApp
     return {
       cust_email: 'cs@rewardsplus.in',
@@ -20,7 +29,7 @@ export default function GetAppConfigData() {
       AppHeaderGradidentColors :[Colors.CLR_033AA4, Colors.CLR_0095D4],
       app_theme:Colors.THEMME_CLR_RPLUS
     };
-  } else if (AppID == 2) {
+  } else if (appid == 2) {
     //Hmt App
     return {
       cust_email: 'hmtit@honeymoneytop.com',
@@ -39,7 +48,7 @@ export default function GetAppConfigData() {
       AppHeaderGradidentColors :[Colors.CLR_033AA4, Colors.CLR_0095D4],
       app_theme:Colors.THEMME_CLR_HMT
     };
-  } else if (AppID == 3) {
+  } else if (appid == 3) {
     //Hmf App
     return {
       cust_email: 'cs@homefreshmart.in',
@@ -58,7 +67,7 @@ export default function GetAppConfigData() {
       AppHeaderGradidentColors :[Colors.CLR_033AA4, Colors.CLR_0095D4],
       app_theme:Colors.THEMME_CLR_HFM
     };
-  } else if (AppID == 4) {
+  } else if (appid == 4) {
     //Gdees App
     return {
       cust_email: 'cs@gdeessupermart.com',
@@ -77,7 +86,46 @@ export default function GetAppConfigData() {
       AppHeaderGradidentColors :[Colors.CLR_033AA4, Colors.CLR_0095D4],
       app_theme:Colors.THEMME_CLR_GDEES
     };
+  }else if (appid == 5) {
+    //Gdees App
+    return {
+      cust_email:"cs@anandkand.com",
+      cust_mobile_whatspp: "9971197671",
+      cust_mobile_call: "9717114434",
+      title_alert:"Kandavika adrish",
+      wallet_app_name: 'Kandavika adrish',
+      payment_key: 'rzp_live_7NXmXoE72iTqIo',
+      isBrandLogoNeeded: false,
+      storeListingName: 'adrishStore',
+      appStoreURL: 'http://itunes.apple.com/app/id1576051283',
+      bundle:'com.rplus.Kandavika',
+      app_store_name:'Kandavika adrish',
+      app_version:"1.0",
+      bundle_version:"1",
+      AppHeaderGradidentColors :[Colors.CLR_033AA4, Colors.CLR_0095D4],
+      app_theme:Colors.THEMME_CLR_KANVIKA
+    };
   }
+}
+
+
+const getAppID = () =>{
+  let bundleId = DeviceInfo.getBundleId();
+  console.log('getUniqueId, getManufacturer ', bundleId)
+  let appID = 10
+  if(bundleId == 'com.RewardsPlus.Rplus'){
+    appID = 1
+  }else if(bundleId == 'com.honeymoneytop.honeymoneytop'){
+    appID = 2
+  }else if(bundleId == 'com.rplus.hmf'){
+    appID = 3
+  }else if(bundleId == 'com.rplus.gdees'){
+    appID = 4 
+  }
+  else if(bundleId == 'com.rplus.Kandavika'){
+    appID = 5
+  }
+  return appID
 }
 
 //Testing data

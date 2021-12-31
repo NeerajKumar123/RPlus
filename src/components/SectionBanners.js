@@ -9,7 +9,7 @@ const SectionBanners = props => {
       horizontal={true}
       showsHorizontalScrollIndicator={false}
       ItemSeparatorComponent={() => <View style={{height: 10, width: 20}} />}
-      style={{paddingVertical: 5,marginTop:10, borderRadius:4}}
+      style={{paddingVertical: 5,marginTop:10, borderRadius:4, marginHorizontal:2}}
       keyExtractor={(item, index) => 'key_' + index}
       data={sectionBanners}
       renderItem={({item}) => {

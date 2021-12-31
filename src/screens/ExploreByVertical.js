@@ -38,6 +38,7 @@ const ExploreByVertical = props => {
   const [alreadyFetchedSubcats, setAlreadyFetchedSubcats] = useState([])
 
   // 
+  console.log('vertical',vertical)
   const details = props?.route?.params;
   const level = details?.level
   let showCats = true
@@ -64,9 +65,11 @@ const ExploreByVertical = props => {
   }, [isFocused]);
 
   useEffect(() => {
+    console.log('showCats',showCats, showSubCats)
     if(!showCats && !showSubCats){
       setSelectedCategory({category_id:vertical?.category_id});
       setSelectedSubCategory({subcategory_id:vertical?.subcategory_id});
+      global.subcategory = {subcategory_id:vertical?.subcategory_id}
     }else if(!showCats && showSubCats){
       setSelectedCategory({category_id:vertical?.category_id});
     }else{
@@ -92,6 +95,7 @@ const ExploreByVertical = props => {
         setSubCategories(savedSubcats);
         setSelectedSubCategory(global.subcategory ?  global.subcategory : savedSubcats?.[0]);
       }else{
+        console.log('selectedCategory1111',selectedCategory)
         setIsLoading(true);
         getCategoryBySubCategory(
           {store_id: storeID, category_id: selectedCategory?.category_id},
@@ -113,6 +117,7 @@ const ExploreByVertical = props => {
 
   useEffect(() => {
     if (selectedSubCategory) {
+      console.log('selectedSubCategory',selectedSubCategory)
       const savedProducts = checkIfProductsAlreadyFetched(selectedCategory,selectedSubCategory)
       if(savedProducts){
         setProducts(savedProducts);
