@@ -38,7 +38,6 @@ const ExploreByVertical = props => {
   const [alreadyFetchedSubcats, setAlreadyFetchedSubcats] = useState([])
 
   // 
-  console.log('vertical',vertical)
   const details = props?.route?.params;
   const level = details?.level
   let showCats = true

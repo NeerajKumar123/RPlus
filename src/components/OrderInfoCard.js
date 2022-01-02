@@ -23,17 +23,18 @@ const OrderInfoCard = props => {
     q_number = 3,
     uname = '',
     delivery_stage,
+    out_for_delivery_action = 0,
     quantity,
     image,
     mrp,
     selling_price,
-    cancel_status = 0
+    cancel_status = 0,
   } = props.item;
   let off = ((mrp - selling_price) / mrp) * 100;
   off = off.toFixed(0);
   off = `${off} % OFF`;
 
-  const {store_name} = global.storeInfo
+  const {store_name} = global.storeInfo;
   return (
     <View
       key={order_id}
@@ -61,10 +62,10 @@ const OrderInfoCard = props => {
       </Text>
       <View style={{marginTop: 10, flexDirection: 'row'}}>
         <Image
-        resizeMode = 'contain'
+          resizeMode="contain"
           style={{width: 60, height: 80}}
           source={{
-            uri:image,
+            uri: image,
           }}
         />
         <View
@@ -81,50 +82,54 @@ const OrderInfoCard = props => {
             }}>
             {product_name}
           </Text>
-          <View style={{flexDirection: 'row', justifyContent: 'space-between', alignItems:'center'}}>
-            <Text
+          <View
             style={{
-              color: Colors.CLR_16253B,
-              fontSize: 14,
-              marginVertical: 7,
-              fontWeight: 'bold',
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+              alignItems: 'center',
             }}>
-            {`Rs. ${selling_price}`}
-            </Text>
             <Text
-            style={{
-              color: Colors.GRAY,
-              fontSize: 14,
-              marginVertical: 7,
-              fontWeight: 'bold',
-              textDecorationLine:'line-through'
-            }}>
-            {`Rs. ${mrp}`}
-            </Text>
-            <View>
-            <Text
-            style={{
-              borderRadius: 4,
-              borderWidth: 1,
-              borderColor: Colors.GREEN,
-              paddingHorizontal: 5,
-              fontWeight: 'bold',
-              fontSize: 12,
-              color: Colors.GREEN,
-            }}>
-            {off}
-          </Text>
-          </View>
-            
-          </View>
-          <Text
               style={{
                 color: Colors.CLR_16253B,
-                fontSize: 13,
+                fontSize: 14,
                 marginVertical: 7,
+                fontWeight: 'bold',
               }}>
-              {`Qty : ${quantity}`}
+              {`Rs. ${selling_price}`}
             </Text>
+            <Text
+              style={{
+                color: Colors.GRAY,
+                fontSize: 14,
+                marginVertical: 7,
+                fontWeight: 'bold',
+                textDecorationLine: 'line-through',
+              }}>
+              {`Rs. ${mrp}`}
+            </Text>
+            <View>
+              <Text
+                style={{
+                  borderRadius: 4,
+                  borderWidth: 1,
+                  borderColor: Colors.GREEN,
+                  paddingHorizontal: 5,
+                  fontWeight: 'bold',
+                  fontSize: 12,
+                  color: Colors.GREEN,
+                }}>
+                {off}
+              </Text>
+            </View>
+          </View>
+          <Text
+            style={{
+              color: Colors.CLR_16253B,
+              fontSize: 13,
+              marginVertical: 7,
+            }}>
+            {`Qty : ${quantity}`}
+          </Text>
           <Text
             style={{
               color: Colors.CLR_16253B,
@@ -158,28 +163,42 @@ const OrderInfoCard = props => {
           justifyContent: 'flex-end',
           alignItems: 'center',
         }}>
-        <TouchableOpacity
-          disabled = {cancel_status }
-          style={{
-            height: 40,
-            justifyContent: 'center',
-            alignItems: 'center',
-            paddingHorizontal: 15,
-            marginRight: 30,
-          }}
-          onPress={() => {
-            props.onCancelPressed && props.onCancelPressed();
-          }}>
+        {out_for_delivery_action ? (
           <Text
             style={{
-              color: Colors.CLR_DD5E5E,
+              color: Colors.GREEN,
               fontWeight: 'bold',
               fontSize: 14,
-              opacity : cancel_status ? .7 : 1.0
+              marginRight: 30,
+              opacity: 1.0,
             }}>
-            {cancel_status ? 'Cancelled' : 'Cancel'}
+            Delivered
           </Text>
-        </TouchableOpacity>
+        ) : (
+          <TouchableOpacity
+            disabled={cancel_status}
+            style={{
+              height: 40,
+              justifyContent: 'center',
+              alignItems: 'center',
+              paddingHorizontal: 15,
+              marginRight: 30,
+            }}
+            onPress={() => {
+              props.onCancelPressed && props.onCancelPressed();
+            }}>
+            <Text
+              style={{
+                color: Colors.CLR_DD5E5E,
+                fontWeight: 'bold',
+                fontSize: 14,
+                opacity: cancel_status ? 0.7 : 1.0,
+              }}>
+              {cancel_status ? 'Cancelled' : 'Cancel'}
+            </Text>
+          </TouchableOpacity>
+        )}
+
         <TouchableOpacity
           style={{
             height: 40,

@@ -73,7 +73,6 @@ const OrderDetails = props => {
     };
     setIsLoading(true);
     getOrderDetails(params, res => {
-      console.log('res', res);
       setOrderDetails(res?.payload_orderDetails);
       setOrderItems(res?.payload_orderDetails?.orderdetails);
       setTimeout(() => {

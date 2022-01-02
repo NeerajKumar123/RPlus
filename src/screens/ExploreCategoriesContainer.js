@@ -45,6 +45,21 @@ const ExploreCategoriesContainer = () => {
     setSelectedVertical(verticals && verticals[0])
   }, [])
 
+  const doNavigate = item => {
+    const isSubCategory = item.category_id && item.subcategory_id;
+   if (isSubCategory) {
+      global.vertical = item;
+      global.category = undefined;
+      global.subcategory = undefined;
+      let decidedLevel = 4;
+      if (isSubCategory) {
+        decidedLevel = 2;
+      }
+      navigation.navigate('ExploreByVertical', {level: decidedLevel});
+    }
+  };
+
+
   return (
     <View
       style={{
@@ -85,11 +100,7 @@ const ExploreCategoriesContainer = () => {
               item={item}
               index={index}
               onCategorySelected={(subcat) => {
-                setSelectedCategory(item);
-                global.category = item
-                global.subcategory = subcat
-                global.vertical = selectedVertical
-                navigation.navigate('ExploreByVertical',{level:2});
+                doNavigate(subcat)
               }}
             />
           )}

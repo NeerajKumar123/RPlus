@@ -47,7 +47,7 @@ const AddNewAddress = props => {
     state = '',
     street = '',
     landmark = '',
-    address_type = 'home',
+    address_type = {name:'home'},
     address_id = 0,
     email
   } = address && address;
@@ -215,6 +215,13 @@ const AddNewAddress = props => {
     } else if (mhouseNo == undefined || mhouseNo.length < 1) {
       isValidForm = false;
       Alert.alert(AppData.title_alert, 'Please enter valid house number.');
+    }else if (mlandmark == undefined || mlandmark?.length < 1) {
+      isValidForm = false;
+      Alert.alert(AppData.title_alert, 'Please enter valid Landmark.');
+    }
+    else if (maddressType == undefined || maddressType?.name?.length < 1) {
+      isValidForm = false;
+      Alert.alert(AppData.title_alert, 'Please enter valid Address Type.');
     }
     return isValidForm;
   };
@@ -420,7 +427,7 @@ const Footer = props => {
   );
 };
 const AddressTypeBlock = props => {
-  const { addressType } = props;
+  const { addressType = { name: 'Home' }} = props;
   const types = [{ name: 'Home' }, { name: 'Office' }, { name: 'Other' }];
   return (
     <View
@@ -440,6 +447,7 @@ const AddressTypeBlock = props => {
         }}>
         Address Type
       </Text>
+      {console.log('types',types,addressType)}
       <View style={{ flexDirection: 'row', marginTop: 10 }}>
         {types.map(item => {
           return (
@@ -456,8 +464,7 @@ const AddressTypeBlock = props => {
                 props.typeSelected(item.name);
               }}>
               <Icon
-                name={
-                  item.name && item.name.toLowerCase() == addressType.toLowerCase()
+                name={item.name?.toLowerCase() == addressType?.toLowerCase()
                     ? 'radiobox-marked'
                     : 'radiobox-blank'
                 }

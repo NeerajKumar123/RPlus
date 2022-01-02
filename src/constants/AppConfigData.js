@@ -9,7 +9,6 @@ export const PaymentKeys = {
 
 export default function GetAppConfigData() {
   const appid = getAppID()
-  console.log('getAppID',appid)
   if (appid == 1) {
     //rewardPlusApp
     return {
@@ -111,7 +110,6 @@ export default function GetAppConfigData() {
 
 const getAppID = () =>{
   let bundleId = DeviceInfo.getBundleId();
-  console.log('getUniqueId, getManufacturer ', bundleId)
   let appID = 10
   if(bundleId == 'com.RewardsPlus.Rplus'){
     appID = 1

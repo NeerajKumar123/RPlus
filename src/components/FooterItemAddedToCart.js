@@ -13,7 +13,7 @@ const FooterItemAddedToCart = props => {
   return (
     <View
       style={{
-        height: 62,
+        height: 75,
         width: '100%',
         flexDirection: 'row',
       }}>

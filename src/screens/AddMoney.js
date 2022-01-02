@@ -36,7 +36,6 @@ import AppConfigData, {PaymentKeys} from '../constants/AppConfigData'
 
 const AddMoney = props => {
   const AppData = AppConfigData()
-  console.log('PaymentKeys',PaymentKeys)
   const navigation = useNavigation();
   const {userDetailsRes, amount = 0} = props?.route?.params;
   const [selectedAmount, setSelectedAmount] = useState(amount);

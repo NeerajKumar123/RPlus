@@ -38,9 +38,7 @@ static void InitializeFlipper(UIApplication *application) {
 #ifdef FB_SONARKIT_ENABLED
   InitializeFlipper(application);
 #endif
-  NSString *bundleIdentifier = [[NSBundle mainBundle] bundleIdentifier];
-  NSLog(@"bundle id%@",bundleIdentifier);
-  [self configureFirebaseWithAppID:(3)];
+  [self configureFirebaseWithAppID:(5)];
   RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];
   RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge
                                                    moduleName:@"RPlus"
@@ -87,7 +85,7 @@ static void InitializeFlipper(UIApplication *application) {
       plistName = @"GoogleService-Info-GDEES";
       break;
     case 5:
-      plistName = @"GoogleService-Info-Kandavika.plist";
+      plistName = @"GoogleService-Info-Kandavika";
       break;
     default:
       plistName = @"GoogleService-Info-RewardsPlus";
@@ -96,10 +94,7 @@ static void InitializeFlipper(UIApplication *application) {
   
   NSLog(@"plistName%@",plistName);
   NSString *filePath = [[NSBundle mainBundle] pathForResource:plistName ofType:@"plist"];
-  NSLog(@"filePath%@",filePath);
   FIROptions *options = [[FIROptions alloc] initWithContentsOfFile:filePath];
-  NSLog(@"options%@",options);
-
   [FIRApp configureWithOptions:options];
 }
 

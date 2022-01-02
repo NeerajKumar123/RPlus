@@ -34,11 +34,10 @@ import TermsAndConditions from '../screens/TermsAndConditions';
 import HowItWorks from '../screens/HowItWorks';
 import RPWebpage from '../screens/RPWebpage';
 import Notification from '../screens/Notification';
+import DeviceInfo from 'react-native-device-info';
 
 import {View, Image} from 'react-native';
 import * as Storage from '../helpers/RPStorage';
-var launch = require('../../ios/launch.png');
-
 const Stack = createStackNavigator();
 const MyStack = () => {
 
@@ -64,13 +63,35 @@ const MyStack = () => {
     });
   }, []);
 
+  const getAppLaunchImage = () =>{
+    let bundleId = DeviceInfo.getBundleId();
+    console.log('bundleId',bundleId)
+    // let launch = require('../../ios/AdrishStoreTargetFiles/MediaKandavika.xcassets/launch.imageset/launch.png');
+    let launch;
+    if(bundleId == 'com.RewardsPlus.Rplus'){
+      launch = require('../../ios/RPlusTargetFiles/MediaRPlus.xcassets/launch.imageset/launch.png');
+    }else if(bundleId == 'com.honeymoneytop.honeymoneytop'){
+      launch = require('../../ios/HMTTargetFiles/MediaHMT.xcassets/launch.imageset/launch.png');
+    }else if(bundleId == 'com.rplus.hmf'){
+      launch = require('../../ios/HMFTargetFiles/MediaHMF.xcassets/launch.imageset/launch.png');
+    }else if(bundleId == 'com.rplus.gdees'){
+      launch = require('../../ios/GDEESTargetFiles/MediaGDEES.xcassets/launch.imageset/launch.png');
+    }
+    else if(bundleId == 'com.rplus.Kandavika'){
+      launch = require('../../ios/AdrishStoreTargetFiles/MediaKandavika.xcassets/launch.imageset/launch.png');
+    }
+    console.log('launch====>',launch)
+    return launch
+  }
+
+
   if (!isReady)
     return (
       <View style={{flex: 1}}>
         <Image
           resizeMode="cover"
           style={{height: '100%', width: '100%'}}
-          source={launch}
+          source={getAppLaunchImage()}
         />
       </View>
     );
