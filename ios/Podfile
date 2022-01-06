@@ -9,7 +9,8 @@ platform :ios, '12.1'
 #GDEES
 #HMF
 #Kandvika
-target 'Kandvika' do
+#BudgetSuperMarket
+target 'BudgetSuperMarket' do
   config = use_native_modules!
 
   use_react_native!(

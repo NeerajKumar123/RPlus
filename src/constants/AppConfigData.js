@@ -1,4 +1,3 @@
-import {AppID} from '../../app.json';
 import * as Colors from '../constants/ColorDefs';
 import DeviceInfo from 'react-native-device-info';
 
@@ -26,7 +25,7 @@ export default function GetAppConfigData() {
       app_version:"1.0.3",
       bundle_version:"6",
       AppHeaderGradidentColors :[Colors.CLR_033AA4, Colors.CLR_0095D4],
-      app_theme:Colors.THEMME_CLR_RPLUS
+      app_theme:Colors.THEME_CLR_RPLUS
     };
   } else if (appid == 2) {
     //Hmt App
@@ -45,7 +44,7 @@ export default function GetAppConfigData() {
       app_version:"1.6",
       bundle_version:"7",
       AppHeaderGradidentColors :[Colors.CLR_033AA4, Colors.CLR_0095D4],
-      app_theme:Colors.THEMME_CLR_HMT
+      app_theme:Colors.THEME_CLR_HMT
     };
   } else if (appid == 3) {
     //Hmf App
@@ -64,7 +63,7 @@ export default function GetAppConfigData() {
       app_version:"1.0",
       bundle_version:"1",
       AppHeaderGradidentColors :[Colors.CLR_033AA4, Colors.CLR_0095D4],
-      app_theme:Colors.THEMME_CLR_HFM
+      app_theme:Colors.THEME_CLR_HFM
     };
   } else if (appid == 4) {
     //Gdees App
@@ -83,7 +82,7 @@ export default function GetAppConfigData() {
       app_version:"1.0",
       bundle_version:"1",
       AppHeaderGradidentColors :[Colors.CLR_033AA4, Colors.CLR_0095D4],
-      app_theme:Colors.THEMME_CLR_GDEES
+      app_theme:Colors.THEME_CLR_GDEES
     };
   }else if (appid == 5) {
     //Gdees App
@@ -102,7 +101,45 @@ export default function GetAppConfigData() {
       app_version:"1.0",
       bundle_version:"1",
       AppHeaderGradidentColors :[Colors.CLR_033AA4, Colors.CLR_0095D4],
-      app_theme:Colors.THEMME_CLR_KANVIKA
+      app_theme:Colors.THEME_CLR_KANVIKA
+    };
+  }else if (appid == 6) {
+    //Gdees App
+    return {
+      cust_email:"cs@budget.com",
+      cust_mobile_whatspp: "9971197671",
+      cust_mobile_call: "9717114434",
+      title_alert:"Budget Super Market",
+      wallet_app_name: 'Budget Super Market',
+      payment_key: 'rzp_live_7NXmXoE72iTqIo',
+      isBrandLogoNeeded: false,
+      storeListingName: 'budgetStore',
+      appStoreURL: 'http://itunes.apple.com',
+      bundle:'com.budget.bms',
+      app_store_name:'Budget Super Market',
+      app_version:"1.0",
+      bundle_version:"1",
+      AppHeaderGradidentColors :[Colors.CLR_033AA4, Colors.CLR_0095D4],
+      app_theme:Colors.THEME_CLR_BMS
+    };
+  }else{
+    //rewardPlusApp
+    return {
+      cust_email: 'cs@rewardsplus.in',
+      cust_mobile_call: '9811995444',
+      cust_mobile_whatspp: '9650861174',
+      title_alert: 'RewardsPlus Store',
+      wallet_app_name: 'RewardsPlus',
+      payment_key: 'rzp_live_7NXmXoE72iTqIo',
+      isBrandLogoNeeded: true,
+      storeListingName: 'storeListing',
+      appStoreURL: 'http://itunes.apple.com/app/id1576051283',
+      bundle:'com.RewardsPlus.Rplus',
+      app_store_name:'RewardsPlus Store',
+      app_version:"1.0.3",
+      bundle_version:"6",
+      AppHeaderGradidentColors :[Colors.CLR_033AA4, Colors.CLR_0095D4],
+      app_theme:Colors.THEME_CLR_RPLUS
     };
   }
 }
@@ -122,6 +159,9 @@ const getAppID = () =>{
   }
   else if(bundleId == 'com.rplus.Kandavika'){
     appID = 5
+  }
+  else if(bundleId == 'com.budget.bms'){
+    appID = 6
   }
   return appID
 }

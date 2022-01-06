@@ -464,7 +464,7 @@ const AddressTypeBlock = props => {
                 props.typeSelected(item.name);
               }}>
               <Icon
-                name={item.name?.toLowerCase() == addressType?.toLowerCase()
+                name={item.name?.toLowerCase() == addressType?.name?.toLowerCase()
                     ? 'radiobox-marked'
                     : 'radiobox-blank'
                 }

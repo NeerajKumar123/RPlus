@@ -91,9 +91,11 @@ export const CLR_333F5E = '#333F5E'
 export const CLR_FF6667 = '#FF6667'
 
 // App theme Colors
-export const THEMME_CLR_RPLUS = '#171F58'
-export const THEMME_CLR_HMT = '#51AF5E'
-export const THEMME_CLR_HFM = '#233C42'
-export const THEMME_CLR_GDEES = '#2C3E33'
-export const THEMME_CLR_KANVIKA = '#E4E44E'
+export const THEME_CLR_RPLUS = '#171F58'
+export const THEME_CLR_HMT = '#51AF5E'
+export const THEME_CLR_HFM = '#233C42'
+export const THEME_CLR_GDEES = '#2C3E33'
+export const THEME_CLR_KANVIKA = '#E4E44E'
+export const THEME_CLR_BMS = '#E4E44E'
+
 

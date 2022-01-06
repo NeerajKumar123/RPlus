@@ -66,7 +66,6 @@ const MyStack = () => {
   const getAppLaunchImage = () =>{
     let bundleId = DeviceInfo.getBundleId();
     console.log('bundleId',bundleId)
-    // let launch = require('../../ios/AdrishStoreTargetFiles/MediaKandavika.xcassets/launch.imageset/launch.png');
     let launch;
     if(bundleId == 'com.RewardsPlus.Rplus'){
       launch = require('../../ios/RPlusTargetFiles/MediaRPlus.xcassets/launch.imageset/launch.png');
@@ -76,11 +75,11 @@ const MyStack = () => {
       launch = require('../../ios/HMFTargetFiles/MediaHMF.xcassets/launch.imageset/launch.png');
     }else if(bundleId == 'com.rplus.gdees'){
       launch = require('../../ios/GDEESTargetFiles/MediaGDEES.xcassets/launch.imageset/launch.png');
-    }
-    else if(bundleId == 'com.rplus.Kandavika'){
+    }else if(bundleId == 'com.rplus.Kandavika'){
       launch = require('../../ios/AdrishStoreTargetFiles/MediaKandavika.xcassets/launch.imageset/launch.png');
+    }else if(bundleId == 'com.budget.bms'){
+      launch = require('../../ios/BMSTargetFiles/MediaBMS.xcassets/launch.imageset/launch.png');
     }
-    console.log('launch====>',launch)
     return launch
   }
 

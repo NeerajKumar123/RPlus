@@ -17,6 +17,7 @@
 //#HMF == 3
 //#GDEES  == 4
 //#Kandvika == 5
+//#BudgetSupermarket == 6
 
 
 
@@ -38,7 +39,7 @@ static void InitializeFlipper(UIApplication *application) {
 #ifdef FB_SONARKIT_ENABLED
   InitializeFlipper(application);
 #endif
-  [self configureFirebaseWithAppID:(5)];
+  [self configureFirebaseWithAppID:(6)];
   RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];
   RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge
                                                    moduleName:@"RPlus"
@@ -86,6 +87,9 @@ static void InitializeFlipper(UIApplication *application) {
       break;
     case 5:
       plistName = @"GoogleService-Info-Kandavika";
+      break;
+    case 6:
+      plistName = @"GoogleService-Info-BMS";
       break;
     default:
       plistName = @"GoogleService-Info-RewardsPlus";
