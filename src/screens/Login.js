@@ -132,7 +132,7 @@ const Login = (props) => {
               const params = res && res.payload ? res.payload : {};
               const details = {
                 ...params,
-                company_id: 38,
+                company_id: storeInfo?.company_id,
                 mobile_no: mobileNumber,
                 lastScreenName:passedProps && passedProps.lastScreenName
               };

@@ -63,6 +63,15 @@ const OrderSummary = () => {
     setIsLoading(true);
     const params = {store_id: storeInfo.id, customer_id: userInfo.customer_id};
     getAddressList(params, res => {
+      const addressList = res?.payload_addressList;
+      const results =
+        addressList &&
+        addressList.filter(item => {
+          return item.address_type.toLowerCase() == 'home';
+        });
+      if (results && results.length > 0) {
+        setDeliveryAddress(results[0]);
+      }
       setAddresses(res?.payload_addressList);
       setTimeout(() => {
         setIsLoading(false);
@@ -143,23 +152,14 @@ const OrderSummary = () => {
     setTimeout(() => {
       setIsLoading(false);
     }, 4000);
-
-    const getAddParams = {store_id: storeID, customer_id: customerID};
-    getAddressList(getAddParams, res => {
-      const addressList = res?.payload_addressList;
-      const results =
-        addressList &&
-        addressList.filter(item => {
-          return item.address_type.toLowerCase() == 'home';
-        });
-      if (results && results.length > 0) {
-        setDeliveryAddress(results[0]);
-      }
-    });
     updateAddList()
   }, []);
 
   const checkDelivery = () => {
+    if(addresses?.length < 1){
+      Alert.alert(AppData.title_alert,'Please add an address.');
+      return
+    }
     if(!deliveryTimeSlot?.slot_id){
       Alert.alert(AppData.title_alert,'Please select a time slot.');
       setTimeout(() => {
@@ -355,7 +355,7 @@ const AddressBlock = props => {
 };
 
 const AddOrChangeAddBlock = props => {
-  const {onChangeorAddNewAddressPressed  = () =>{},subtitle} = props;
+  const {onChangeorAddNewAddressPressed  = () =>{},subtitle,title} = props;
   return (
     <View
     style={{
@@ -383,7 +383,7 @@ const AddOrChangeAddBlock = props => {
           fontWeight: 'bold',
           color: Colors.CLR_02A3FC,
         }}>
-        Change or Add New Address
+        {title}
       </Text>
       {subtitle && 
  <Text

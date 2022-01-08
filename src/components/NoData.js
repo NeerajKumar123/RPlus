@@ -4,13 +4,14 @@ import RPButton from '../components/RPButton';
 import * as Colors from '../constants/ColorDefs';
 
 const NoData = props => {
-  const {image, title, subtitle, buttonTitle, onButtonPress, bgColor = Colors.CLR_EE6F12} = props;
+  const {image, title, subtitle, buttonTitle, onButtonPress, bgColor = Colors.CLR_EE6F12, marginTop} = props;
   return (
     <View
       style={{
         width: '100%',
         flexDirection: 'column',
         padding: 20,
+        marginTop,
         alignItems: 'center',
         justifyContent: 'center',
        backgroundColor:"white"

@@ -39,7 +39,7 @@ static void InitializeFlipper(UIApplication *application) {
 #ifdef FB_SONARKIT_ENABLED
   InitializeFlipper(application);
 #endif
-  [self configureFirebaseWithAppID:(6)];
+  [self configureFirebaseWithAppID];
   RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];
   RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge
                                                    moduleName:@"RPlus"
@@ -69,34 +69,22 @@ static void InitializeFlipper(UIApplication *application) {
 }
 
 
-- (void) configureFirebaseWithAppID:(int)appID{
-  NSLog(@"%d", appID);
-  NSString *plistName;
-  switch (appID) {
-    case 1:
-      plistName = @"GoogleService-Info-RewardsPlus";
-      break;
-    case 2:
-      plistName = @"GoogleService-Info-HMT";
-      break;
-    case 3:
-      plistName = @"GoogleService-Info-HMF";
-      break;
-    case 4:
-      plistName = @"GoogleService-Info-GDEES";
-      break;
-    case 5:
-      plistName = @"GoogleService-Info-Kandavika";
-      break;
-    case 6:
-      plistName = @"GoogleService-Info-BMS";
-      break;
-    default:
-      plistName = @"GoogleService-Info-RewardsPlus";
-      break;
+- (void) configureFirebaseWithAppID{
+  NSString* targetName = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleName"];
+  NSString *plistName = @"GoogleService-Info-RewardsPlus";
+  if ([targetName isEqualToString:@"RewardsPlus"]){
+    plistName = @"GoogleService-Info-RewardsPlus";
+  }else if ([targetName isEqualToString:@"HMT"]){
+    plistName = @"GoogleService-Info-HMT";
+  }else if ([targetName isEqualToString:@"HMF"]){
+    plistName = @"GoogleService-Info-HMF";
+  }else if ([targetName isEqualToString:@"GDEES"]){
+    plistName = @"GoogleService-Info-GDEES";
+  }else if ([targetName  isEqual: @"Kandvika"]){
+    plistName = @"GoogleService-Info-Kandavika";
+  }else if ([targetName isEqualToString:@"BudgetSuperMarket"]){
+    plistName = @"GoogleService-Info-BMS";
   }
-  
-  NSLog(@"plistName%@",plistName);
   NSString *filePath = [[NSBundle mainBundle] pathForResource:plistName ofType:@"plist"];
   FIROptions *options = [[FIROptions alloc] initWithContentsOfFile:filePath];
   [FIRApp configureWithOptions:options];

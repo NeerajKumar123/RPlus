@@ -47,10 +47,10 @@ const AddNewAddress = props => {
     state = '',
     street = '',
     landmark = '',
-    address_type = {name:'home'},
     address_id = 0,
     email
   } = address && address;
+  const address_type = {name:address?.address_type || 'home'}
   const [mpincode, setPincode] = useState(pincode);
   const [mname, setName] = useState(name);
   const [memail, setEmail] = useState(email);
@@ -355,6 +355,7 @@ const AddNewAddress = props => {
           <AddressTypeBlock
             addressType={maddressType}
             typeSelected={type => {
+              console.log('type',type)
               setAddressType(type);
             }}
           />
@@ -377,7 +378,7 @@ const AddNewAddress = props => {
               house_no: mhouseNo,
               street: mstreet,
               landmark: mlandmark,
-              address_type: maddressType,
+              address_type: maddressType?.name || 'home',
               email:memail
             };
             if (address_id) {
@@ -447,7 +448,6 @@ const AddressTypeBlock = props => {
         }}>
         Address Type
       </Text>
-      {console.log('types',types,addressType)}
       <View style={{ flexDirection: 'row', marginTop: 10 }}>
         {types.map(item => {
           return (
@@ -461,7 +461,7 @@ const AddressTypeBlock = props => {
                 flexDirection: 'row',
               }}
               onPress={() => {
-                props.typeSelected(item.name);
+                props.typeSelected(item);
               }}>
               <Icon
                 name={item.name?.toLowerCase() == addressType?.name?.toLowerCase()

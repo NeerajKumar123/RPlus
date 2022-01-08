@@ -66,6 +66,7 @@ const Addresses = props => {
         {isLoading && <RPLoader />}
         {isAddressFetchingDone && !addresses.length && (
           <NoData
+            marginTop = {30}
             image={empty_orders_image}
             title={'No Delivery Address'}
             subtitle={'Add address where you need your delivery'}

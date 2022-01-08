@@ -10,7 +10,7 @@ platform :ios, '12.1'
 #HMF
 #Kandvika
 #BudgetSuperMarket
-target 'BudgetSuperMarket' do
+target 'HMT' do
   config = use_native_modules!
 
   use_react_native!(

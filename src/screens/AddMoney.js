@@ -148,7 +148,7 @@ const AddMoney = props => {
               textContentType="none"
               placeholder="Enter amount"
               onChangeText={value => {
-                console.log('onChangeText', value);
+                setSelectedAmount(value)
               }}
               onEndEditing={value => {
               }}

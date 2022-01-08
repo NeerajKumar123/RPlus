@@ -37,7 +37,6 @@ const SquareShapeCard = props => {
         justifyContent: 'center',
       }}
       onPress={() => {
-        console.log('onPress');
         onPress();
       }}>
       <Image

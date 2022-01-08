@@ -173,5 +173,7 @@ pincodes
 1.Rewards Plus ==> All Delhi
 2.HMT ==> 110016
 3.HMF ==> 110074
-3.GDEES ==> 110068
+4.GDEES ==> 110068
+5. Adrish ==> 110019
+6. BMS == > 110074
 */

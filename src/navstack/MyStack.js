@@ -65,7 +65,6 @@ const MyStack = () => {
 
   const getAppLaunchImage = () =>{
     let bundleId = DeviceInfo.getBundleId();
-    console.log('bundleId',bundleId)
     let launch;
     if(bundleId == 'com.RewardsPlus.Rplus'){
       launch = require('../../ios/RPlusTargetFiles/MediaRPlus.xcassets/launch.imageset/launch.png');
