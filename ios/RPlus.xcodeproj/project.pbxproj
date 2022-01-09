@@ -23,6 +23,11 @@
 		07680647277DBAD6003D1C32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		07680659277DBC1C003D1C32 /* Kandavika.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07680656277DBC1C003D1C32 /* Kandavika.plist */; };
 		0768065A277DBC1C003D1C32 /* MediaKandavika.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07680657277DBC1C003D1C32 /* MediaKandavika.xcassets */; };
+		07A8DCDA278AA6430035E593 /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07457D722608F289005D672D /* MaterialCommunityIcons.ttf */; };
+		07A8DCE2278AA6440035E593 /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07457D722608F289005D672D /* MaterialCommunityIcons.ttf */; };
+		07A8DCE3278AA6450035E593 /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07457D722608F289005D672D /* MaterialCommunityIcons.ttf */; };
+		07A8DCE4278AA6450035E593 /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07457D722608F289005D672D /* MaterialCommunityIcons.ttf */; };
+		07A8DCE5278AA6460035E593 /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07457D722608F289005D672D /* MaterialCommunityIcons.ttf */; };
 		07C6094427871D9B00428D4A /* GoogleService-Info-BMS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07C6094327871D9B00428D4A /* GoogleService-Info-BMS.plist */; };
 		07D55DA2277EE878000C6D9B /* GoogleService-Info-GDEES.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07D55DA1277EE877000C6D9B /* GoogleService-Info-GDEES.plist */; };
 		07D55DA9277EE889000C6D9B /* GoogleService-Info-HMF.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07D55DA8277EE889000C6D9B /* GoogleService-Info-HMF.plist */; };
@@ -550,6 +555,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				073F9D3427871B110001F0D4 /* GoogleService-Info-Kandavika.plist in Resources */,
+				07A8DCE5278AA6460035E593 /* MaterialCommunityIcons.ttf in Resources */,
 				071A596C27871C870017AE1A /* MediaBMS.xcassets in Resources */,
 				073F9D3527871B110001F0D4 /* Kandavika.plist in Resources */,
 				07C6094427871D9B00428D4A /* GoogleService-Info-BMS.plist in Resources */,
@@ -563,6 +569,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				071CCEA0277ECD6D00412F05 /* GoogleService-Info-Kandavika.plist in Resources */,
+				07A8DCE4278AA6450035E593 /* MaterialCommunityIcons.ttf in Resources */,
 				07680659277DBC1C003D1C32 /* Kandavika.plist in Resources */,
 				07680647277DBAD6003D1C32 /* LaunchScreen.storyboard in Resources */,
 				0768065A277DBC1C003D1C32 /* MediaKandavika.xcassets in Resources */,
@@ -585,6 +592,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				07D55DA2277EE878000C6D9B /* GoogleService-Info-GDEES.plist in Resources */,
+				07A8DCE2278AA6440035E593 /* MaterialCommunityIcons.ttf in Resources */,
 				07F168E7277791360082015A /* GDEES.plist in Resources */,
 				07F168DE277791320082015A /* MediaGDEES.xcassets in Resources */,
 				07F1688127778E9C0082015A /* LaunchScreen.storyboard in Resources */,
@@ -596,6 +604,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				07F168A527778FDB0082015A /* LaunchScreen.storyboard in Resources */,
+				07A8DCE3278AA6450035E593 /* MaterialCommunityIcons.ttf in Resources */,
 				07D55DA9277EE889000C6D9B /* GoogleService-Info-HMF.plist in Resources */,
 				07F168B72777902F0082015A /* HMF.plist in Resources */,
 				07F168B62777902F0082015A /* MediaHMF.xcassets in Resources */,
@@ -607,6 +616,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				07F16818277789630082015A /* MediaRPlus.xcassets in Resources */,
+				07A8DCDA278AA6430035E593 /* MaterialCommunityIcons.ttf in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				07E2C90A277D89C900C61E7D /* GoogleService-Info-RewardsPlus.plist in Resources */,
 				07F1681B277789980082015A /* RPlusInfo.plist in Resources */,

@@ -131,7 +131,9 @@ const Profile = props => {
           text: 'Logout',
           onPress: () => {
             Storage.clearAllData(()=>{
-              props.onLogout && props.onLogout(1);
+              Storage.clearStoresCart(()=>{
+                props.onLogout && props.onLogout(1);
+              })
             });
           }
         }

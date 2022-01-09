@@ -50,9 +50,10 @@ const Cart = props => {
   };
 
   useEffect(() => {
-    const isSyncNeeded = props.route.params?.isSync
+    const pageParams = props.route.params;
+    const isSyncNeeded = pageParams?.isSync
     let customerId = global?.userInfo?.customer_id;
-    if(isFocused && isSyncNeeded && customerId){
+    if(isFocused && customerId){
       Storage.getUserCartData(cartItems => {
         updateCartWithMultipleItems(cartItems)
       });
@@ -77,6 +78,9 @@ const Cart = props => {
         }
         cartSimilarProduct(params, (similarRes) => {
           setSimilarProducts(similarRes?.payload_cartSimilarProduct)
+          setTimeout(() => {
+            setIsLoading(false);
+          }, 200);
         })
       }
     });
