@@ -26,7 +26,6 @@
 		07A8DCDA278AA6430035E593 /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07457D722608F289005D672D /* MaterialCommunityIcons.ttf */; };
 		07A8DCE2278AA6440035E593 /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07457D722608F289005D672D /* MaterialCommunityIcons.ttf */; };
 		07A8DCE3278AA6450035E593 /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07457D722608F289005D672D /* MaterialCommunityIcons.ttf */; };
-		07A8DCE4278AA6450035E593 /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07457D722608F289005D672D /* MaterialCommunityIcons.ttf */; };
 		07A8DCE5278AA6460035E593 /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07457D722608F289005D672D /* MaterialCommunityIcons.ttf */; };
 		07C6094427871D9B00428D4A /* GoogleService-Info-BMS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07C6094327871D9B00428D4A /* GoogleService-Info-BMS.plist */; };
 		07D55DA2277EE878000C6D9B /* GoogleService-Info-GDEES.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07D55DA1277EE877000C6D9B /* GoogleService-Info-GDEES.plist */; };
@@ -55,8 +54,8 @@
 		07F168E7277791360082015A /* GDEES.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07F1689027778F030082015A /* GDEES.plist */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		4BD02EC3E7406A626457FAC7 /* libPods-HMT.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ADF5F8B9E0AA2276F13931A /* libPods-HMT.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		D023AB9E507E770805A2693F /* libPods-Kandvika.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BF14D591123A00844AC97EF /* libPods-Kandvika.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,15 +104,16 @@
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = RPlus/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* RPlusInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = RPlusInfo.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = RPlus/main.m; sourceTree = "<group>"; };
+		312124E6BD8812793556610F /* Pods-Kandvika.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kandvika.release.xcconfig"; path = "Target Support Files/Pods-Kandvika/Pods-Kandvika.release.xcconfig"; sourceTree = "<group>"; };
 		372A79F749AF44789C645DE4 /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
+		4CF8611C7D490D96804528B3 /* Pods-Kandvika.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kandvika.debug.xcconfig"; path = "Target Support Files/Pods-Kandvika/Pods-Kandvika.debug.xcconfig"; sourceTree = "<group>"; };
 		5C7AE11CA1514C66996800CF /* Fontisto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Fontisto.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf"; sourceTree = "<group>"; };
 		62E1C6DA2F7B418AA21BD95A /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
 		6675137F51A45297975DCBAA /* libPods-RPlus-RPlusTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RPlus-RPlusTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		67F9AEA094074C1789389522 /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
 		6950573662964B40B4581799 /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
-		7ADF5F8B9E0AA2276F13931A /* libPods-HMT.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HMT.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7BF14D591123A00844AC97EF /* libPods-Kandvika.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Kandvika.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = RPlus/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		907F61D5B86C9EB21FF34054 /* Pods-HMT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HMT.debug.xcconfig"; path = "Target Support Files/Pods-HMT/Pods-HMT.debug.xcconfig"; sourceTree = "<group>"; };
 		9201691099BA49D5931DAB3A /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
 		A3995A3150AE7F9E8803F4A1 /* Pods-RPlus-RPlusTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RPlus-RPlusTests.debug.xcconfig"; path = "Target Support Files/Pods-RPlus-RPlusTests/Pods-RPlus-RPlusTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A6CC269602504251B8AB8E02 /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Solid.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
@@ -124,7 +124,6 @@
 		D3D3E87DA89344FF91BFB1DB /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
 		D5B6940D1C2543E2A5279926 /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
 		D774FF804A864381A71E2025 /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
-		E5F7936C0ACD167AABEFAE51 /* Pods-HMT.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HMT.release.xcconfig"; path = "Target Support Files/Pods-HMT/Pods-HMT.release.xcconfig"; sourceTree = "<group>"; };
 		EA6E102DE53F4E938253ECB8 /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -143,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				07680645277DBAD6003D1C32 /* UserNotifications.framework in Frameworks */,
+				D023AB9E507E770805A2693F /* libPods-Kandvika.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,7 +151,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				07F167F8277786BB0082015A /* UserNotifications.framework in Frameworks */,
-				4BD02EC3E7406A626457FAC7 /* libPods-HMT.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,7 +315,7 @@
 				075698FA2753B8D500E531F1 /* UserNotifications.framework */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				6675137F51A45297975DCBAA /* libPods-RPlus-RPlusTests.a */,
-				7ADF5F8B9E0AA2276F13931A /* libPods-HMT.a */,
+				7BF14D591123A00844AC97EF /* libPods-Kandvika.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -370,8 +369,8 @@
 			children = (
 				A3995A3150AE7F9E8803F4A1 /* Pods-RPlus-RPlusTests.debug.xcconfig */,
 				13A7264E1885B994E0CD8DF4 /* Pods-RPlus-RPlusTests.release.xcconfig */,
-				907F61D5B86C9EB21FF34054 /* Pods-HMT.debug.xcconfig */,
-				E5F7936C0ACD167AABEFAE51 /* Pods-HMT.release.xcconfig */,
+				4CF8611C7D490D96804528B3 /* Pods-Kandvika.debug.xcconfig */,
+				312124E6BD8812793556610F /* Pods-Kandvika.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -402,11 +401,15 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0768064B277DBAD6003D1C32 /* Build configuration list for PBXNativeTarget "Kandvika" */;
 			buildPhases = (
+				D80613B2FA27EE010CF0D3EF /* [CP] Check Pods Manifest.lock */,
 				07680640277DBAD6003D1C32 /* Start Packager */,
 				07680641277DBAD6003D1C32 /* Sources */,
 				07680644277DBAD6003D1C32 /* Frameworks */,
 				07680646277DBAD6003D1C32 /* Resources */,
 				0768064A277DBAD6003D1C32 /* Bundle React Native code and images */,
+				238829653C96E085D2D3605A /* [CP] Embed Pods Frameworks */,
+				6E1A67517A789A3445E1B578 /* [CP] Copy Pods Resources */,
+				FCF1C17B748B90C8FB1F71D2 /* [CP-User] [RNFB] Core Configuration */,
 			);
 			buildRules = (
 			);
@@ -421,15 +424,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 07F16802277786BB0082015A /* Build configuration list for PBXNativeTarget "HMT" */;
 			buildPhases = (
-				80B7682353D4DC5CFBB9A780 /* [CP] Check Pods Manifest.lock */,
 				07F167F3277786BB0082015A /* Start Packager */,
 				07F167F4277786BB0082015A /* Sources */,
 				07F167F7277786BB0082015A /* Frameworks */,
 				07F167FA277786BB0082015A /* Resources */,
 				07F167FE277786BB0082015A /* Bundle React Native code and images */,
-				74AD5644D3C77BB33310067F /* [CP] Embed Pods Frameworks */,
-				391DABC04A4D5A1408E2CEC1 /* [CP] Copy Pods Resources */,
-				F87B3CCBF23812CE808DF8D8 /* [CP-User] [RNFB] Core Configuration */,
 			);
 			buildRules = (
 			);
@@ -569,7 +568,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				071CCEA0277ECD6D00412F05 /* GoogleService-Info-Kandavika.plist in Resources */,
-				07A8DCE4278AA6450035E593 /* MaterialCommunityIcons.ttf in Resources */,
 				07680659277DBC1C003D1C32 /* Kandavika.plist in Resources */,
 				07680647277DBAD6003D1C32 /* LaunchScreen.storyboard in Resources */,
 				0768065A277DBC1C003D1C32 /* MediaKandavika.xcassets in Resources */,
@@ -805,41 +803,41 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nexport NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
-		391DABC04A4D5A1408E2CEC1 /* [CP] Copy Pods Resources */ = {
+		238829653C96E085D2D3605A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-HMT/Pods-HMT-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-HMT/Pods-HMT-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HMT/Pods-HMT-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		74AD5644D3C77BB33310067F /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-HMT/Pods-HMT-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Kandvika/Pods-Kandvika-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-HMT/Pods-HMT-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Kandvika/Pods-Kandvika-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HMT/Pods-HMT-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Kandvika/Pods-Kandvika-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		80B7682353D4DC5CFBB9A780 /* [CP] Check Pods Manifest.lock */ = {
+		6E1A67517A789A3445E1B578 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Kandvika/Pods-Kandvika-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Kandvika/Pods-Kandvika-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Kandvika/Pods-Kandvika-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D80613B2FA27EE010CF0D3EF /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -854,14 +852,14 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-HMT-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Kandvika-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F87B3CCBF23812CE808DF8D8 /* [CP-User] [RNFB] Core Configuration */ = {
+		FCF1C17B748B90C8FB1F71D2 /* [CP-User] [RNFB] Core Configuration */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1099,12 +1097,13 @@
 		};
 		0768064C277DBAD6003D1C32 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4CF8611C7D490D96804528B3 /* Pods-Kandvika.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = RPlus/RPlus.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Avinash K Jha (378LT7JJLS)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Avinash K Jha (378LT7JJLS)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: APPZIAA SOFTLABS PRIVATE LIMITED (N9T6K48WRZ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: APPZIAA SOFTLABS PRIVATE LIMITED (N9T6K48WRZ)";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = N9T6K48WRZ;
@@ -1163,7 +1162,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.rplus.Kandavika;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = Kandavika_Dev_APNs_31Dec21;
+				PROVISIONING_PROFILE_SPECIFIER = Kandavika_Dist_APNs_6Jan22;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1172,11 +1171,12 @@
 		};
 		0768064D277DBAD6003D1C32 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 312124E6BD8812793556610F /* Pods-Kandvika.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = RPlus/RPlus.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Avinash K Jha (378LT7JJLS)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: APPZIAA SOFTLABS PRIVATE LIMITED (N9T6K48WRZ)";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = N9T6K48WRZ;
@@ -1235,7 +1235,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.rplus.Kandavika;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = Kandavika_Dev_APNs_31Dec21;
+				PROVISIONING_PROFILE_SPECIFIER = Kandavika_Dist_APNs_6Jan22;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -1243,7 +1243,6 @@
 		};
 		07F16803277786BB0082015A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 907F61D5B86C9EB21FF34054 /* Pods-HMT.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -1317,7 +1316,6 @@
 		};
 		07F16804277786BB0082015A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E5F7936C0ACD167AABEFAE51 /* Pods-HMT.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
