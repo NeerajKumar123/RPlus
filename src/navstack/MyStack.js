@@ -78,6 +78,8 @@ const MyStack = () => {
       launch = require('../../ios/AdrishStoreTargetFiles/MediaKandavika.xcassets/launch.imageset/launch.png');
     }else if(bundleId == 'com.budget.bms'){
       launch = require('../../ios/BMSTargetFiles/MediaBMS.xcassets/launch.imageset/launch.png');
+    }else if(bundleId == 'com.aspl.des'){
+      launch = require('../../ios/DailyEssentialsTargetFiles/MediaDE.xcassets/launch.imageset/launch.png');
     }
     return launch
   }

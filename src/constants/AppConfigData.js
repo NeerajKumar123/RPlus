@@ -122,6 +122,25 @@ export default function GetAppConfigData() {
       AppHeaderGradidentColors :[Colors.CLR_033AA4, Colors.CLR_0095D4],
       app_theme:Colors.THEME_CLR_BMS
     };
+  }else if (appid == 7) {
+    //Gdees App
+    return {
+      cust_email:"cs@budget.com",
+      cust_mobile_whatspp: "9971197671",
+      cust_mobile_call: "9717114434",
+      title_alert:"Budget Super Market",
+      wallet_app_name: 'Budget Super Market',
+      payment_key: 'rzp_live_7NXmXoE72iTqIo',
+      isBrandLogoNeeded: false,
+      storeListingName: 'budgetStore',
+      appStoreURL: 'http://itunes.apple.com',
+      bundle:'com.budget.bms',
+      app_store_name:'Budget Super Market',
+      app_version:"1.0",
+      bundle_version:"1",
+      AppHeaderGradidentColors :[Colors.CLR_033AA4, Colors.CLR_0095D4],
+      app_theme:Colors.THEME_CLR_BMS
+    };
   }else{
     //rewardPlusApp
     return {
@@ -162,6 +181,8 @@ const getAppID = () =>{
   }
   else if(bundleId == 'com.budget.bms'){
     appID = 6
+  } else if(bundleId == 'com.aspl.des'){
+    appID = 7
   }
   return appID
 }

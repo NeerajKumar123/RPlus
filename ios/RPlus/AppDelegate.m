@@ -84,8 +84,11 @@ static void InitializeFlipper(UIApplication *application) {
     plistName = @"GoogleService-Info-Kandavika";
   }else if ([targetName isEqualToString:@"BudgetSuperMarket"]){
     plistName = @"GoogleService-Info-BMS";
+  }else if ([targetName isEqualToString:@"DailyEssentials"]){
+    plistName = @"GoogleService-Info-DE";
   }
-  NSString *filePath = [[NSBundle mainBundle] pathForResource:plistName ofType:@"plist"];
+  
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:plistName ofType:@"plist"];
   FIROptions *options = [[FIROptions alloc] initWithContentsOfFile:filePath];
   [FIRApp configureWithOptions:options];
 }
