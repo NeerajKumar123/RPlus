@@ -545,12 +545,12 @@ const neeraj = () => {
 // let neeshu = points.sort(function(a, b){return a - b});
 // console.log('neeshu======>', neeshu)
 
-const points = [40, 100, 1, 5, 25, 10];
-let neeshu = points.sort(function(a, b){return b - a}); 
-function myArrayMax(points) {
-  return Math.max.apply(neeshu, points);
-}
-console.log('neeshu======>', neeshu)
+// const points = [40, 100, 1, 5, 25, 10];
+// let neeshu = points.sort(function(a, b){return b - a}); 
+// function myArrayMax(points) {
+//   return Math.max.apply(neeshu, points);
+// }
+// console.log('neeshu======>', neeshu)
 
 
 

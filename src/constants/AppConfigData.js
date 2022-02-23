@@ -126,16 +126,16 @@ export default function GetAppConfigData() {
     //Gdees App
     return {
       cust_email:"cs@budget.com",
-      cust_mobile_whatspp: "9971197671",
-      cust_mobile_call: "9717114434",
-      title_alert:"Budget Super Market",
-      wallet_app_name: 'Budget Super Market',
+      cust_mobile_whatspp: "9911329581",
+      cust_mobile_call: "9911329581",
+      title_alert:"Daily Essentials",
+      wallet_app_name: 'Daily Essentials',
       payment_key: 'rzp_live_7NXmXoE72iTqIo',
       isBrandLogoNeeded: false,
-      storeListingName: 'budgetStore',
+      storeListingName: 'smartStore',
       appStoreURL: 'http://itunes.apple.com',
       bundle:'com.budget.bms',
-      app_store_name:'Budget Super Market',
+      app_store_name:'Daily Essentials',
       app_version:"1.0",
       bundle_version:"1",
       AppHeaderGradidentColors :[Colors.CLR_033AA4, Colors.CLR_0095D4],
@@ -162,6 +162,8 @@ export default function GetAppConfigData() {
     };
   }
 }
+
+//https://rewardsplus.in/api/store/smartStore
 
 
 const getAppID = () =>{

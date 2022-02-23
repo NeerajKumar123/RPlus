@@ -10,7 +10,8 @@ platform :ios, '12.1'
 #HMF
 #Kandvika
 #BudgetSuperMarket
-target 'HMT' do
+#Daily Essentials
+target 'Daily Essentials' do
   config = use_native_modules!
 
   use_react_native!(

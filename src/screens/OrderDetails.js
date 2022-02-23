@@ -133,7 +133,13 @@ const OrderDetails = props => {
                   }}
                   onReorderPresssed={() => {
                     setSelectedOrder(item);
-                    setShowRescheduleModel(true);
+                    // setShowRescheduleModel(true);
+                    const params = {
+                      store_id: storeID,
+                      product_id: item.product_id,
+                      company_id: companyID,
+                    }
+                    navigation.push('ProductDetailsContainer',params)
                   }}
                 />
               )}
