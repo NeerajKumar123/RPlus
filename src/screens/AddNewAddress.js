@@ -50,6 +50,7 @@ const AddNewAddress = props => {
     address_id = 0,
     email
   } = address && address;
+  
   const address_type = {name:address?.address_type || 'home'}
   const [mpincode, setPincode] = useState(pincode);
   const [mname, setName] = useState(name);

@@ -140,6 +140,7 @@ const setKeyValue = async (key, value, callback) => {
   const clearAllData = async (callback) => {
     try {
      await AsyncStorage.removeItem('USER_DATA');
+     await AsyncStorage.getItem('USER_CART_DATA');
      callback && callback()
     } catch (error) {
         console.log(error);
