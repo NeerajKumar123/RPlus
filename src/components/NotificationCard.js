@@ -32,7 +32,7 @@ const NotificationCard = props => {
           shadowRadius: 2,
           shadowOpacity: 0.5,
         }}>
-        <Image resizeMode = 'cover' style={{ width: 42, height: 42, backgroundColor:'red'}} source={{ uri: image }} />
+        <Image resizeMode = 'cover' style={{ width: 42, height: 42}} source={{ uri: image }} />
         <View
           style={{
             flex: 5,

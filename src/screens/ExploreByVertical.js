@@ -9,6 +9,7 @@ import {
   getVerticalByCategory,
   getCategoryBySubCategory,
   getProductBySubCategory,
+  getProductByCategoryAndStore
 } from '../apihelper/Api.js';
 import RPLoader from '../components/RPLoader';
 import * as Colors from '../constants/ColorDefs';
@@ -100,11 +101,13 @@ const ExploreByVertical = props => {
           {store_id: storeID, category_id: selectedCategory?.category_id},
           res => {
             const subs = res?.payload_categoryBySubCategory;
-            const dataToBeCached = {"category_id": `${selectedCategory?.category_id}`,"subs": subs}
+            const allSub = {subcategory_id: 100000, category_id: selectedCategory?.category_id, name: ' All '}
+            const subsWithAll = [allSub, ...subs]
+            const dataToBeCached = {"category_id": `${selectedCategory?.category_id}`,"subs": subsWithAll}
             const ad = [...alreadyFetchedSubcats,dataToBeCached]
             setAlreadyFetchedSubcats(ad)
-            setSubCategories(subs);
-            setSelectedSubCategory(global.subcategory ?  global.subcategory : subs && subs.length && subs[0]);
+            setSubCategories(subsWithAll);
+            setSelectedSubCategory(global.subcategory ? global.subcategory : subsWithAll?.[0]);
             setTimeout(() => {
               setIsLoading(false);
             }, 500);
@@ -116,12 +119,27 @@ const ExploreByVertical = props => {
 
   useEffect(() => {
     if (selectedSubCategory) {
-      console.log('selectedSubCategory',selectedSubCategory)
       const savedProducts = checkIfProductsAlreadyFetched(selectedCategory,selectedSubCategory)
       if(savedProducts){
         setProducts(savedProducts);
       }else{
         setIsLoading(true);
+        if(selectedSubCategory?.subcategory_id == 100000){
+          const params =  {
+            store_id: storeID,
+            category_id: selectedCategory?.category_id,
+          }
+          getProductByCategoryAndStore(params, (res) =>{
+            const prods =  res?.payload_CategoryByProduct;
+            setProducts(prods);
+            const dataToBeCached = {"category_id": `${selectedCategory.category_id}`,subcategory_id:`${selectedSubCategory.subcategory_id}` ,"products": prods}
+            const ad = [...alreadyFetchedProducts,dataToBeCached]
+            setAlreadyFetchedProducts(ad)
+            setTimeout(() => {
+              setIsLoading(false);
+            }, 500);
+          })
+        }
         getProductBySubCategory(
           {
             store_id: storeID,

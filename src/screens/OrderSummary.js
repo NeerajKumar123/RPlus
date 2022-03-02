@@ -133,7 +133,6 @@ const OrderSummary = () => {
   useEffect(() => {
     DeviceEventEmitter.addListener('add_selected', eventData => {
       setDeliveryAddress(eventData);
-      updateAddList()
     });
   }, []);
 

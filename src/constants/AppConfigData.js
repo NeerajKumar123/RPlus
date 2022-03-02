@@ -85,7 +85,7 @@ export default function GetAppConfigData() {
       app_theme:Colors.THEME_CLR_GDEES
     };
   }else if (appid == 5) {
-    //Gdees App
+    //Kandavika
     return {
       cust_email:"cs@anandkand.com",
       cust_mobile_whatspp: "9971197671",
@@ -104,7 +104,7 @@ export default function GetAppConfigData() {
       app_theme:Colors.THEME_CLR_KANVIKA
     };
   }else if (appid == 6) {
-    //Gdees App
+    //budget Super Market
     return {
       cust_email:"cs@budget.com",
       cust_mobile_whatspp: "9971197671",
@@ -123,7 +123,7 @@ export default function GetAppConfigData() {
       app_theme:Colors.THEME_CLR_BMS
     };
   }else if (appid == 7) {
-    //Gdees App
+    //Daily Essentials
     return {
       cust_email:"cs@budget.com",
       cust_mobile_whatspp: "9911329581",

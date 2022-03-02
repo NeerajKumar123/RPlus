@@ -209,7 +209,7 @@ const AddNewAddress = props => {
     } else if (mcity == undefined || mcity.length < 3) {
       isValidForm = false;
       Alert.alert(AppData.title_alert, 'Please enter valid city.');
-    } else if (mstate == undefined || mstate.length < 3) {
+    } else if (mstate == undefined || mstate.length < 2) {
       isValidForm = false;
       Alert.alert(AppData.title_alert, 'Please enter valid state.');
     } else if (mhouseNo == undefined || mhouseNo.length < 1) {
@@ -422,7 +422,7 @@ const Footer = props => {
         props.onSaveAddressPressed();
       }}>
       <Text style={{ fontSize: 16, fontWeight: 'bold', color: Colors.WHITE }}>
-        {isUpdateAddress ? 'Update address' : 'Save address'}
+        {isUpdateAddress ? 'Update Address' : 'Save Address'}
       </Text>
     </TouchableOpacity>
   );
@@ -457,8 +457,8 @@ const AddressTypeBlock = props => {
                 paddingHorizontal: 30,
                 justifyContent: 'center',
                 alignItems: 'center',
-                height: 40,
-                flexDirection: 'row',
+                height: 50,
+                flexDirection: 'row'
               }}
               onPress={() => {
                 props.typeSelected(item);
