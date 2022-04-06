@@ -34,7 +34,9 @@ import TermsAndConditions from '../screens/TermsAndConditions';
 import HowItWorks from '../screens/HowItWorks';
 import RPWebpage from '../screens/RPWebpage';
 import Notification from '../screens/Notification';
+import NewArrivalsList from '../screens/NewArrivalsList';
 import DeviceInfo from 'react-native-device-info';
+
 
 import {View, Image} from 'react-native';
 import * as Storage from '../helpers/RPStorage';
@@ -264,6 +266,11 @@ const MyStack = () => {
           name="Notification"
           component={Notification}
           options={{title: 'Notification'}}
+        />
+         <Stack.Screen
+          name="NewArrivalsList"
+          component={NewArrivalsList}
+          options={{title: 'NewArrivalsList'}}
         />
       </Stack.Navigator>
     </NavigationContainer>

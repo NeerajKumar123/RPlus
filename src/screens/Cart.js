@@ -55,7 +55,7 @@ const Cart = props => {
     let customerId = global?.userInfo?.customer_id;
     if(isFocused && customerId){
       Storage.getUserCartData(cartItems => {
-        updateCartWithMultipleItems(cartItems)
+        cartItems?.length > 0 && updateCartWithMultipleItems(cartItems)
       });
     }
   }, [isFocused]);

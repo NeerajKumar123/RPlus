@@ -14,6 +14,7 @@ import AppHeader from '../components/AppHeader';
 import RPButton from '../components/RPButton';
 import * as Colors from '../constants/ColorDefs';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import * as Storage from '../helpers/RPStorage';
 import {
   cashonDelivery,
   onlinePaymentProcess,
@@ -225,6 +226,7 @@ const ChoosePayment = props => {
               };
               onlinePaymentSuccess(params, res => {
                 if (res && res.status != 1) {
+                  Storage.clearCartData()
                   navigation.navigate('Thanks', {
                     ...res?.payload_onlinePaymentProcess,
                   });
@@ -253,6 +255,7 @@ const ChoosePayment = props => {
         setIsLoading(false);
         const isSuccess = res?.payload_cashOnDelivery ?? false;
         if (isSuccess) {
+          Storage.clearCartData()
           navigation.navigate('Thanks', {...res?.payload_cashOnDelivery});
         } else {
           Alert.alert(

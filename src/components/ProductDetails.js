@@ -7,8 +7,7 @@ import * as Colors from '../constants/ColorDefs';
 const ProductDetails = props => {
   const navigation = useNavigation();
 
-  const {about, benefits, otherInfo} = props;
-
+  const {about = undefined, benefits = undefined, otherInfo = undefined} = props;
   return (
     <View
       style={{

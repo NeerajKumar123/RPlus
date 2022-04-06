@@ -18,11 +18,10 @@ const FeaturedSimilarProductCard = props => {
   const { name, image, selling_price, mrp, stock } = props.item
   const mprVal = parseFloat(mrp)
   const selling_priceVal = parseFloat(selling_price)
-  let off = mprVal &&  selling_priceVal && (mprVal - selling_priceVal) / mprVal * 100
+  let off = mprVal && selling_priceVal && (mprVal - selling_priceVal) / mprVal * 100
   off = off.toFixed(0)
-  off = `${off} % OFF`
   const isOutOfStock = stock < 1 ? true : false
-  
+
   const featuredProductCardStyle = {
     backgroundColor: Colors.WHITE,
     flexDirection: 'row',
@@ -39,7 +38,7 @@ const FeaturedSimilarProductCard = props => {
     },
     shadowRadius: 3,
     shadowOpacity: 1.0,
-    elevation:3,
+    elevation: 3,
   }
   return (
     <TouchableOpacity
@@ -48,43 +47,46 @@ const FeaturedSimilarProductCard = props => {
       onPress={() => {
         props.onPress()
       }}>
-      <View
-        style={{
-          width: '100%',
-          flexDirection: 'row',
-          justifyContent: 'flex-end',
-        }}>
-        <Text
+      {off > 0 &&
+        <View
           style={{
-            borderRadius: 4,
-            borderWidth: 1,
-            fontWeight: 'bold',
-            fontSize: 12,
-            paddingHorizontal: 5,
-            paddingVertical: 2,
-            color: Colors.GREEN,
-            borderColor: Colors.GREEN,
-            textAlign: 'center',
+            width: '100%',
+            flexDirection: 'row',
+            justifyContent: 'flex-end',
           }}>
-          {off}
-        </Text>
-      </View>
+          <Text
+            style={{
+              borderRadius: 4,
+              borderWidth: 1,
+              fontWeight: 'bold',
+              fontSize: 12,
+              paddingHorizontal: 5,
+              paddingVertical: 2,
+              color: Colors.GREEN,
+              borderColor: Colors.GREEN,
+              textAlign: 'center',
+            }}>
+            {`${off} % OFF`}
+          </Text>
+        </View>
+      }
+
       <Image
-      resizeMode = 'contain'
+        resizeMode='contain'
         style={{
           width: 70,
           height: 94,
           alignSelf: 'center',
           borderRadius: 4,
           marginTop: 14,
-          opacity:isOutOfStock?.3:1,
+          opacity: isOutOfStock ? .3 : 1,
         }}
         source={{
           uri: image
         }}
       />
-      {isOutOfStock && 
-      <Image resizeMode = 'contain' style={{width: 70, height: 94, position:'absolute',top:50, alignSelf:'center'}} source={sold_out} />
+      {isOutOfStock &&
+        <Image resizeMode='contain' style={{ width: 70, height: 94, position: 'absolute', top: 50, alignSelf: 'center' }} source={sold_out} />
       }
       <Text
         style={{
@@ -109,29 +111,31 @@ const FeaturedSimilarProductCard = props => {
             }}>
             {`Rs. ${selling_price}`}
           </Text>
-          <Text
-            style={{
-              paddingHorizontal: 5,
-              fontSize: 14,
-              marginTop: 6,
-              textDecorationStyle: 'solid',
-              textDecorationLine: 'line-through',
-              color:Colors.GRAY
-            }}>
-            {`Rs. ${mrp}`}
-          </Text>
+          {off > 0 &&
+            <Text
+              style={{
+                paddingHorizontal: 5,
+                fontSize: 14,
+                marginTop: 6,
+                textDecorationStyle: 'solid',
+                textDecorationLine: 'line-through',
+                color: Colors.GRAY
+              }}>
+              {`Rs. ${mrp}`}
+            </Text>
+          }
         </View>
-        {!isOutOfStock && 
-        <PlusMinusButtons
-        onLoaderStateChanged={(isLoading) => {
-          props.onLoaderStateChanged(isLoading)
-        }}
-        onUpdation={() => {
-          props.onUpdation && props.onUpdation()
-        }}
-        item={props.item} quantity={0} type={PLUS_MINUS_BUTTON_TYPE.FeeaturedSimilarProductCard} />
+        {!isOutOfStock &&
+          <PlusMinusButtons
+            onLoaderStateChanged={(isLoading) => {
+              props.onLoaderStateChanged(isLoading)
+            }}
+            onUpdation={() => {
+              props.onUpdation && props.onUpdation()
+            }}
+            item={props.item} quantity={0} type={PLUS_MINUS_BUTTON_TYPE.FeeaturedSimilarProductCard} />
         }
-        
+
       </View>
     </TouchableOpacity>
   );

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <header>
+          neeshu validation
+            </header>
+            
+            <p>
+           enter your data over flow
+            </p>
+            
+            <input id="id1" type="number" max="10" >
+            <p>If the number is greater than 100 (the input's max attribute), an error message will be displayed.</p>
+            <p id="demo"></p>
+            
+            
+            <script>
+                function myFunction () {
+                    let text ;
+                    if (document.getElementById("id1").validity.rangeoverflow){
+                        text  = "range over flow"
+                    }
+                    else{
+                        text = " input value ok"
+                    }
+                    document.getElementById("id").innerHTML = text
+                }
+            </script>
+                        <button onclick="myFunction" ()> ok</button>
+
+    </body>
+
+</html>

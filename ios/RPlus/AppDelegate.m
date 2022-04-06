@@ -80,7 +80,7 @@ static void InitializeFlipper(UIApplication *application) {
     plistName = @"GoogleService-Info-HMF";
   }else if ([targetName isEqualToString:@"GDEES"]){
     plistName = @"GoogleService-Info-GDEES";
-  }else if ([targetName  isEqual: @"Kandvika"]){
+  }else if ([targetName  isEqual: @"Kandavika"]){
     plistName = @"GoogleService-Info-Kandavika";
   }else if ([targetName isEqualToString:@"BudgetSuperMarket"]){
     plistName = @"GoogleService-Info-BMS";

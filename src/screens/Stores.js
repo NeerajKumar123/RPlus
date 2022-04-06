@@ -187,6 +187,7 @@ const Stores = props => {
                       {
                         text: 'Clear Cart',
                         onPress: () => {
+                          Storage.clearCartData()
                           Storage.clearStoresCart();
                           Storage.saveStoreInfo(item, () => {
                             global.storeInfo = item;

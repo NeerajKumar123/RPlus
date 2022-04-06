@@ -140,13 +140,21 @@ const setKeyValue = async (key, value, callback) => {
   const clearAllData = async (callback) => {
     try {
      await AsyncStorage.removeItem('USER_DATA');
-     await AsyncStorage.getItem('USER_CART_DATA');
+     await AsyncStorage.removeItem('USER_CART_DATA');
      callback && callback()
     } catch (error) {
         console.log(error);
     }
   };
 
+  const clearCartData = async (callback) => {
+    try {
+      await AsyncStorage.removeItem('USER_CART_DATA');
+      callback && callback()
+     } catch (error) {
+         console.log(error);
+     }
+  };
   const clearStoresCart = async (callback) => {
     try {
      await AsyncStorage.removeItem('STORE_INFO');
@@ -182,5 +190,6 @@ const setKeyValue = async (key, value, callback) => {
     getStoreInfo,
     getUserData,
     getMultiValue,
-    clearStoresCart
+    clearStoresCart,
+    clearCartData
   }

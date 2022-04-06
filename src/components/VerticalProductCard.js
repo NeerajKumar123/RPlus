@@ -10,7 +10,6 @@ const VerticalProductCard = props => {
   const {mrp, name, selling_price, image,stock} = props.item;
   let off = ((mrp - selling_price) / mrp) * 100;
   off = off.toFixed(0);
-  off = `${off} % OFF`;
   const isOutOfStock = stock < 1 ? true : false;
 
   return (
@@ -55,15 +54,18 @@ const VerticalProductCard = props => {
       ) : (
         <View style={{flexDirection: 'row', marginTop: 15}}>
           <Text style={{fontWeight: 'bold'}}>{`Rs. ${selling_price}`}</Text>
-          <Text
-            style={{
-              textDecorationLine: 'line-through',
-              textDecorationStyle: 'solid',
-              marginHorizontal: 10,
-              color:Colors.GRAY
-            }}>
-            {`Rs. ${mrp}`}
-          </Text>
+          {off > 0 && 
+           <Text
+           style={{
+             textDecorationLine: 'line-through',
+             textDecorationStyle: 'solid',
+             marginHorizontal: 10,
+             color:Colors.GRAY
+           }}>
+           {`Rs. ${mrp}`}
+         </Text>
+          }
+         {off > 0 && 
           <Text
             style={{
               borderRadius: 4,
@@ -76,8 +78,9 @@ const VerticalProductCard = props => {
               textAlign: 'center',
               textAlignVertical: 'center',
             }}>
-            {off}
+            {`${off} % OFF`}
           </Text>
+         }
         </View>
       )}
       </View>

@@ -301,3 +301,7 @@ export const getNotification = ( params, callback) => {
   const path = `https://rewardsplus.in/api/store/notification`;
   API.makePostRequest(path, params, callback);
 };
+export const getNewarrival = ( params, callback) => {
+  const path = `https://rewardsplus.in/api/store/newarrival`;
+  API.makePostRequest(path, params, callback);
+};

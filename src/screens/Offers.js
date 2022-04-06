@@ -23,7 +23,6 @@ const Offers = () => {
         isHome={true}
         title={storeInfo.store_name}
         subtitle={storeInfo.city_id}
-        isHome={true}
         imageUrl={storeInfo.photo}
         storeIconClicked={() => {
           navigation.goBack();

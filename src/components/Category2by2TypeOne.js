@@ -22,7 +22,7 @@ const Category2by2TypeOne = (props) => {
         shadowOpacity: 0.5,
         marginBottom:10,
         elevation:2,
-      }}>
+     }}>
       <Text
         style={{
           fontSize: 16,
@@ -40,7 +40,7 @@ const Category2by2TypeOne = (props) => {
         ItemSeparatorComponent={() => (
           <View style={{height: 14}} />
         )}
-      numColumns = {2}
+        numColumns = {2}
         keyExtractor={(item, index) => 'key_' + index}
         data={category}
         renderItem={({item, index}) => {

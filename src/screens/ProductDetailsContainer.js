@@ -70,13 +70,20 @@ const ProductDetailsContainer = props => {
         setIsOutOfStock(payload?.stock < 1 ? true : false)
         updateCart();
         setIsLoading(false);
+        if (payload) {
+          const cartObj = formatToCartObj(
+            payload,
+            payload.quantity,
+            PLUS_MINUS_BUTTON_TYPE.ProductDetails,
+          );
+          RPCartManager.isAlreadyAdded(cartObj, (_, addedItem) => {
+            setQuantity(addedItem ? addedItem.productQuantity : 0);
+            setIsLoading(false);
+          });
+        }
       });
     }
   }, [storeDetails]);
-
-  useEffect(() => {
-    updateCart();
-  }, []);
 
   const onShare = async imageUrl => {
     try {

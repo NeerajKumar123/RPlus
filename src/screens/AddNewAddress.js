@@ -315,7 +315,7 @@ const AddNewAddress = props => {
             <RPInputAddress
               maxLength={40}
               value={mcity}
-              placeholder="Select City"
+              placeholder="Enter City Name"
               onEndEditing={value => {
                 setCity(value);
               }}
@@ -330,7 +330,7 @@ const AddNewAddress = props => {
             />
             <RPInputAddress
               value={mhouseNo}
-              maxLength={20}
+              maxLength={100}
               placeholder="House No/Apartment No"
               onEndEditing={value => {
                 setHouseNo(value);
