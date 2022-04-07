@@ -301,7 +301,23 @@ export const getNotification = ( params, callback) => {
   const path = `https://rewardsplus.in/api/store/notification`;
   API.makePostRequest(path, params, callback);
 };
-export const getNewarrival = ( params, callback) => {
+
+export const getNewarrivalAllItems = ( params, callback) => {
+  const path = `https://rewardsplus.in/api/store/newarrivalRandom`;
+  API.makePostRequest(path, params, callback);
+};
+
+export const getNewarrivalAllCategoryByStore = ( params, callback) => {
+  const path = `https://rewardsplus.in/api/store/newarrivalCategory`;
+  API.makePostRequest(path, params, callback);
+};
+
+export const getNewarrivalProductsByCategory = ( params, callback) => {
   const path = `https://rewardsplus.in/api/store/newarrival`;
   API.makePostRequest(path, params, callback);
 };
+
+
+
+
+

@@ -40,6 +40,68 @@ const SquareShapeCard = props => {
         onPress();
       }}>
       <Image
+        resizeMode='contain'
+        style={{width: '100%', height: '100%', alignSelf: 'center'}}
+        source={{
+          uri: image,
+        }}
+      />
+      <TouchableOpacity
+        style={{
+          backgroundColor: Colors.WHITE,
+          borderRadius: 4,
+          justifyContent: 'center',
+          alignItems: 'center',
+          position: 'absolute',
+          bottom: 10,
+          height: 40,
+          width: '90%',
+        }}
+        onPress={() => {
+          onPress();
+        }}>
+        <Text
+          style={{
+            fontWeight: '800',
+            textAlign: 'center',
+            color: Colors.CLR_17264D,
+          }}>
+          {name}
+        </Text>
+      </TouchableOpacity>
+    </TouchableOpacity>
+  );
+};
+
+
+export const SquareShapeCardNewArrival = props => {
+  const {marginRight, item, onPress = () => {}} = props;
+  const {image, name} = item;
+  return (
+    <TouchableOpacity
+      activeOpacity={1}
+      key={name}
+      style={{
+        flexDirection: 'row',
+        shadowColor: Colors.GRAY,
+        shadowOffset: {
+          width: 0,
+          height: 2,
+        },
+        shadowRadius: 2,
+        shadowOpacity: 0.5,
+        height: cheight,
+        width: cwidth,
+        borderRadius: 4,
+        overflow: 'hidden',
+        marginRight,
+        justifyContent: 'center',
+        backgroundColor:'red'
+      }}
+      onPress={() => {
+        onPress();
+      }}>
+      <Image
         resizeMode="stretch"
         style={{width: '100%', height: '100%', alignSelf: 'center'}}
         source={{

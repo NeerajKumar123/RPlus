@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {
   Text,
   View,
@@ -9,9 +9,9 @@ import {
   TouchableOpacity,
   Alert,
 } from 'react-native';
-import { useNavigation, useIsFocused } from '@react-navigation/native';
+import {useNavigation, useIsFocused} from '@react-navigation/native';
 import NetInfo from '@react-native-community/netinfo';
-import Carousel, { Pagination } from 'react-native-snap-carousel';
+import Carousel, {Pagination} from 'react-native-snap-carousel';
 import AppHeader from '../components/AppHeader';
 import BannerCard from '../components/BannerCard';
 import SearchProductModel from '../components/SearchProductModel';
@@ -29,17 +29,19 @@ import Category2by2TypeTwo from '../components/Category2by2TypeTwo';
 import Category3by3Block from '../components/Category3by3Block';
 import RPLoader from '../components/RPLoader';
 import NoInternetDashBoard from '../components/NoInternetDashBoard';
+import NewArrivalsBlock from '../components/NewArrivalsBlock';
 import * as Colors from '../constants/ColorDefs';
 import * as RPCartManager from '../helpers/RPCartManager';
 const notif_icon = require('../../assets/notif_icon.png');
 const cart_icon = require('../../assets/cart_icon.png');
-const { height, width } = Dimensions.get('window');
+const {height, width} = Dimensions.get('window');
+
 import {
   getStoreBanner,
   getVerticalList,
   getVerticaldesign,
   getNotification,
-  getNewarrival
+  getNewarrivalAllItems,
 } from '../apihelper/Api.js';
 import messaging from '@react-native-firebase/messaging';
 
@@ -66,7 +68,7 @@ const StoreDashboard = props => {
   const cheight = cwidth * 0.47;
   const [isConnected, setIsConnected] = useState(true);
   const [verticalDesignDetails, setVerticalDesignDetails] = useState();
-  const [newArrivalsDetails, setNewArrivalsDetails] = useState();
+  const [newArrivals, setNewArrivals] = useState();
 
   useEffect(() => {
     requestUserPermission();
@@ -117,18 +119,18 @@ const StoreDashboard = props => {
   const init = () => {
     setIsLoading(true);
     updateCart();
-    const newArrParamas = { store_id: 46, response_type: 4 }
-    getNewarrival(newArrParamas, arraRes => {
-      console.log('arraRes====>', JSON.stringify(arraRes))
-      setNewArrivalsDetails(arraRes?.payload_newarrival)
-    })
-    getStoreBanner({ store_id: storeID }, bannersRes => {
-      const { payload_banner } = bannersRes;
+    const newArrParamas = {store_id: 46};
+    getNewarrivalAllItems(newArrParamas, arraRes => {
+      console.log('getNewarrivalAllItems Res====>', JSON.stringify(arraRes));
+      setNewArrivals(arraRes?.payload_newarrivalRandom);
+    });
+    getStoreBanner({store_id: storeID}, bannersRes => {
+      const {payload_banner} = bannersRes;
       setBanners(payload_banner.banner);
       setPromobanners(payload_banner.promobanner);
       setOffersoftheday(payload_banner.offeroftheday);
       setSectionbanner(payload_banner.sectionbanner);
-      getVerticalList({ store_id: storeID }, verticalRes => {
+      getVerticalList({store_id: storeID}, verticalRes => {
         setIsLoading(false);
         const details = verticalRes?.payload_verticalList;
         setVerticals(details?.vertical);
@@ -141,7 +143,7 @@ const StoreDashboard = props => {
       });
     });
 
-    const params = { store_id: storeID, response_type: 4 };
+    const params = {store_id: storeID, response_type: 4};
     getVerticaldesign(params, res => {
       const designObj = res.payload_verticaldesign;
       setVerticalDesignDetails(designObj);
@@ -185,7 +187,7 @@ const StoreDashboard = props => {
       } else if (isCategory) {
         decidedLevel = 3;
       }
-      navigation.navigate('ExploreByVertical', { level: decidedLevel });
+      navigation.navigate('ExploreByVertical', {level: decidedLevel});
     }
   };
 
@@ -204,9 +206,9 @@ const StoreDashboard = props => {
           if (navigation.canGoBack()) {
             navigation.goBack();
           } else {
-            const { lat, lon } = global?.storeInfo;
-            const location = { latitude: lat, longitude: lon };
-            navigation.navigate('Stores', { location: location });
+            const {lat, lon} = global?.storeInfo;
+            const location = {latitude: lat, longitude: lon};
+            navigation.navigate('Stores', {location: location});
           }
         }}
         rightIcons={[
@@ -278,7 +280,7 @@ const StoreDashboard = props => {
                   }}
                   ref={sliderRef}
                   data={banners}
-                  renderItem={({ item }) => (
+                  renderItem={({item}) => (
                     <BannerCard
                       item={item}
                       height={cheight}
@@ -308,7 +310,7 @@ const StoreDashboard = props => {
               </>
             )}
           </View>
-          <View style={{ paddingHorizontal: 18 }}>
+          <View style={{paddingHorizontal: 18}}>
             {verticals && verticals.length > 0 ? (
               <ExploreCategory
                 data={verticals}
@@ -317,7 +319,7 @@ const StoreDashboard = props => {
                 }}
               />
             ) : (
-              <View style={{ marginTop: 100 }} />
+              <View style={{marginTop: 100}} />
             )}
             {hasSubscription && <SubscriptionsBlock />}
             {promobanners && promobanners.length > 0 && (
@@ -329,9 +331,33 @@ const StoreDashboard = props => {
               />
             )}
           </View>
+
+          {newArrivals?.length > 0 && (
+            <NewArrivalsBlock
+              data={newArrivals}
+              viewAllSelected={() => {
+                navigation.navigate('NewArrivalsList', {allData:newArrivals});
+              }}
+              onPlusMinusPressed={() => {}}
+              onUpdation={() => {
+                setIsLoading(false);
+                updateCart();
+              }}
+              onLoaderStateChanged={isLoading => {
+                setIsLoading(isLoading);
+              }}
+              onProductSelected={item => {
+                navigation.navigate('ProductDetailsContainer', {
+                  store_id: storeID,
+                  product_id: item.product_id,
+                  company_id: storeDetails.company_id,
+                });
+              }}
+            />
+          )}
           {dealsOfTheDayDetails && (
             <DealsOfTheDay
-              onViewAllClicked={() => { }}
+              onViewAllClicked={() => {}}
               onProductSelected={item => {
                 navigation.navigate('ProductDetailsContainer', {
                   store_id: storeID,
@@ -351,16 +377,6 @@ const StoreDashboard = props => {
               }}
             />
           )}
-          {newArrivalsDetails?.all.map(allCates => {
-            return (
-              <AllCategories
-                data={allCates}
-                onSelect={item => {
-                  doNavigate(item);
-                }}
-              />
-            );
-          })}
           {hotDealsDetails && (
             <HotDeals
               details={hotDealsDetails}
@@ -458,7 +474,7 @@ const SearchBar = props => {
         paddingHorizontal: 20,
         borderRadius: 4,
       }}>
-      <Text style={{ fontSize: 16, color: Colors.CLR_8797AA }}>
+      <Text style={{fontSize: 16, color: Colors.CLR_8797AA}}>
         Search your product
       </Text>
     </TouchableOpacity>

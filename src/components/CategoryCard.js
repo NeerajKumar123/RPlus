@@ -155,4 +155,52 @@ export const Category3by3BlockCard = props => {
     </TouchableOpacity>
   );
 };
+
+export const CategoryCardNewArrival = props => {
+  const {item, isSelected = false} = props;
+  return (
+    <TouchableOpacity
+      onPress={() => {
+        props.onPress && props.onPress();
+      }}
+      key={item.category_name}
+      style={{
+        flexDirection: 'column',
+        justifyContent: 'flex-start',
+        alignItems: 'center',
+        paddingHorizontal: 5,
+        width: '100%',
+        borderRightColor: isSelected ? Colors.CLR_044BF7 : Colors.WHITE,
+        borderRightWidth: isSelected ? 3 : 0,
+        paddingVertical:5,
+      }}>
+      <View
+        style={{
+          width: 60,
+          height: 60,
+          borderRadius: 30,
+          borderColor: Colors.CLR_DFDFDF,
+          borderWidth: 1,
+          justifyContent: 'center',
+          alignItems: 'center',
+          overflow:'hidden'
+        }}>
+        <Image
+          resizeMode='cover'
+          style={{width: 55,borderRadius: 27.5, height: 55, overflow:'hidden', alignSelf: 'center'}}
+          source={{uri: item.category_image} ? {uri: item.category_image} : null}
+        />
+      </View>
+      <Text
+        style={{
+          color: '#17264D',
+          fontSize: 12,
+          textAlign: 'center',
+          marginTop: 5,
+        }}>
+        {item.category_name}
+      </Text>
+    </TouchableOpacity>
+  );
+};
 export default CategoryCard;

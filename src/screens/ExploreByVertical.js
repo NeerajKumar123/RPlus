@@ -95,7 +95,6 @@ const ExploreByVertical = props => {
         setSubCategories(savedSubcats);
         setSelectedSubCategory(global.subcategory ?  global.subcategory : savedSubcats?.[0]);
       }else{
-        console.log('selectedCategory1111',selectedCategory)
         setIsLoading(true);
         getCategoryBySubCategory(
           {store_id: storeID, category_id: selectedCategory?.category_id},
