@@ -69,6 +69,7 @@ const StoreDashboard = props => {
   const [isConnected, setIsConnected] = useState(true);
   const [verticalDesignDetails, setVerticalDesignDetails] = useState();
   const [newArrivals, setNewArrivals] = useState();
+  const [allCatIconUrl, setAllCatIconUrl] = useState();
 
   useEffect(() => {
     requestUserPermission();
@@ -119,9 +120,9 @@ const StoreDashboard = props => {
   const init = () => {
     setIsLoading(true);
     updateCart();
-    const newArrParamas = {store_id: 46};
+    const newArrParamas = {store_id: storeID};
     getNewarrivalAllItems(newArrParamas, arraRes => {
-      console.log('getNewarrivalAllItems Res====>', JSON.stringify(arraRes));
+      setAllCatIconUrl(arraRes?.view_all_icon)
       setNewArrivals(arraRes?.payload_newarrivalRandom);
     });
     getStoreBanner({store_id: storeID}, bannersRes => {
@@ -160,8 +161,6 @@ const StoreDashboard = props => {
   }, [isFocused]);
 
   const doNavigate = item => {
-    // navigation.navigate('NewArrivalsList', { newarrivals: [] });
-    // return
     const isProduct =
       item.vertical_id &&
       item.category_id &&
@@ -331,30 +330,6 @@ const StoreDashboard = props => {
               />
             )}
           </View>
-
-          {newArrivals?.length > 0 && (
-            <NewArrivalsBlock
-              data={newArrivals}
-              viewAllSelected={() => {
-                navigation.navigate('NewArrivalsList', {allData:newArrivals});
-              }}
-              onPlusMinusPressed={() => {}}
-              onUpdation={() => {
-                setIsLoading(false);
-                updateCart();
-              }}
-              onLoaderStateChanged={isLoading => {
-                setIsLoading(isLoading);
-              }}
-              onProductSelected={item => {
-                navigation.navigate('ProductDetailsContainer', {
-                  store_id: storeID,
-                  product_id: item.product_id,
-                  company_id: storeDetails.company_id,
-                });
-              }}
-            />
-          )}
           {dealsOfTheDayDetails && (
             <DealsOfTheDay
               onViewAllClicked={() => {}}
@@ -395,7 +370,29 @@ const StoreDashboard = props => {
               }}
             />
           )}
-
+          {newArrivals?.length > 0 && (
+            <NewArrivalsBlock
+              data={newArrivals}
+              viewAllSelected={() => {
+                navigation.navigate('NewArrivalsList', {allData:newArrivals, allCatIconUrl:allCatIconUrl});
+              }}
+              onPlusMinusPressed={() => {}}
+              onUpdation={() => {
+                setIsLoading(false);
+                updateCart();
+              }}
+              onLoaderStateChanged={isLoading => {
+                setIsLoading(isLoading);
+              }}
+              onProductSelected={item => {
+                navigation.navigate('ProductDetailsContainer', {
+                  store_id: storeID,
+                  product_id: item.product_id,
+                  company_id: storeDetails.company_id,
+                });
+              }}
+            />
+          )}
           {verticalDesignDetails?.d_even.map(evenCates => {
             return (
               <Category2by2TypeOne

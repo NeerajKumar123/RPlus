@@ -32,7 +32,7 @@ const AppHeader = props => {
   const headerGradidentColors = AppData.AppHeaderGradidentColors
   // const headerGradidentColors = [AppData.app_theme, AppData.app_theme]
   let truncatedtitle = title;
-  if (title && title.length > 30) {
+  if (title && title.length > 26) {
     truncatedtitle = `${title.substring(0, 25)} ...`;
   }
   let headerHeight = 90;

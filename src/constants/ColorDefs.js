@@ -97,5 +97,4 @@ export const THEME_CLR_HFM = '#233C42'
 export const THEME_CLR_GDEES = '#2C3E33'
 export const THEME_CLR_KANVIKA = '#E4E44E'
 export const THEME_CLR_BMS = '#E4E44E'
-
-
+export const CTO_DARK_SHADE = '#757575'           

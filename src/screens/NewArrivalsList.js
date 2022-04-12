@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Text, View, FlatList} from 'react-native';
+import {Text, View, FlatList, Image} from 'react-native';
 import {useNavigation, useIsFocused} from '@react-navigation/native';
 import AppHeader from '../components/AppHeader';
 import {NewArrivalListCard} from '../components/FeaturedSimilarProductCard';
@@ -14,6 +14,7 @@ import * as Colors from '../constants/ColorDefs';
 const cart_icon = require('../../assets/cart_icon.png');
 import NoData from '../components/NoData';
 import * as RPCartManager from '../helpers/RPCartManager';
+const All_Cat_ID = 10000
 
 const NewArrivalsList = props => {
   const navigation = useNavigation();
@@ -23,9 +24,9 @@ const NewArrivalsList = props => {
   const isFocused = useIsFocused();
   const [cartCount, setCartCount] = useState(0);
   const [categories, setCategories] = useState();
-  const [selCatProducts, setSelCatProducts] = useState()
+  const [bannerCats, setBannerCats] = useState();
+  const [selCatProducts, setSelCatProducts] = useState();
   const [selectedCategory, setSelectedCategory] = useState();
-
 
   const updateCart = () => {
     RPCartManager.decideAndGetCartData(cartItems => {
@@ -41,44 +42,43 @@ const NewArrivalsList = props => {
     }
   }, [isFocused]);
 
-  
-
   useEffect(() => {
-    const {allData} = props.route.params;
-    let cates = []
+    const {allData,allCatIconUrl} = props.route.params;
+    let cates = [];
     allData.forEach(element => {
       if (!cates.some(e => e.category_id == element.category_id)) {
-        const cateObj = {category_id:element.category_id, category_name:`cate:${element.category_id}`, category_image:'https://rewardsplus.in/uploads/app/public/company/product/5ee76b5dd96ade3e0c0a57e4.webp'}
-        cates.push(cateObj)
+        const cateObj = {
+          category_id: element.category_id,
+          category_name: element?.category_name,
+          category_image: element?.category_image,
+          category_banner:element?.n_a_image || undefined,
+        };
+        cates.push(cateObj);
       }
-      setCategories(cates)
-      setSelectedCategory(cates?.[0])
     });
-    // const params = {store_id: 46};
-    // getNewarrivalAllCategoryByStore(params, res => {
-    //   console.log('res', res);
-    //   const allCates = res?.payload_newarrivalCategory
-    //   setCategories(allCates)
-    //   setSelectedCategory(allCates?.[0]);
-    // });
+    const allTypeCat = {
+      category_id: All_Cat_ID,
+      category_name: 'All',
+      category_image: allCatIconUrl,
+      category_banner:undefined,
+    }
+    cates = [allTypeCat, ...cates]
+    setCategories(cates);
+    setSelectedCategory(cates?.[0]);
   }, []);
 
-  // useEffect(() => {
-  //   setIsLoading(true)
-  //   const params = {store_id: 46,category_id:54};
-  //   getNewarrivalProductsByCategory(params, res => {
-  //     console.log('getNewarrivalProductsByCategory====>', res);
-  //     setSelCatProducts(res?.payload_newarrival)
-  //     setIsLoading(false)
-  //   });
-  // }, [selectedCategory]);
-
   useEffect(() => {
-    if(selectedCategory){
+    if (selectedCategory) {
       const {allData} = props.route.params;
-      let products = allData.filter( element => element.category_id == selectedCategory.category_id )
-      setSelCatProducts(products)
-      console.log('products',products)  
+      if(selectedCategory?.category_id == All_Cat_ID){
+        setSelCatProducts(allData);
+  
+      }else{
+        let products = allData.filter(
+          element => element.category_id == selectedCategory.category_id,
+        );
+        setSelCatProducts(products);
+      }
     }
   }, [selectedCategory]);
 
@@ -107,78 +107,105 @@ const NewArrivalsList = props => {
         ]}
       />
       {isLoading && <RPLoader />}
-      {console.log('categories',categories)}
-      <View style = {{flex:1, flexDirection:'row'}}>
+      <View style={{flex: 1, flexDirection: 'row'}}>
         {categories && (
           <FlatList
             style={{
               width: '20%',
-              backgroundColor:Colors.WHITE,
-              paddingBottom:30
+              backgroundColor: Colors.WHITE,
+              paddingBottom: 30,
             }}
             keyExtractor={(item, index) => 'key_' + index}
             data={categories}
             renderItem={({item, index}) => {
               return (
                 <CategoryCardNewArrival
-                  isSelected={true}
+                  isSelected={item.category_id == selectedCategory?.category_id}
                   item={item}
                   onPress={() => {
-                    console.log('sdsdsd');
-                    setSelectedCategory(item)
+                    setSelectedCategory(item);
                   }}
                 />
               );
             }}
           />
         )}
-        <View style = {{backgroundColor:'yellow', width:'80%', backgroundColor:Colors.CLR_E7ECF2}}>
-          <View style= {{width:'100%', flexDirection:'row', alignItems:'center', height:43, paddingHorizontal:12}}>
-          <Text>
-            {`${selCatProducts?.length} Products`}
-          </Text>
-          </View>
-          {categories && (
-          <FlatList
-            showsVerticalScrollIndicator = {false}
-            ItemSeparatorComponent={() => (
-              <View style={{height: 10, width: 20}} />
-            )}
-            ListFooterComponent = {() =>  <View style={{height: 50, width: 20}} />}
-            style={{
-              paddingVertical: 5,
-              paddingRight:10,
-              paddingLeft:5,
-              width:'100%',
-            }}
-            numColumns = {2}
-            keyExtractor={(item, index) => 'key_' + index}
-            data={selCatProducts}
-            renderItem={({item, index}) => {NewArrivalListCard
-              return (
-                <NewArrivalListCard
-                  isSelected={true}
-                  index = {index + 1}
-                  item={item}
-                  onPress={() => {
-                    console.log('sdsdsd', item)
-                    navigation.navigate('ProductDetailsContainer', {
-                      store_id: storeID,
-                      product_id: item.product_id,
-                      company_id: companyID,
-                    });    
-                  }}
-                  onLoaderStateChanged = {(isLoading) =>{
-                    setIsLoading(isLoading)
-                  }}
-                  onUpdation = {()=>{
-                    updateCart();
-                  }}
-                />
-              );
-            }}
-          />
-        )}
+        <View style={{width: '80%', backgroundColor: Colors.CLR_E7ECF2}}>
+          {categories && selCatProducts && (
+            <FlatList
+              showsVerticalScrollIndicator={false}
+              ListHeaderComponent={() => (
+                <View style = {{flexDirection:'column', marginBottom:10}}>
+                  {selCatProducts?.length > 0 && (
+                    <View
+                      style={{
+                        width: '100%',
+                        flexDirection: 'row',
+                        alignItems: 'center',
+                        height: 43,
+                        paddingHorizontal: 12,
+                      }}>
+                      <Text
+                        style={{
+                          color: Colors.CTO_DARK_SHADE,
+                          fontSize: 15,
+                        }}>{`${selCatProducts?.length} Products`}
+                      </Text>
+                    </View>
+                  )}
+                  {selectedCategory?.category_banner?.length && (
+                    <Image
+                      resizeMode="cover"
+                      style={{
+                        width: '100%',
+                        height: 150,
+                        overflow: 'hidden',
+                        alignSelf: 'center',
+                      }}
+                      source={{uri: selectedCategory?.category_banner}}
+                    />
+                  )}
+                </View>
+              )}
+              ItemSeparatorComponent={() => (
+                <View style={{height: 10, width: 20}} />
+              )}
+              ListFooterComponent={() => (
+                <View style={{height: 50, width: 20}} />
+              )}
+              style={{
+                paddingVertical: 5,
+                paddingRight: 10,
+                paddingLeft: 5,
+                width: '100%',
+              }}
+              numColumns={2}
+              keyExtractor={(item, index) => 'key_' + index}
+              data={selCatProducts}
+              renderItem={({item, index}) => {
+                return (
+                  <NewArrivalListCard
+                    isSelected={true}
+                    index={index + 1}
+                    item={item}
+                    onPress={() => {
+                      navigation.navigate('ProductDetailsContainer', {
+                        store_id: storeID,
+                        product_id: item.product_id,
+                        company_id: companyID,
+                      });
+                    }}
+                    onLoaderStateChanged={isLoading => {
+                      setIsLoading(isLoading);
+                    }}
+                    onUpdation={() => {
+                      updateCart();
+                    }}
+                  />
+                );
+              }}
+            />
+          )}
         </View>
       </View>
     </View>

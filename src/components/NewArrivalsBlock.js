@@ -4,7 +4,6 @@ import FeaturedSimilarProductCard from './FeaturedSimilarProductCard';
 import * as Colors from '../constants/ColorDefs';
 const NewArrivalsBlock = (props) => {
     const { data, onProductSelected = () => { }, viewAllSelected = () => { },onLoaderStateChanged = () =>{}, onUpdation = () =>{} } = props
-    console.log('props', props)
     return (
         <View
             style={{
