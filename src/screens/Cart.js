@@ -121,6 +121,8 @@ const Cart = props => {
     const params =  prepareparams(cartItemsUpdateMultiple)
     addTocartMultiple(params,(res)=>{
       getRefreshedData()
+      Storage.clearStoresCart(()=>{
+      })
     })
   }
 

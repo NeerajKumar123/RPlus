@@ -199,7 +199,7 @@ export const CategoryCardNewArrival = props => {
           width: 60,
           height: 60,
           borderRadius: 30,
-          borderColor: Colors.CLR_DFDFDF,
+          borderColor: isSelected ? Colors.CLR_044BF7 : Colors.WHITE,
           borderWidth: 1,
           justifyContent: 'center',
           alignItems: 'center',

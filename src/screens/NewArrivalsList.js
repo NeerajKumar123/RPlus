@@ -27,6 +27,7 @@ const NewArrivalsList = props => {
   const [bannerCats, setBannerCats] = useState();
   const [selCatProducts, setSelCatProducts] = useState();
   const [selectedCategory, setSelectedCategory] = useState();
+  const {pageTitle} =  props.route.params
 
   const updateCart = () => {
     RPCartManager.decideAndGetCartData(cartItems => {
@@ -90,7 +91,7 @@ const NewArrivalsList = props => {
       }}>
       <AppHeader
         isLeftIconEnabeld={true}
-        title={'New Arrivals'}
+        title={pageTitle ? pageTitle : 'New Arrivals'}
         onLeftPress={() => {
           navigation.goBack();
         }}
@@ -135,7 +136,7 @@ const NewArrivalsList = props => {
             <FlatList
               showsVerticalScrollIndicator={false}
               ListHeaderComponent={() => (
-                <View style = {{flexDirection:'column', marginBottom:10}}>
+                <View style = {{flexDirection:'column', marginBottom:selectedCategory?.category_banner?.length ? 10 : 0}}>
                   {selCatProducts?.length > 0 && (
                     <View
                       style={{

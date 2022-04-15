@@ -44,6 +44,7 @@ import {
   getNewarrivalAllItems,
 } from '../apihelper/Api.js';
 import messaging from '@react-native-firebase/messaging';
+const All_Cat_ID = 10000
 
 const StoreDashboard = props => {
   const navigation = useNavigation();
@@ -52,6 +53,8 @@ const StoreDashboard = props => {
   const sliderRef = useRef();
   const [hasSubscription, setHasSubscription] = useState(false);
   const [banners, setBanners] = useState([]);
+  const [occBannerUrl, setOccBannerUrl] = useState();
+  const [occProducts, setOccProducts] = useState([]);
   const [offersoftheday, setOffersoftheday] = useState(undefined);
   const [comboOffers, setComboOffers] = useState(undefined);
   const [promobanners, setPromobanners] = useState(undefined);
@@ -70,6 +73,7 @@ const StoreDashboard = props => {
   const [verticalDesignDetails, setVerticalDesignDetails] = useState();
   const [newArrivals, setNewArrivals] = useState();
   const [allCatIconUrl, setAllCatIconUrl] = useState();
+  const [newArrPageTitle, setNewArrPageTitle] = useState("New Arrivals");
 
   useEffect(() => {
     requestUserPermission();
@@ -124,6 +128,9 @@ const StoreDashboard = props => {
     getNewarrivalAllItems(newArrParamas, arraRes => {
       setAllCatIconUrl(arraRes?.view_all_icon)
       setNewArrivals(arraRes?.payload_newarrivalRandom);
+      setNewArrPageTitle(arraRes?.occasion_name)
+      setOccBannerUrl({mobile_image:arraRes?.occasion_banner,category_id:All_Cat_ID})
+      setOccProducts(arraRes?.occasion)
     });
     getStoreBanner({store_id: storeID}, bannersRes => {
       const {payload_banner} = bannersRes;
@@ -278,13 +285,17 @@ const StoreDashboard = props => {
                     width: '100%',
                   }}
                   ref={sliderRef}
-                  data={banners}
+                  data={occBannerUrl ? [...banners,occBannerUrl] : banners}
                   renderItem={({item}) => (
                     <BannerCard
                       item={item}
                       height={cheight}
                       onPress={() => {
+                        if(item?.category_id == All_Cat_ID){
+                          navigation.navigate('NewArrivalsList', {allData:occProducts, allCatIconUrl:allCatIconUrl, pageTitle:newArrPageTitle});
+                        }else{
                         doNavigate(item);
+                        }
                       }}
                     />
                   )}

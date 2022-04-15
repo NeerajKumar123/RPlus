@@ -24,8 +24,8 @@ const ExploreByVertical = props => {
   const vertical = global.vertical
     ? global.vertical
     : global.verticals && global.verticals[0];
-  const storeID = global.storeInfo.id;
-  const companyID = global.storeInfo.company_id;
+  const storeID = global?.storeInfo?.id;
+  const companyID = global?.storeInfo?.company_id;
   const [categories, setCategories] = useState(undefined);
   const [selectedCategory, setSelectedCategory] = useState(undefined);
   const [subCategories, setSubCategories] = useState(undefined);
@@ -65,7 +65,6 @@ const ExploreByVertical = props => {
   }, [isFocused]);
 
   useEffect(() => {
-    console.log('showCats',showCats, showSubCats)
     if(!showCats && !showSubCats){
       setSelectedCategory({category_id:vertical?.category_id});
       setSelectedSubCategory({subcategory_id:vertical?.subcategory_id});
